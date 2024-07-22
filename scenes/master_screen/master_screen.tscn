@@ -115,31 +115,41 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_smuye")
 
 [node name="MenuOptions" type="VBoxContainer" parent="GameArea/MainContainer/MenuMargin/Panel"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -30.0
-offset_right = 300.0
-offset_bottom = 30.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_right = 150.0
+offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="NewGameOut" type="Panel" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions"]
+[node name="NewGame" type="Panel" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions"]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_u5vhv")
 
-[node name="ButtonInner" type="Panel" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions/NewGameOut"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 290.0
-offset_bottom = 50.0
+[node name="ButtonInner" type="Panel" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions/NewGame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.0
+offset_top = -25.0
+offset_right = 145.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = ExtResource("3_jidwa")
 
-[node name="Label" type="Label" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions/NewGameOut/ButtonInner"]
+[node name="Label" type="Label" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions/NewGame/ButtonInner"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -154,3 +164,118 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "New Game"
 label_settings = ExtResource("4_pc6qy")
+horizontal_alignment = 1
+
+[node name="LoadGame" type="Panel" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_u5vhv")
+
+[node name="ButtonInner" type="Panel" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions/LoadGame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.0
+offset_top = -25.0
+offset_right = 145.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("3_jidwa")
+
+[node name="Label" type="Label" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions/LoadGame/ButtonInner"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.5
+offset_top = -20.5
+offset_right = 96.5
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Load Game"
+label_settings = ExtResource("4_pc6qy")
+horizontal_alignment = 1
+
+[node name="Settings" type="Panel" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_u5vhv")
+
+[node name="ButtonInner" type="Panel" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions/Settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.0
+offset_top = -25.0
+offset_right = 145.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("3_jidwa")
+
+[node name="Label" type="Label" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions/Settings/ButtonInner"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.5
+offset_top = -20.5
+offset_right = 96.5
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings"
+label_settings = ExtResource("4_pc6qy")
+horizontal_alignment = 1
+
+[node name="Discord" type="Panel" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_u5vhv")
+
+[node name="ButtonInner" type="Panel" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions/Discord"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.0
+offset_top = -25.0
+offset_right = 145.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("3_jidwa")
+
+[node name="Label" type="Label" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions/Discord/ButtonInner"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.5
+offset_top = -20.5
+offset_right = 96.5
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Discord"
+label_settings = ExtResource("4_pc6qy")
+horizontal_alignment = 1
