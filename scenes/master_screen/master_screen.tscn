@@ -1,0 +1,156 @@
+[gd_scene load_steps=9 format=3 uid="uid://7kg3g2xgh6rm"]
+
+[ext_resource type="Script" path="res://scripts/MasterScreen.gd" id="1_uhdpj"]
+[ext_resource type="Texture2D" uid="uid://d2peix8vcw51r" path="res://assets/images/tse_placeholder_logo.png" id="2_430or"]
+[ext_resource type="StyleBox" uid="uid://cn6bdhxdvqdix" path="res://assets/panels/panel_lg_rounded.tres" id="3_jidwa"]
+[ext_resource type="LabelSettings" uid="uid://bnintpa14r1ev" path="res://assets/fonts/orbitron_32_so.tres" id="4_pc6qy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w3yrw"]
+bg_color = Color(0.14902, 0.14902, 0.14902, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xj454"]
+bg_color = Color(0.411765, 0.411765, 0.411765, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_smuye"]
+bg_color = Color(0, 0, 0, 0.313726)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5vhv"]
+bg_color = Color(0.14902, 0.14902, 0.14902, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="MasterScreen" type="CanvasLayer"]
+script = ExtResource("1_uhdpj")
+
+[node name="BackgroundLayers" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OuterRect" type="ColorRect" parent="BackgroundLayers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MiddleRect" type="Panel" parent="BackgroundLayers"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -940.0
+offset_top = -520.0
+offset_right = 940.0
+offset_bottom = 520.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w3yrw")
+
+[node name="InnerRect" type="Panel" parent="BackgroundLayers"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -920.0
+offset_top = -500.0
+offset_right = 920.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xj454")
+
+[node name="GameArea" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="MainContainer" type="VBoxContainer" parent="GameArea"]
+layout_mode = 2
+
+[node name="TitleImage" type="TextureRect" parent="GameArea/MainContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("2_430or")
+stretch_mode = 5
+
+[node name="MenuMargin" type="MarginContainer" parent="GameArea/MainContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+
+[node name="Panel" type="Panel" parent="GameArea/MainContainer/MenuMargin"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_smuye")
+
+[node name="MenuOptions" type="VBoxContainer" parent="GameArea/MainContainer/MenuMargin/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -30.0
+offset_right = 300.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="NewGameOut" type="Panel" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_u5vhv")
+
+[node name="ButtonInner" type="Panel" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions/NewGameOut"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 290.0
+offset_bottom = 50.0
+theme_override_styles/panel = ExtResource("3_jidwa")
+
+[node name="Label" type="Label" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions/NewGameOut/ButtonInner"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.5
+offset_top = -20.5
+offset_right = 96.5
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "New Game"
+label_settings = ExtResource("4_pc6qy")
