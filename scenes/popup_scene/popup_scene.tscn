@@ -1,97 +1,58 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfjb3fdjqon0a"]
+[gd_scene load_steps=7 format=3 uid="uid://dxpj7rk6tr1vh"]
 
-[ext_resource type="StyleBox" uid="uid://djh6x40g3x5wj" path="res://assets/panels/panel_dg_rounded.tres" id="1_fpdai"]
-[ext_resource type="StyleBox" uid="uid://cn6bdhxdvqdix" path="res://assets/panels/panel_lg_rounded.tres" id="2_dnxo5"]
-[ext_resource type="LabelSettings" uid="uid://bnintpa14r1ev" path="res://assets/fonts/orbitron_32_so.tres" id="2_utxuj"]
-[ext_resource type="FontFile" uid="uid://c5qfrbkp8n088" path="res://resources/fonts/Orbitron-VariableFont_wght.ttf" id="4_27hv0"]
+[ext_resource type="Script" path="res://scenes/popup_scene/popup_scene.gd" id="1_dksm1"]
+[ext_resource type="Texture2D" uid="uid://c4raotdsqdcbh" path="res://assets/panels/button_panel_800x800.png" id="1_w0heb"]
+[ext_resource type="LabelSettings" uid="uid://ckg0j8haan05w" path="res://assets/fonts/orbitron_48_so.tres" id="2_5dus3"]
+[ext_resource type="Texture2D" uid="uid://qnbdy1vgg1j5" path="res://assets/panels/close_button/close_button_panel_50x50.png" id="3_hc6ey"]
+[ext_resource type="Texture2D" uid="uid://blu3v660yt63r" path="res://assets/panels/close_button/close_button_panel_50x50_pressed.png" id="4_eucvv"]
+[ext_resource type="Texture2D" uid="uid://w8eb67ngwgep" path="res://assets/panels/close_button/close_button_panel_50x50_hover.png" id="5_jntdj"]
 
-[node name="PopupScene" type="Control"]
-custom_minimum_size = Vector2(400, 300)
-layout_mode = 3
-anchors_preset = 0
+[node name="PopupPanel" type="Panel"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_dksm1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_w0heb")
+
+[node name="TitleLabel" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "TITLE"
+label_settings = ExtResource("2_5dus3")
+
+[node name="Container" type="Container" parent="TextureRect"]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="BackgroundPanel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = ExtResource("1_fpdai")
-
-[node name="Panel" type="Panel" parent="BackgroundPanel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -195.0
-offset_top = -145.0
-offset_right = 195.0
-offset_bottom = 145.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = ExtResource("2_dnxo5")
-
-[node name="CloseButton" type="Panel" parent="BackgroundPanel/Panel"]
-custom_minimum_size = Vector2(40, 40)
+[node name="CloseButton" type="TextureButton" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -45.0
-offset_top = 5.0
-offset_right = -5.0
-offset_bottom = 45.0
+offset_left = -70.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 70.0
 grow_horizontal = 0
-size_flags_horizontal = 8
-size_flags_vertical = 0
-theme_override_styles/panel = ExtResource("1_fpdai")
+texture_normal = ExtResource("3_hc6ey")
+texture_pressed = ExtResource("4_eucvv")
+texture_hover = ExtResource("5_jntdj")
 
-[node name="Label" type="Label" parent="BackgroundPanel/Panel/CloseButton"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "X"
-label_settings = ExtResource("2_utxuj")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ContentMargin" type="MarginContainer" parent="BackgroundPanel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="VBoxContainer" type="VBoxContainer" parent="BackgroundPanel/ContentMargin"]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="TitleBar" type="HBoxContainer" parent="BackgroundPanel/ContentMargin/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 10
-
-[node name="TitleLabel" type="Label" parent="BackgroundPanel/ContentMargin/VBoxContainer/TitleBar"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("4_27hv0")
-theme_override_font_sizes/font_size = 24
-text = "Title"
-label_settings = ExtResource("2_utxuj")
-
-[node name="ContentContainer" type="Control" parent="BackgroundPanel/ContentMargin/VBoxContainer"]
-layout_mode = 2

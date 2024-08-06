@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" path="res://scripts/MasterScreen.gd" id="1_uhdpj"]
 [ext_resource type="Texture2D" uid="uid://d2peix8vcw51r" path="res://assets/images/tse_placeholder_logo.png" id="2_430or"]
-[ext_resource type="StyleBox" uid="uid://cn6bdhxdvqdix" path="res://assets/panels/panel_lg_rounded.tres" id="3_jidwa"]
-[ext_resource type="LabelSettings" uid="uid://bnintpa14r1ev" path="res://assets/fonts/orbitron_32_so.tres" id="4_pc6qy"]
+[ext_resource type="Texture2D" uid="uid://cimtj75m1wmoe" path="res://assets/panels/button_panel_400x100.png" id="3_ly56c"]
+[ext_resource type="Texture2D" uid="uid://d1tga5njkvlsk" path="res://assets/panels/button_panel_400x100_hover.png" id="4_jkrq8"]
+[ext_resource type="Texture2D" uid="uid://dhjtn4qkrcj7b" path="res://assets/panels/button_panel_400x100_pressed.png" id="4_rfuie"]
+[ext_resource type="LabelSettings" uid="uid://ckg0j8haan05w" path="res://assets/fonts/orbitron_48_so.tres" id="6_0kjul"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w3yrw"]
 bg_color = Color(0.14902, 0.14902, 0.14902, 1)
@@ -14,20 +16,6 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xj454"]
 bg_color = Color(0.411765, 0.411765, 0.411765, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_smuye"]
-bg_color = Color(0, 0, 0, 0.313726)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5vhv"]
-bg_color = Color(0.14902, 0.14902, 0.14902, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -108,174 +96,85 @@ stretch_mode = 5
 layout_mode = 2
 theme_override_constants/margin_top = 30
 
-[node name="Panel" type="Panel" parent="GameArea/MainContainer/MenuMargin"]
+[node name="ButtonContainer" type="VBoxContainer" parent="GameArea/MainContainer/MenuMargin"]
+layout_mode = 2
+
+[node name="NewGame" type="TextureButton" parent="GameArea/MainContainer/MenuMargin/ButtonContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_smuye")
+size_flags_vertical = 4
+texture_normal = ExtResource("3_ly56c")
+texture_pressed = ExtResource("4_rfuie")
+texture_hover = ExtResource("4_jkrq8")
 
-[node name="MenuOptions" type="VBoxContainer" parent="GameArea/MainContainer/MenuMargin/Panel"]
+[node name="Label" type="Label" parent="GameArea/MainContainer/MenuMargin/ButtonContainer/NewGame"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -150.0
-offset_right = 150.0
-offset_bottom = 300.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="NewGame" type="Panel" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions"]
-custom_minimum_size = Vector2(0, 60)
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_u5vhv")
-
-[node name="ButtonInner" type="Panel" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions/NewGame"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -145.0
-offset_top = -25.0
-offset_right = 145.0
-offset_bottom = 25.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = ExtResource("3_jidwa")
-
-[node name="Label" type="Label" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions/NewGame/ButtonInner"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -96.5
-offset_top = -20.5
-offset_right = 96.5
-offset_bottom = 20.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "New Game"
-label_settings = ExtResource("4_pc6qy")
+text = "NEW GAME"
+label_settings = ExtResource("6_0kjul")
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="LoadGame" type="Panel" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions"]
-custom_minimum_size = Vector2(0, 60)
+[node name="LoadGame" type="TextureButton" parent="GameArea/MainContainer/MenuMargin/ButtonContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_u5vhv")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_ly56c")
+texture_pressed = ExtResource("4_rfuie")
+texture_hover = ExtResource("4_jkrq8")
 
-[node name="ButtonInner" type="Panel" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions/LoadGame"]
+[node name="Label" type="Label" parent="GameArea/MainContainer/MenuMargin/ButtonContainer/LoadGame"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -145.0
-offset_top = -25.0
-offset_right = 145.0
-offset_bottom = 25.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("3_jidwa")
-
-[node name="Label" type="Label" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions/LoadGame/ButtonInner"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -96.5
-offset_top = -20.5
-offset_right = 96.5
-offset_bottom = 20.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Load Game"
-label_settings = ExtResource("4_pc6qy")
+text = "LOAD GAME"
+label_settings = ExtResource("6_0kjul")
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Settings" type="Panel" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions"]
-custom_minimum_size = Vector2(0, 60)
+[node name="Settings" type="TextureButton" parent="GameArea/MainContainer/MenuMargin/ButtonContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_u5vhv")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_ly56c")
+texture_pressed = ExtResource("4_rfuie")
+texture_hover = ExtResource("4_jkrq8")
 
-[node name="ButtonInner" type="Panel" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions/Settings"]
+[node name="Label" type="Label" parent="GameArea/MainContainer/MenuMargin/ButtonContainer/Settings"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -145.0
-offset_top = -25.0
-offset_right = 145.0
-offset_bottom = 25.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("3_jidwa")
-
-[node name="Label" type="Label" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions/Settings/ButtonInner"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -96.5
-offset_top = -20.5
-offset_right = 96.5
-offset_bottom = 20.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Settings"
-label_settings = ExtResource("4_pc6qy")
+text = "SETTINGS"
+label_settings = ExtResource("6_0kjul")
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Discord" type="Panel" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions"]
-custom_minimum_size = Vector2(0, 60)
+[node name="Discord" type="TextureButton" parent="GameArea/MainContainer/MenuMargin/ButtonContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_u5vhv")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_ly56c")
+texture_pressed = ExtResource("4_rfuie")
+texture_hover = ExtResource("4_jkrq8")
 
-[node name="ButtonInner" type="Panel" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions/Discord"]
+[node name="Label" type="Label" parent="GameArea/MainContainer/MenuMargin/ButtonContainer/Discord"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -145.0
-offset_top = -25.0
-offset_right = 145.0
-offset_bottom = 25.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("3_jidwa")
-
-[node name="Label" type="Label" parent="GameArea/MainContainer/MenuMargin/Panel/MenuOptions/Discord/ButtonInner"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -96.5
-offset_top = -20.5
-offset_right = 96.5
-offset_bottom = 20.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Discord"
-label_settings = ExtResource("4_pc6qy")
+text = "DISCORD"
+label_settings = ExtResource("6_0kjul")
 horizontal_alignment = 1
+vertical_alignment = 1
