@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://20f0j66xd2ve"
-path="res://.godot/imported/button_panel_200x100_hover.png-7a5fabe166c9d10f84461f447c55caf1.ctex"
+uid="uid://dpwohn54e6j12"
+path="res://.godot/imported/button_panel_800x800_hover.png-0714121cd4f348afd48640770cf107e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/panels/button_panel_200x100_hover.png"
-dest_files=["res://.godot/imported/button_panel_200x100_hover.png-7a5fabe166c9d10f84461f447c55caf1.ctex"]
+source_file="res://assets/panels/button_panel/button_panel_800x800_hover.png"
+dest_files=["res://.godot/imported/button_panel_800x800_hover.png-0714121cd4f348afd48640770cf107e3.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c18mov60i7bgk"
-path="res://.godot/imported/button_panel_200x100.png-479c449d7803e5babce37a978cb2877e.ctex"
+uid="uid://c2karcoospwan"
+path="res://.godot/imported/button_panel_200x50_pressed.png-9e16d740efdd6eeab8eb9ca40410bea8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/panels/button_panel_200x100.png"
-dest_files=["res://.godot/imported/button_panel_200x100.png-479c449d7803e5babce37a978cb2877e.ctex"]
+source_file="res://assets/panels/button_panel/button_panel_200x50_pressed.png"
+dest_files=["res://.godot/imported/button_panel_200x50_pressed.png-9e16d740efdd6eeab8eb9ca40410bea8.ctex"]
 
 [params]
 

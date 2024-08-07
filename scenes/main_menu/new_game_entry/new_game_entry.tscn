@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=3 uid="uid://b2mixpahis02r"]
+
+[ext_resource type="Script" path="res://scenes/main_menu/new_game_entry/new_game_entry.gd" id="1_43wys"]
+[ext_resource type="Texture2D" uid="uid://cw18u7oj6vyy6" path="res://assets/panels/button_panel/button_panel_400x200.png" id="1_w24r1"]
+[ext_resource type="Texture2D" uid="uid://qnbdy1vgg1j5" path="res://assets/panels/close_button/close_button_panel_50x50.png" id="4_f0h1x"]
+[ext_resource type="LabelSettings" uid="uid://cikkld844vyvt" path="res://assets/fonts/orbitron_24_so.tres" id="5_08qoi"]
+[ext_resource type="Texture2D" uid="uid://blu3v660yt63r" path="res://assets/panels/close_button/close_button_panel_50x50_pressed.png" id="5_44vsr"]
+[ext_resource type="Texture2D" uid="uid://w8eb67ngwgep" path="res://assets/panels/close_button/close_button_panel_50x50_hover.png" id="6_4b7sf"]
+[ext_resource type="Texture2D" uid="uid://bh56wix62780f" path="res://assets/panels/button_panel/button_panel_200x50.png" id="6_fbpwh"]
+[ext_resource type="FontFile" uid="uid://c5qfrbkp8n088" path="res://resources/fonts/Orbitron-VariableFont_wght.ttf" id="6_hgwd3"]
+[ext_resource type="Texture2D" uid="uid://c2karcoospwan" path="res://assets/panels/button_panel/button_panel_200x50_pressed.png" id="7_nd1pe"]
+[ext_resource type="Texture2D" uid="uid://bnws5wn00cgbs" path="res://assets/panels/button_panel/button_panel_200x50_hover.png" id="8_niebu"]
+
+[node name="Panel" type="Panel"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_43wys")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_w24r1")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "What's your Name?"
+label_settings = ExtResource("5_08qoi")
+
+[node name="LineEdit" type="LineEdit" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_hgwd3")
+placeholder_text = "Enter your name here..."
+alignment = 1
+
+[node name="StartButton" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("6_fbpwh")
+texture_pressed = ExtResource("7_nd1pe")
+texture_hover = ExtResource("8_niebu")
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/StartButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Game"
+label_settings = ExtResource("5_08qoi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 320.0
+offset_top = 15.0
+offset_right = 370.0
+offset_bottom = 65.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("4_f0h1x")
+texture_pressed = ExtResource("5_44vsr")
+texture_hover = ExtResource("6_4b7sf")

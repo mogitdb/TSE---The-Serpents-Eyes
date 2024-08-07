@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://7kg3g2xgh6rm"]
 
-[ext_resource type="Script" path="res://scripts/MasterScreen.gd" id="1_uhdpj"]
+[ext_resource type="Script" path="res://scripts/master_screen.gd" id="1_uhdpj"]
 [ext_resource type="Texture2D" uid="uid://d2peix8vcw51r" path="res://assets/images/tse_placeholder_logo.png" id="2_430or"]
-[ext_resource type="Texture2D" uid="uid://cimtj75m1wmoe" path="res://assets/panels/button_panel_400x100.png" id="3_ly56c"]
-[ext_resource type="Texture2D" uid="uid://d1tga5njkvlsk" path="res://assets/panels/button_panel_400x100_hover.png" id="4_jkrq8"]
-[ext_resource type="Texture2D" uid="uid://dhjtn4qkrcj7b" path="res://assets/panels/button_panel_400x100_pressed.png" id="4_rfuie"]
+[ext_resource type="Texture2D" uid="uid://cimtj75m1wmoe" path="res://assets/panels/button_panel/button_panel_400x100.png" id="3_ly56c"]
+[ext_resource type="Texture2D" uid="uid://d1tga5njkvlsk" path="res://assets/panels/button_panel/button_panel_400x100_hover.png" id="4_jkrq8"]
+[ext_resource type="Texture2D" uid="uid://dhjtn4qkrcj7b" path="res://assets/panels/button_panel/button_panel_400x100_pressed.png" id="4_rfuie"]
 [ext_resource type="LabelSettings" uid="uid://ckg0j8haan05w" path="res://assets/fonts/orbitron_48_so.tres" id="6_0kjul"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w3yrw"]

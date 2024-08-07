@@ -1,0 +1,254 @@
+[gd_scene load_steps=9 format=3 uid="uid://ctcjd6mt7t5as"]
+
+[ext_resource type="Script" path="res://scenes/main_menu/settings_scene/settings_scene.gd" id="1_fivh3"]
+[ext_resource type="Texture2D" uid="uid://c4raotdsqdcbh" path="res://assets/panels/button_panel/button_panel_800x800.png" id="2_0obfp"]
+[ext_resource type="LabelSettings" uid="uid://ckg0j8haan05w" path="res://assets/fonts/orbitron_48_so.tres" id="3_ytquy"]
+[ext_resource type="Texture2D" uid="uid://qnbdy1vgg1j5" path="res://assets/panels/close_button/close_button_panel_50x50.png" id="4_xkmbj"]
+[ext_resource type="Texture2D" uid="uid://blu3v660yt63r" path="res://assets/panels/close_button/close_button_panel_50x50_pressed.png" id="5_iolcf"]
+[ext_resource type="Texture2D" uid="uid://w8eb67ngwgep" path="res://assets/panels/close_button/close_button_panel_50x50_hover.png" id="6_uf8j6"]
+[ext_resource type="Texture2D" uid="uid://bh56wix62780f" path="res://assets/panels/button_panel/button_panel_200x50.png" id="7_ojf3o"]
+[ext_resource type="LabelSettings" uid="uid://c0r3vu37o7tx8" path="res://assets/fonts/orbitron_16_so.tres" id="8_chj0h"]
+
+[node name="PopupPanel" type="Panel"]
+offset_right = 800.0
+offset_bottom = 800.0
+script = ExtResource("1_fivh3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_0obfp")
+
+[node name="TitleLabel" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "TITLE"
+label_settings = ExtResource("3_ytquy")
+
+[node name="Container" type="Container" parent="TextureRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="General" type="ScrollContainer" parent="MarginContainer/TabContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/General"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TabContainer/General/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/TabContainer/General/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_ojf3o")
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/General/MarginContainer/VBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -10.0
+offset_right = 138.0
+offset_bottom = 11.0
+grow_vertical = 2
+size_flags_horizontal = 0
+text = "MUTE MUSIC"
+label_settings = ExtResource("8_chj0h")
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/TabContainer/General/MarginContainer/VBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -10.0
+offset_right = -26.0
+offset_bottom = 14.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+
+[node name="Audio" type="ScrollContainer" parent="MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/Audio"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TabContainer/Audio/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_ojf3o")
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -10.0
+offset_right = 138.0
+offset_bottom = 11.0
+grow_vertical = 2
+size_flags_horizontal = 0
+text = "TEST LABEL"
+label_settings = ExtResource("8_chj0h")
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -10.0
+offset_right = -26.0
+offset_bottom = 14.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+
+[node name="Video" type="ScrollContainer" parent="MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/Video"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TabContainer/Video/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/TabContainer/Video/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_ojf3o")
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/Video/MarginContainer/VBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -10.0
+offset_right = 138.0
+offset_bottom = 11.0
+grow_vertical = 2
+size_flags_horizontal = 0
+text = "TEST LABEL"
+label_settings = ExtResource("8_chj0h")
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/TabContainer/Video/MarginContainer/VBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -10.0
+offset_right = -26.0
+offset_bottom = 14.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+
+[node name="Gameplay" type="ScrollContainer" parent="MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/Gameplay"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TabContainer/Gameplay/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/TabContainer/Gameplay/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_ojf3o")
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/Gameplay/MarginContainer/VBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -10.0
+offset_right = 138.0
+offset_bottom = 11.0
+grow_vertical = 2
+size_flags_horizontal = 0
+text = "TEST LABEL"
+label_settings = ExtResource("8_chj0h")
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/TabContainer/Gameplay/MarginContainer/VBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -10.0
+offset_right = -26.0
+offset_bottom = 14.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+
+[node name="CloseButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -70.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 70.0
+grow_horizontal = 0
+texture_normal = ExtResource("4_xkmbj")
+texture_pressed = ExtResource("5_iolcf")
+texture_hover = ExtResource("6_uf8j6")
