@@ -16,15 +16,13 @@ func on_start_pressed():
 	if player_name:
 		emit_signal("start_new_game", player_name)
 	else:
-		# Show an error message if the name is empty
-		# You might want to add a Label for error messages
 		print("Please enter a name")
 
 func on_close_pressed():
-	queue_free()  # This will remove the panel from the scene
+	queue_free()
 
 func center_panel():
-	var screen_size = get_viewport_rect().size
-	var panel_size = get_size()
-	var centered_position = (screen_size - panel_size) / 2
+	var viewport_size = get_viewport_rect().size
+	var panel_size = $TextureRect.size  # Assuming TextureRect is the main container
+	var centered_position = (viewport_size - panel_size) / 2
 	set_global_position(centered_position)

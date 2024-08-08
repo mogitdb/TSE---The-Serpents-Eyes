@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dhjtn4qkrcj7b" path="res://assets/panels/button_panel/button_panel_400x100_pressed.png" id="8_xs7lx"]
 [ext_resource type="Texture2D" uid="uid://d1tga5njkvlsk" path="res://assets/panels/button_panel/button_panel_400x100_hover.png" id="9_6appx"]
 
-[node name="PopupPanel" type="Panel"]
+[node name="Panel" type="Panel"]
 offset_right = 800.0
 offset_bottom = 800.0
 script = ExtResource("1_0pcev")

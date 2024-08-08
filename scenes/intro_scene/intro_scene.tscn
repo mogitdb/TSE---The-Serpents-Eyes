@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://bnoxkcveknfca"]
+
+[ext_resource type="Texture2D" uid="uid://bsakk43lu6exs" path="res://assets/panels/button_panel/button_panel_1600x300.png" id="1_lotss"]
+[ext_resource type="Script" path="res://scenes/intro_scene/intro_scene.gd" id="1_nukma"]
+[ext_resource type="LabelSettings" uid="uid://ckg0j8haan05w" path="res://assets/fonts/orbitron_48_so.tres" id="2_f5gax"]
+[ext_resource type="Texture2D" uid="uid://bbobfn5s0a72r" path="res://assets/panels/next_button/next_button_150x80.png" id="3_7e40w"]
+[ext_resource type="Texture2D" uid="uid://c66d4tjw6s8rc" path="res://assets/panels/next_button/next_button_150x80_pressed.png" id="4_qfn3q"]
+[ext_resource type="Texture2D" uid="uid://c5bayin3o83gi" path="res://assets/panels/next_button/next_button_150x80_hover.png" id="5_u78oc"]
+
+[node name="IntroScene" type="Node2D"]
+script = ExtResource("1_nukma")
+
+[node name="Background" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="LogoPlaceholder" type="TextureRect" parent="Background"]
+custom_minimum_size = Vector2(800, 400)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_right = 400.0
+offset_bottom = 400.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+custom_minimum_size = Vector2(1600, 300)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -800.0
+offset_top = -300.0
+offset_right = 800.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_lotss")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="DialogueText" type="Label" parent="Background/TextureRect/MarginContainer"]
+custom_minimum_size = Vector2(1400, 250)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Welcome to the world of The Snake Eyes... "
+label_settings = ExtResource("2_f5gax")
+autowrap_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="Background/TextureRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture_normal = ExtResource("3_7e40w")
+texture_pressed = ExtResource("4_qfn3q")
+texture_hover = ExtResource("5_u78oc")

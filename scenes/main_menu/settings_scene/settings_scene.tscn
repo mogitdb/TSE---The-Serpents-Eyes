@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bh56wix62780f" path="res://assets/panels/button_panel/button_panel_200x50.png" id="7_ojf3o"]
 [ext_resource type="LabelSettings" uid="uid://c0r3vu37o7tx8" path="res://assets/fonts/orbitron_16_so.tres" id="8_chj0h"]
 
-[node name="PopupPanel" type="Panel"]
+[node name="Panel" type="Panel"]
 offset_right = 800.0
 offset_bottom = 800.0
 script = ExtResource("1_fivh3")

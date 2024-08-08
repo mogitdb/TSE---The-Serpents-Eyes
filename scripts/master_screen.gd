@@ -43,6 +43,12 @@ func on_popup_closed():
 
 func on_start_new_game(save_slot, player_name):
 	print("Starting new game with name: ", player_name, " in slot: ", save_slot)
-	# Here you would typically save the game and transition to your first game scene
-	# For now, we'll just close the popup
+	# Here you would typically save the game data
+	save_game_data(save_slot, player_name)
 	on_popup_closed()
+
+func save_game_data(slot, player_name):
+	# This is a placeholder function for saving game data
+	# You'll need to implement actual save functionality here
+	print("Saving game data for " + player_name + " in slot " + str(slot))
+	# TODO: Implement actual save functionality

@@ -21,6 +21,7 @@ GameKaren="*res://singletons/game_karen.gd"
 SignalKaren="*res://singletons/signal_karen.gd"
 ImageKaren="*res://singletons/image_karen.gd"
 SoundKaren="*res://singletons/sound_karen.gd"
+SaveManager="*res://singletons/save_manager.gd"
 
 [display]
 

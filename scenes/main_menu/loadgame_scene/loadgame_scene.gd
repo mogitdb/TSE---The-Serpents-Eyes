@@ -1,28 +1,53 @@
 extends Panel
 
-@onready var close_button = $CloseButton
 signal close_popup
+signal load_game(save_slot)
+
+@onready var close_button = $CloseButton
+@onready var save_slots_container = $MarginContainer/VBoxContainer
 
 func _ready():
-	# Connect the close button's pressed signal to the close function
-	close_button.pressed.connect(self.close)
-	
-	# Wait for the next frame to ensure the popup has its correct size
-	call_deferred("center_popup")
+	close_button.pressed.connect(on_close_pressed)
+	setup_save_slots()
+	call_deferred("center_panel")
 
-func center_popup():
-	# Get the size of the viewport (screen)
-	var screen_size = get_viewport_rect().size
-	
-	# Get the size of this popup
-	var popup_size = Vector2(800, 800)  # Or whatever size your popup background is
-	
-	# Calculate the position to center the popup
-	var centered_position = (screen_size - popup_size) / 2
-	
-	# Set the position of the popup
-	set_global_position(centered_position)
+func setup_save_slots():
+	for i in range(1, 6):
+		var save_slot = save_slots_container.get_node("SaveSlot" + str(i))
+		if save_slot:
+			save_slot.pressed.connect(on_load_game.bind(i))
+			update_save_slot_display(i)
+		else:
+			print("WARNING: SaveSlot" + str(i) + " not found")
 
-func close():
+func update_save_slot_display(slot):
+	var save_slot_button = save_slots_container.get_node("SaveSlot" + str(slot))
+	if save_slot_button:
+		var label = save_slot_button.get_node("Label")
+		if label:
+			var slot_data = SaveManager.get_save_data(slot)
+			if slot_data["name"] != "":
+				label.text = slot_data["name"]
+			else:
+				label.text = "Empty Slot"
+		else:
+			print("WARNING: Label not found in SaveSlot" + str(slot))
+	else:
+		print("WARNING: SaveSlot" + str(slot) + " not found")
+
+func on_load_game(slot):
+	if SaveManager.has_save_data(slot):
+		emit_signal("load_game", slot)
+		queue_free()
+	else:
+		print("No save data in slot ", slot)
+
+func on_close_pressed():
 	emit_signal("close_popup")
 	queue_free()
+
+func center_panel():
+	var viewport_size = get_viewport_rect().size
+	var panel_size = get_size()
+	var centered_position = (viewport_size - panel_size) / 2
+	set_global_position(centered_position)
