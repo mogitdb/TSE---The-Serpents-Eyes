@@ -40,7 +40,7 @@ This project is licensed under the [Creative Commons Attribution-NonCommercial-S
 
 Interested in following the project's development, participating in testing, or contributing your own ideas and code? Join our Discord community:
 
-[![Discord](https://img.shields.io/discord/123456789012345678?label=Discord&logo=discord)](https://discord.gg/totalitylore)
+**Discord Invite Link:** https://discord.gg/totalitylore
 
 We welcome contributions from developers of all skill levels. Feel free to explore the codebase, report issues, and submit pull requests. 
 
