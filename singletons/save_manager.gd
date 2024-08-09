@@ -42,3 +42,15 @@ func get_save_data(slot):
 
 func has_save_data(slot):
 	return save_data["slots"][str(slot)]["name"] != ""
+
+func delete_save(slot):
+	save_data["slots"][str(slot)] = {
+		"name": "",
+		"playtime": 0
+	}
+	write_save_data()
+
+func load_game(slot):
+	if has_save_data(slot):
+		return get_save_data(slot)
+	return null

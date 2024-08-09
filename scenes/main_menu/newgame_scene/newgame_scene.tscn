@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://daexp71snnvfl"]
+[gd_scene load_steps=12 format=3 uid="uid://daexp71snnvfl"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/newgame_scene/newgame_scene.gd" id="1_c1jxb"]
 [ext_resource type="Texture2D" uid="uid://c4raotdsqdcbh" path="res://assets/panels/button_panel/button_panel_800x800.png" id="2_yjb7t"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://blu3v660yt63r" path="res://assets/panels/close_button/close_button_panel_50x50_pressed.png" id="5_o15in"]
 [ext_resource type="Texture2D" uid="uid://w8eb67ngwgep" path="res://assets/panels/close_button/close_button_panel_50x50_hover.png" id="6_kyr7c"]
 [ext_resource type="Texture2D" uid="uid://cimtj75m1wmoe" path="res://assets/panels/button_panel/button_panel_400x100.png" id="7_0mssh"]
+[ext_resource type="Texture2D" uid="uid://2tlsdd41dxbh" path="res://assets/images/delete_icon/delete_icon_150x150.png" id="7_munh1"]
+[ext_resource type="LabelSettings" uid="uid://bnintpa14r1ev" path="res://assets/fonts/orbitron_32_so.tres" id="7_orps2"]
 [ext_resource type="Texture2D" uid="uid://dhjtn4qkrcj7b" path="res://assets/panels/button_panel/button_panel_400x100_pressed.png" id="8_kieyh"]
 [ext_resource type="Texture2D" uid="uid://d1tga5njkvlsk" path="res://assets/panels/button_panel/button_panel_400x100_hover.png" id="9_mqtes"]
 
@@ -64,9 +66,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Save File 1"
-label_settings = ExtResource("3_assub")
+label_settings = ExtResource("7_orps2")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="DeleteButton1" type="TextureButton" parent="MarginContainer/VBoxContainer/SaveSlot1"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -37.0
+offset_right = 170.0
+offset_bottom = 113.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("7_munh1")
 
 [node name="SaveSlot2" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -83,9 +101,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Save File 2"
-label_settings = ExtResource("3_assub")
+label_settings = ExtResource("7_orps2")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="DeleteButton2" type="TextureButton" parent="MarginContainer/VBoxContainer/SaveSlot2"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -37.0
+offset_right = 170.0
+offset_bottom = 113.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("7_munh1")
 
 [node name="SaveSlot3" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -102,9 +136,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Save File 3"
-label_settings = ExtResource("3_assub")
+label_settings = ExtResource("7_orps2")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="DeleteButton3" type="TextureButton" parent="MarginContainer/VBoxContainer/SaveSlot3"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -37.0
+offset_right = 170.0
+offset_bottom = 113.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("7_munh1")
 
 [node name="SaveSlot4" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -121,9 +171,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Save File 4"
-label_settings = ExtResource("3_assub")
+label_settings = ExtResource("7_orps2")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="DeleteButton4" type="TextureButton" parent="MarginContainer/VBoxContainer/SaveSlot4"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -37.0
+offset_right = 170.0
+offset_bottom = 113.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("7_munh1")
 
 [node name="SaveSlot5" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -140,9 +206,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Save File 5"
-label_settings = ExtResource("3_assub")
+label_settings = ExtResource("7_orps2")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="DeleteButton5" type="TextureButton" parent="MarginContainer/VBoxContainer/SaveSlot5"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -37.0
+offset_right = 170.0
+offset_bottom = 113.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("7_munh1")
 
 [node name="CloseButton" type="TextureButton" parent="."]
 layout_mode = 1

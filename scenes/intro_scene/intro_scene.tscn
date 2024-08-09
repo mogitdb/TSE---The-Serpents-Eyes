@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnoxkcveknfca"]
+[gd_scene load_steps=8 format=3 uid="uid://bnoxkcveknfca"]
 
 [ext_resource type="Texture2D" uid="uid://bsakk43lu6exs" path="res://assets/panels/button_panel/button_panel_1600x300.png" id="1_lotss"]
 [ext_resource type="Script" path="res://scenes/intro_scene/intro_scene.gd" id="1_nukma"]
+[ext_resource type="Texture2D" uid="uid://d2peix8vcw51r" path="res://assets/images/tse_placeholder_logo.png" id="2_2pcx4"]
 [ext_resource type="LabelSettings" uid="uid://ckg0j8haan05w" path="res://assets/fonts/orbitron_48_so.tres" id="2_f5gax"]
 [ext_resource type="Texture2D" uid="uid://bbobfn5s0a72r" path="res://assets/panels/next_button/next_button_150x80.png" id="3_7e40w"]
 [ext_resource type="Texture2D" uid="uid://c66d4tjw6s8rc" path="res://assets/panels/next_button/next_button_150x80_pressed.png" id="4_qfn3q"]
@@ -26,6 +27,7 @@ offset_left = -400.0
 offset_right = 400.0
 offset_bottom = 400.0
 grow_horizontal = 2
+texture = ExtResource("2_2pcx4")
 
 [node name="TextureRect" type="TextureRect" parent="Background"]
 custom_minimum_size = Vector2(1600, 300)

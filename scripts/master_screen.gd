@@ -8,6 +8,7 @@ extends Node
 var newgame_scene = preload("res://scenes/main_menu/newgame_scene/newgame_scene.tscn")
 var loadgame_scene = preload("res://scenes/main_menu/loadgame_scene/loadgame_scene.tscn")
 var settings_scene = preload("res://scenes/main_menu/settings_scene/settings_scene.tscn")
+var intro_scene = preload("res://scenes/intro_scene/intro_scene.tscn")
 
 var current_popup = null
 
@@ -37,18 +38,27 @@ func show_popup(scene_resource):
 	current_popup.connect("close_popup", Callable(self, "on_popup_closed"))
 	if current_popup.has_signal("start_new_game"):
 		current_popup.connect("start_new_game", Callable(self, "on_start_new_game"))
+	if current_popup.has_signal("load_game"):
+		current_popup.connect("load_game", Callable(self, "on_load_game"))
 
 func on_popup_closed():
 	current_popup = null
 
 func on_start_new_game(save_slot, player_name):
 	print("Starting new game with name: ", player_name, " in slot: ", save_slot)
-	# Here you would typically save the game data
-	save_game_data(save_slot, player_name)
-	on_popup_closed()
+	SaveManager.save_game(save_slot, player_name)
+	start_intro_scene()
 
-func save_game_data(slot, player_name):
-	# This is a placeholder function for saving game data
-	# You'll need to implement actual save functionality here
-	print("Saving game data for " + player_name + " in slot " + str(slot))
-	# TODO: Implement actual save functionality
+func on_load_game(save_slot):
+	print("Loading game from slot: ", save_slot)
+	var save_data = SaveManager.load_game(save_slot)
+	if save_data:
+		print("Loaded game data for: ", save_data["name"])
+		# Here you would typically load the game state and move to the appropriate scene
+		# For now, we'll just start the intro scene
+		start_intro_scene()
+	else:
+		print("Failed to load game data from slot: ", save_slot)
+
+func start_intro_scene():
+	get_tree().change_scene_to_packed(intro_scene)

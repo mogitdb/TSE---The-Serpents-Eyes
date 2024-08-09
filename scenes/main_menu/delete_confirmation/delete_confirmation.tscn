@@ -1,0 +1,85 @@
+[gd_scene load_steps=10 format=3 uid="uid://k6yjvheyig2u"]
+
+[ext_resource type="Script" path="res://scenes/main_menu/delete_confirmation/delete_confirmation.gd" id="1_c3w0w"]
+[ext_resource type="Texture2D" uid="uid://cw18u7oj6vyy6" path="res://assets/panels/button_panel/button_panel_400x200.png" id="2_mla2r"]
+[ext_resource type="LabelSettings" uid="uid://cikkld844vyvt" path="res://assets/fonts/orbitron_24_so.tres" id="3_56kk2"]
+[ext_resource type="Texture2D" uid="uid://bh56wix62780f" path="res://assets/panels/button_panel/button_panel_200x50.png" id="5_octu8"]
+[ext_resource type="Texture2D" uid="uid://c2karcoospwan" path="res://assets/panels/button_panel/button_panel_200x50_pressed.png" id="6_vlr4n"]
+[ext_resource type="Texture2D" uid="uid://bnws5wn00cgbs" path="res://assets/panels/button_panel/button_panel_200x50_hover.png" id="7_xe4jo"]
+[ext_resource type="Texture2D" uid="uid://qnbdy1vgg1j5" path="res://assets/panels/close_button/close_button_panel_50x50.png" id="8_a2d07"]
+[ext_resource type="Texture2D" uid="uid://blu3v660yt63r" path="res://assets/panels/close_button/close_button_panel_50x50_pressed.png" id="9_goorf"]
+[ext_resource type="Texture2D" uid="uid://w8eb67ngwgep" path="res://assets/panels/close_button/close_button_panel_50x50_hover.png" id="10_3y38v"]
+
+[node name="Panel" type="Panel"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_c3w0w")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_mla2r")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Are you Sure about that?"
+label_settings = ExtResource("3_56kk2")
+
+[node name="TitleLabel2" type="Label" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "There's no going back..."
+label_settings = ExtResource("3_56kk2")
+
+[node name="StartButton" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_octu8")
+texture_pressed = ExtResource("6_vlr4n")
+texture_hover = ExtResource("7_xe4jo")
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/StartButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Yes, DELETE!"
+label_settings = ExtResource("3_56kk2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 320.0
+offset_top = 15.0
+offset_right = 370.0
+offset_bottom = 65.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("8_a2d07")
+texture_pressed = ExtResource("9_goorf")
+texture_hover = ExtResource("10_3y38v")

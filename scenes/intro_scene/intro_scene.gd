@@ -18,25 +18,25 @@ var dialogue = [
 
 var current_dialogue = 0
 var dialogue_finished = false
+var tween: Tween
 
 func _ready():
 	dialogue_text.text = ""
-	next_button.hide()
+	next_button.show()  # Show the button from the start
 	next_button.pressed.connect(next_dialogue)
 	display_dialogue()
 
 func display_dialogue():
 	dialogue_finished = false
 	dialogue_text.text = ""
-	next_button.hide()
 	
 	if current_dialogue < dialogue.size():
-		var tween = create_tween()
-		tween.tween_method(set_partial_text, 0, dialogue[current_dialogue].length(), 2.0)
+		tween = create_tween()
+		tween.tween_method(set_partial_text, 0, dialogue[current_dialogue].length(), 1.0)  # Reduced from 2.0 to 1.0 for double speed
 		tween.tween_callback(on_dialogue_finished)
 	else:
 		print("Dialogue completed")
-		# Handle end of dialogue here
+		get_tree().change_scene_to_file("res://scenes/dice_selection.tscn")
 
 func set_partial_text(length: int):
 	if current_dialogue < dialogue.size():
@@ -44,11 +44,12 @@ func set_partial_text(length: int):
 
 func on_dialogue_finished():
 	dialogue_finished = true
-	next_button.show()
 
 func next_dialogue():
 	if not dialogue_finished:
 		# If dialogue is still typing, complete it immediately
+		if tween and tween.is_valid():
+			tween.kill()  # Stop the current tween
 		if current_dialogue < dialogue.size():
 			dialogue_text.text = dialogue[current_dialogue]
 		on_dialogue_finished()
@@ -58,5 +59,4 @@ func next_dialogue():
 			display_dialogue()
 		else:
 			print("Transitioning to dice selection scene")
-			# Uncomment the next line when you have the dice_selection scene ready
-			# get_tree().change_scene_to_file("res://scenes/dice_selection.tscn")
+			get_tree().change_scene_to_file("res://scenes/intro_scene/dice_selection/dice_selection.tscn")
