@@ -33,12 +33,10 @@ func setup_save_slots():
 			delete_button.texture_hover = load("res://assets/images/delete_icon/delete_icon_150x150_hover.png")
 			delete_button.texture_pressed = load("res://assets/images/delete_icon/delete_icon_150x150_pressed.png")
 			
-			# Ensure the button uses the entire texture
 			delete_button.ignore_texture_size = true
 			delete_button.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
 			
-			# Set a fixed size for the button if needed
-			delete_button.custom_minimum_size = Vector2(50, 50)  # Adjust this value as needed
+			delete_button.custom_minimum_size = Vector2(50, 50)
 		else:
 			print("WARNING: SaveSlot" + str(i) + " or DeleteButton" + str(i) + " not found")
 
@@ -74,7 +72,6 @@ func delete_save(slot):
 		save_slot.pressed.connect(open_new_game_entry.bind(slot))
 		delete_button.hide()
 	
-	# Remove the confirmation dialog
 	var confirm_dialog = get_node_or_null("Panel")
 	if confirm_dialog:
 		confirm_dialog.queue_free()
@@ -85,8 +82,9 @@ func open_new_game_entry(slot):
 	entry_panel.connect("start_new_game", Callable(self, "on_start_new_game").bind(slot))
 
 func on_start_new_game(player_name, save_slot):
-	emit_signal("start_new_game", save_slot, player_name)
-	queue_free()
+	GameManager.set_game_data(save_slot, player_name)
+	SaveManager.save_game(save_slot, player_name)
+	get_tree().change_scene_to_file("res://scenes/intro_scene/intro_scene.tscn")
 
 func on_close_pressed():
 	emit_signal("close_popup")

@@ -37,8 +37,13 @@ func update_save_slot_display(slot):
 
 func on_load_game(slot):
 	if SaveManager.has_save_data(slot):
-		emit_signal("load_game", slot)
-		queue_free()
+		var save_data = SaveManager.load_game(slot)
+		GameManager.set_game_data(slot, save_data["name"])
+		GameManager.set_starter_dice(save_data["starter_dice"])
+		if save_data["starter_dice"] != "":
+			get_tree().change_scene_to_file("res://scenes/bedroom_scene/bedroom_scene.tscn")
+		else:
+			get_tree().change_scene_to_file("res://scenes/intro_scene/intro_scene.tscn")
 	else:
 		print("No save data in slot ", slot)
 

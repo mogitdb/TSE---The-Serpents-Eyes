@@ -17,18 +17,19 @@ func load_save_data():
 	else:
 		save_data = {
 			"slots": {
-				"1": {"name": "", "playtime": 0},
-				"2": {"name": "", "playtime": 0},
-				"3": {"name": "", "playtime": 0},
-				"4": {"name": "", "playtime": 0},
-				"5": {"name": "", "playtime": 0}
+				"1": {"name": "", "playtime": 0, "starter_dice": ""},
+				"2": {"name": "", "playtime": 0, "starter_dice": ""},
+				"3": {"name": "", "playtime": 0, "starter_dice": ""},
+				"4": {"name": "", "playtime": 0, "starter_dice": ""},
+				"5": {"name": "", "playtime": 0, "starter_dice": ""}
 			}
 		}
 
-func save_game(slot, player_name):
+func save_game(slot, player_name, starter_dice=""):
 	save_data["slots"][str(slot)] = {
 		"name": player_name,
-		"playtime": 0
+		"playtime": 0,
+		"starter_dice": starter_dice
 	}
 	write_save_data()
 
@@ -46,7 +47,8 @@ func has_save_data(slot):
 func delete_save(slot):
 	save_data["slots"][str(slot)] = {
 		"name": "",
-		"playtime": 0
+		"playtime": 0,
+		"starter_dice": ""
 	}
 	write_save_data()
 

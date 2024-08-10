@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://bvhco66l24fuw"]
+
+[ext_resource type="Texture2D" uid="uid://c4raotdsqdcbh" path="res://assets/panels/button_panel/button_panel_800x800.png" id="1_5u6wr"]
+[ext_resource type="Script" path="res://scenes/bedroom_scene/popups/bedroom_popup_computer.gd" id="1_088lv"]
+[ext_resource type="LabelSettings" uid="uid://cikkld844vyvt" path="res://assets/fonts/orbitron_24_so.tres" id="2_8w660"]
+[ext_resource type="LabelSettings" uid="uid://c0r3vu37o7tx8" path="res://assets/fonts/orbitron_16_so.tres" id="3_ed0m2"]
+[ext_resource type="Texture2D" uid="uid://qnbdy1vgg1j5" path="res://assets/panels/close_button/close_button_panel_50x50.png" id="4_i08dx"]
+[ext_resource type="Texture2D" uid="uid://blu3v660yt63r" path="res://assets/panels/close_button/close_button_panel_50x50_pressed.png" id="5_njkxs"]
+[ext_resource type="Texture2D" uid="uid://w8eb67ngwgep" path="res://assets/panels/close_button/close_button_panel_50x50_hover.png" id="6_v3bom"]
+
+[node name="ComputerPopup" type="Panel"]
+custom_minimum_size = Vector2(800, 800)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_088lv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_5u6wr")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "THE COMPUTER"
+label_settings = ExtResource("2_8w660")
+
+[node name="TitleLabel2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Browse the web and order gems & crafting materials"
+label_settings = ExtResource("3_ed0m2")
+
+[node name="CloseButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.0
+offset_top = 25.0
+offset_right = -10.0
+offset_bottom = 75.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("4_i08dx")
+texture_pressed = ExtResource("5_njkxs")
+texture_hover = ExtResource("6_v3bom")

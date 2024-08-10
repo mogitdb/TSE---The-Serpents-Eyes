@@ -1,0 +1,143 @@
+[gd_scene load_steps=20 format=3 uid="uid://dhsflvhqbul34"]
+
+[ext_resource type="Texture2D" uid="uid://8legreastj53" path="res://assets/panels/background_panel/bg_1920x1080.png" id="1_1qwkp"]
+[ext_resource type="Script" path="res://scenes/bedroom_scene/bedroom_scene.gd" id="1_qk16a"]
+[ext_resource type="Shader" path="res://shaders/outline.gdshader" id="2_s34ha"]
+[ext_resource type="Texture2D" uid="uid://cst3iymifwvcm" path="res://assets/sprites/bedroom/robot_placeholder.png" id="3_gm42o"]
+[ext_resource type="Texture2D" uid="uid://dxbmmwn4wg7wy" path="res://assets/sprites/bedroom/mail_placeholder.png" id="4_t2yi2"]
+[ext_resource type="Texture2D" uid="uid://8cgy7h6ekak2" path="res://assets/sprites/bedroom/workbench_placeholder.png" id="5_3dryq"]
+[ext_resource type="Texture2D" uid="uid://bgn8u7g84saoy" path="res://assets/sprites/bedroom/altar_placeholder.png" id="6_ho7yj"]
+[ext_resource type="Texture2D" uid="uid://bapxnq6ift701" path="res://assets/sprites/bedroom/computer_placeholder.png" id="7_fsptx"]
+[ext_resource type="Texture2D" uid="uid://myoowjf16ueu" path="res://assets/sprites/bedroom/door_placeholder.png" id="8_ihhcu"]
+[ext_resource type="Texture2D" uid="uid://bt8f6ajbiux1s" path="res://assets/sprites/bedroom/jukebox_placeholder.png" id="9_oj3rq"]
+[ext_resource type="Texture2D" uid="uid://cth52nhruk06h" path="res://assets/sprites/bedroom/library_placeholder.png" id="10_to7rq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_exued"]
+shader = ExtResource("2_s34ha")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mqh26"]
+shader = ExtResource("2_s34ha")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_36usn"]
+shader = ExtResource("2_s34ha")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_14dnl"]
+shader = ExtResource("2_s34ha")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8wrnm"]
+shader = ExtResource("2_s34ha")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iks6j"]
+shader = ExtResource("2_s34ha")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l05hd"]
+shader = ExtResource("2_s34ha")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ytee4"]
+shader = ExtResource("2_s34ha")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 2.0
+
+[node name="BedroomScene" type="Node2D"]
+script = ExtResource("1_qk16a")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1qwkp")
+
+[node name="Robot" type="TextureButton" parent="."]
+material = SubResource("ShaderMaterial_exued")
+offset_left = 1591.0
+offset_top = 750.0
+offset_right = 3386.0
+offset_bottom = 2801.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("3_gm42o")
+
+[node name="Mailbox" type="TextureButton" parent="."]
+material = SubResource("ShaderMaterial_mqh26")
+offset_left = 688.0
+offset_top = 29.0
+offset_right = 1987.0
+offset_bottom = 1919.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("4_t2yi2")
+
+[node name="Workbench" type="TextureButton" parent="."]
+material = SubResource("ShaderMaterial_36usn")
+offset_left = 25.0
+offset_top = 26.0
+offset_right = 2022.0
+offset_bottom = 1741.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("5_3dryq")
+
+[node name="Altar" type="TextureButton" parent="."]
+material = SubResource("ShaderMaterial_14dnl")
+offset_left = 32.0
+offset_top = 384.0
+offset_right = 1925.0
+offset_bottom = 2173.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("6_ho7yj")
+
+[node name="Computer" type="TextureButton" parent="."]
+material = SubResource("ShaderMaterial_8wrnm")
+offset_left = 1566.0
+offset_top = 53.0
+offset_right = 3700.0
+offset_bottom = 1521.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("7_fsptx")
+
+[node name="Door" type="TextureButton" parent="."]
+material = SubResource("ShaderMaterial_iks6j")
+offset_left = 848.0
+offset_top = 26.0
+offset_right = 1937.0
+offset_bottom = 1831.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("8_ihhcu")
+
+[node name="Jukebox" type="TextureButton" parent="."]
+material = SubResource("ShaderMaterial_l05hd")
+offset_left = 36.0
+offset_top = 769.0
+offset_right = 1840.0
+offset_bottom = 2606.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("9_oj3rq")
+
+[node name="Library" type="TextureButton" parent="."]
+material = SubResource("ShaderMaterial_ytee4")
+offset_left = 1609.0
+offset_top = 408.0
+offset_right = 3283.0
+offset_bottom = 2136.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("10_to7rq")

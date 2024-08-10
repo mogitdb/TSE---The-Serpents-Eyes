@@ -26,10 +26,11 @@ var dice_info = {
 
 var selected_dice = null
 var confirmation_scene = preload("res://scenes/intro_scene/dice_selection/dice_selection_confirmation.tscn")
+var hover_tween: Tween
 
 func _ready():
 	dialogue_text.text = ""
-	next_button.show()  # Show the button from the start
+	next_button.show()
 	next_button.pressed.connect(on_next_pressed)
 	setup_dice()
 	display_initial_text()
@@ -48,17 +49,22 @@ func _on_dice_input(event: InputEvent, dice_type: String):
 		select_dice(dice_type)
 
 func select_dice(dice_type: String):
-	# Reset all dice outlines
+	if hover_tween:
+		hover_tween.kill()
+
 	for dice in [tech_dice, magic_dice, bio_dice]:
+		dice.position.y = 140
 		if dice.material:
 			dice.material.set_shader_parameter("outline_width", 0.0)
 	
-	# Set the outline for the selected dice
 	var selected_dice_node = get_node("Background/MarginContainer/" + dice_type.capitalize() + "Dice")
 	if selected_dice_node and selected_dice_node.material:
 		selected_dice_node.material.set_shader_parameter("outline_width", 2.0)
 	
-	# Update selected dice and dialogue
+	hover_tween = create_tween().set_loops().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	hover_tween.tween_property(selected_dice_node, "position:y", 125.0, 0.5)
+	hover_tween.tween_property(selected_dice_node, "position:y", 140.0, 0.5)
+	
 	selected_dice = dice_type
 	update_dialogue()
 
@@ -73,7 +79,6 @@ func on_next_pressed():
 		dialogue_text.text = "Please select a dice before continuing."
 
 func show_confirmation():
-	print("Show confirmation called")  # Debug print
 	var confirm_instance = confirmation_scene.instantiate()
 	add_child(confirm_instance)
 	confirm_instance.connect("confirmed", Callable(self, "on_dice_confirmed"))
@@ -87,10 +92,9 @@ func center_popup(popup):
 	popup.set_position(centered_position)
 
 func on_dice_confirmed():
-	print("Selected dice: ", selected_dice)
-	# Save the player's choice here if needed
-	get_tree().change_scene_to_file("res://scenes/bedroom_scene.tscn")
+	GameManager.set_starter_dice(selected_dice)
+	SaveManager.save_game(GameManager.current_save_slot, GameManager.current_player_name, selected_dice)
+	get_tree().change_scene_to_file("res://scenes/bedroom_scene/bedroom_scene.tscn")
 
 func on_confirmation_cancelled():
-	# The player decided not to confirm, so we don't need to do anything
 	pass
