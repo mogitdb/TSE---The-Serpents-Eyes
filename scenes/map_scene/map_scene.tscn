@@ -1,11 +1,454 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhvxox7nynhsv"]
+[gd_scene load_steps=19 format=3 uid="uid://dhvxox7nynhsv"]
 
 [ext_resource type="Texture2D" uid="uid://8legreastj53" path="res://assets/panels/background_panel/bg_1920x1080.png" id="1_7e2li"]
+[ext_resource type="Script" path="res://scenes/map_scene/map_scene.gd" id="1_lr5nq"]
+[ext_resource type="Texture2D" uid="uid://qqiquiwcx0g3" path="res://assets/buttons_dice/school_110x110_placeholder.png" id="2_6oeke"]
+[ext_resource type="Texture2D" uid="uid://1t58voilyvii" path="res://assets/panels/button_panel/button_panel_110x110/button_panel_110x110.png" id="2_07fhe"]
+[ext_resource type="Texture2D" uid="uid://b4di6wegvxgvj" path="res://assets/panels/button_panel/button_panel_110x110/button_panel_110x110_pressed.png" id="3_tk3ts"]
+[ext_resource type="Texture2D" uid="uid://bws6ox4lxko84" path="res://assets/panels/button_panel/button_panel_110x110/button_panel_110x110_hover.png" id="4_bd000"]
+[ext_resource type="LabelSettings" uid="uid://ckg0j8haan05w" path="res://assets/fonts/orbitron_48_so.tres" id="5_ubltt"]
+[ext_resource type="Texture2D" uid="uid://myoowjf16ueu" path="res://assets/sprites/bedroom/door_placeholder.png" id="6_f0db0"]
+[ext_resource type="Texture2D" uid="uid://c0t5g444tousf" path="res://assets/buttons_dice/tech_110x110.png" id="7_ow356"]
+[ext_resource type="Texture2D" uid="uid://b21k6cm3b4yh" path="res://assets/buttons_dice/magic_110x110.png" id="8_j8rrd"]
+[ext_resource type="Texture2D" uid="uid://d7k3ccw8sufe" path="res://assets/buttons_dice/bio_110x110.png" id="9_xe62b"]
+[ext_resource type="Texture2D" uid="uid://b82isjykccf6g" path="res://assets/panels/button_panel/button_panel_350x350/button_panel_350x350.png" id="10_gbyfr"]
+[ext_resource type="Texture2D" uid="uid://2ymbvpol8v2f" path="res://assets/sprites/astral_arena_placeholder.png" id="10_oi44k"]
+[ext_resource type="Texture2D" uid="uid://b5y8nvcdees63" path="res://assets/panels/button_panel/button_panel_350x350/button_panel_350x350_pressed.png" id="11_qfkcw"]
+[ext_resource type="Texture2D" uid="uid://dn4xrfk3hbx1g" path="res://assets/panels/button_panel/button_panel_350x350/button_panel_350x350_hover.png" id="12_5m1rr"]
+[ext_resource type="Texture2D" uid="uid://pghgxjbrwpuw" path="res://assets/panels/button_panel/button_panel_100x100/button_panel_100x100.png" id="13_wp3ci"]
+[ext_resource type="Texture2D" uid="uid://b40yfffl6qiiu" path="res://assets/panels/button_panel/button_panel_100x100/button_panel_100x100_pressed.png" id="14_v47q7"]
+[ext_resource type="Texture2D" uid="uid://d0v3evc431ctd" path="res://assets/panels/button_panel/button_panel_100x100/button_panel_100x100_hover.png" id="15_qwy2v"]
 
 [node name="MapScene" type="Node2D"]
+script = ExtResource("1_lr5nq")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(1920, 1080)
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_7e2li")
+
+[node name="Content" type="MarginContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/Content"]
+layout_mode = 2
+
+[node name="Column1" type="VBoxContainer" parent="Background/Content/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Arena7" type="TextureButton" parent="Background/Content/HBoxContainer/Column1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_6oeke")
+texture_pressed = ExtResource("2_6oeke")
+texture_hover = ExtResource("2_6oeke")
+
+[node name="Arena6" type="TextureButton" parent="Background/Content/HBoxContainer/Column1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_07fhe")
+texture_pressed = ExtResource("3_tk3ts")
+texture_hover = ExtResource("4_bd000")
+
+[node name="Arena5" type="TextureButton" parent="Background/Content/HBoxContainer/Column1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_07fhe")
+texture_pressed = ExtResource("3_tk3ts")
+texture_hover = ExtResource("4_bd000")
+
+[node name="Arena4" type="TextureButton" parent="Background/Content/HBoxContainer/Column1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_07fhe")
+texture_pressed = ExtResource("3_tk3ts")
+texture_hover = ExtResource("4_bd000")
+
+[node name="Arena3" type="TextureButton" parent="Background/Content/HBoxContainer/Column1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_07fhe")
+texture_pressed = ExtResource("3_tk3ts")
+texture_hover = ExtResource("4_bd000")
+
+[node name="Arena2" type="TextureButton" parent="Background/Content/HBoxContainer/Column1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_07fhe")
+texture_pressed = ExtResource("3_tk3ts")
+texture_hover = ExtResource("4_bd000")
+
+[node name="Arena1" type="TextureButton" parent="Background/Content/HBoxContainer/Column1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_07fhe")
+texture_pressed = ExtResource("3_tk3ts")
+texture_hover = ExtResource("4_bd000")
+
+[node name="Label" type="Label" parent="Background/Content/HBoxContainer/Column1"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "SCHOOL"
+label_settings = ExtResource("5_ubltt")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Column2" type="VBoxContainer" parent="Background/Content/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Arena7" type="TextureButton" parent="Background/Content/HBoxContainer/Column2"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("7_ow356")
+texture_pressed = ExtResource("7_ow356")
+texture_hover = ExtResource("7_ow356")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="Arena6" type="TextureButton" parent="Background/Content/HBoxContainer/Column2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_07fhe")
+texture_pressed = ExtResource("3_tk3ts")
+texture_hover = ExtResource("4_bd000")
+
+[node name="Arena5" type="TextureButton" parent="Background/Content/HBoxContainer/Column2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_07fhe")
+texture_pressed = ExtResource("3_tk3ts")
+texture_hover = ExtResource("4_bd000")
+
+[node name="Arena4" type="TextureButton" parent="Background/Content/HBoxContainer/Column2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_07fhe")
+texture_pressed = ExtResource("3_tk3ts")
+texture_hover = ExtResource("4_bd000")
+
+[node name="Arena3" type="TextureButton" parent="Background/Content/HBoxContainer/Column2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_07fhe")
+texture_pressed = ExtResource("3_tk3ts")
+texture_hover = ExtResource("4_bd000")
+
+[node name="Arena2" type="TextureButton" parent="Background/Content/HBoxContainer/Column2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_07fhe")
+texture_pressed = ExtResource("3_tk3ts")
+texture_hover = ExtResource("4_bd000")
+
+[node name="Arena1" type="TextureButton" parent="Background/Content/HBoxContainer/Column2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_07fhe")
+texture_pressed = ExtResource("3_tk3ts")
+texture_hover = ExtResource("4_bd000")
+
+[node name="Label" type="Label" parent="Background/Content/HBoxContainer/Column2"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "TECH"
+label_settings = ExtResource("5_ubltt")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Column3" type="VBoxContainer" parent="Background/Content/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Arena7" type="TextureButton" parent="Background/Content/HBoxContainer/Column3"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("8_j8rrd")
+texture_pressed = ExtResource("8_j8rrd")
+texture_hover = ExtResource("8_j8rrd")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="Arena6" type="TextureButton" parent="Background/Content/HBoxContainer/Column3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_07fhe")
+texture_pressed = ExtResource("3_tk3ts")
+texture_hover = ExtResource("4_bd000")
+
+[node name="Arena5" type="TextureButton" parent="Background/Content/HBoxContainer/Column3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_07fhe")
+texture_pressed = ExtResource("3_tk3ts")
+texture_hover = ExtResource("4_bd000")
+
+[node name="Arena4" type="TextureButton" parent="Background/Content/HBoxContainer/Column3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_07fhe")
+texture_pressed = ExtResource("3_tk3ts")
+texture_hover = ExtResource("4_bd000")
+
+[node name="Arena3" type="TextureButton" parent="Background/Content/HBoxContainer/Column3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_07fhe")
+texture_pressed = ExtResource("3_tk3ts")
+texture_hover = ExtResource("4_bd000")
+
+[node name="Arena2" type="TextureButton" parent="Background/Content/HBoxContainer/Column3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_07fhe")
+texture_pressed = ExtResource("3_tk3ts")
+texture_hover = ExtResource("4_bd000")
+
+[node name="Arena1" type="TextureButton" parent="Background/Content/HBoxContainer/Column3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_07fhe")
+texture_pressed = ExtResource("3_tk3ts")
+texture_hover = ExtResource("4_bd000")
+
+[node name="Label" type="Label" parent="Background/Content/HBoxContainer/Column3"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "MAGIC"
+label_settings = ExtResource("5_ubltt")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Column4" type="VBoxContainer" parent="Background/Content/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Arena7" type="TextureButton" parent="Background/Content/HBoxContainer/Column4"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("9_xe62b")
+texture_pressed = ExtResource("9_xe62b")
+texture_hover = ExtResource("9_xe62b")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="Arena6" type="TextureButton" parent="Background/Content/HBoxContainer/Column4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_07fhe")
+texture_pressed = ExtResource("3_tk3ts")
+texture_hover = ExtResource("4_bd000")
+
+[node name="Arena5" type="TextureButton" parent="Background/Content/HBoxContainer/Column4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_07fhe")
+texture_pressed = ExtResource("3_tk3ts")
+texture_hover = ExtResource("4_bd000")
+
+[node name="Arena4" type="TextureButton" parent="Background/Content/HBoxContainer/Column4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_07fhe")
+texture_pressed = ExtResource("3_tk3ts")
+texture_hover = ExtResource("4_bd000")
+
+[node name="Arena3" type="TextureButton" parent="Background/Content/HBoxContainer/Column4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_07fhe")
+texture_pressed = ExtResource("3_tk3ts")
+texture_hover = ExtResource("4_bd000")
+
+[node name="Arena2" type="TextureButton" parent="Background/Content/HBoxContainer/Column4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_07fhe")
+texture_pressed = ExtResource("3_tk3ts")
+texture_hover = ExtResource("4_bd000")
+
+[node name="Arena1" type="TextureButton" parent="Background/Content/HBoxContainer/Column4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_07fhe")
+texture_pressed = ExtResource("3_tk3ts")
+texture_hover = ExtResource("4_bd000")
+
+[node name="Label" type="Label" parent="Background/Content/HBoxContainer/Column4"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "BIO"
+label_settings = ExtResource("5_ubltt")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Column5" type="VBoxContainer" parent="Background/Content/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Control" type="Control" parent="Background/Content/HBoxContainer/Column5"]
+custom_minimum_size = Vector2(300, 270)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Background/Content/HBoxContainer/Column5"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("10_oi44k")
+
+[node name="Arena1" type="TextureButton" parent="Background/Content/HBoxContainer/Column5"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("10_gbyfr")
+texture_pressed = ExtResource("11_qfkcw")
+texture_hover = ExtResource("12_5m1rr")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/Content/HBoxContainer/Column5/Arena1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/Content/HBoxContainer/Column5/Arena1/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="RuneSlot1" type="TextureButton" parent="Background/Content/HBoxContainer/Column5/Arena1/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("13_wp3ci")
+texture_pressed = ExtResource("14_v47q7")
+texture_hover = ExtResource("15_qwy2v")
+
+[node name="RuneSlot2" type="TextureButton" parent="Background/Content/HBoxContainer/Column5/Arena1/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("13_wp3ci")
+texture_pressed = ExtResource("14_v47q7")
+texture_hover = ExtResource("15_qwy2v")
+
+[node name="RuneSlot3" type="TextureButton" parent="Background/Content/HBoxContainer/Column5/Arena1/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("13_wp3ci")
+texture_pressed = ExtResource("14_v47q7")
+texture_hover = ExtResource("15_qwy2v")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Background/Content/HBoxContainer/Column5/Arena1/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="RuneSlot1" type="TextureButton" parent="Background/Content/HBoxContainer/Column5/Arena1/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("13_wp3ci")
+texture_pressed = ExtResource("14_v47q7")
+texture_hover = ExtResource("15_qwy2v")
+
+[node name="RuneSlot2" type="TextureButton" parent="Background/Content/HBoxContainer/Column5/Arena1/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("13_wp3ci")
+texture_pressed = ExtResource("14_v47q7")
+texture_hover = ExtResource("15_qwy2v")
+
+[node name="RuneSlot3" type="TextureButton" parent="Background/Content/HBoxContainer/Column5/Arena1/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("13_wp3ci")
+texture_pressed = ExtResource("14_v47q7")
+texture_hover = ExtResource("15_qwy2v")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Background/Content/HBoxContainer/Column5/Arena1/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="RuneSlot1" type="TextureButton" parent="Background/Content/HBoxContainer/Column5/Arena1/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("13_wp3ci")
+texture_pressed = ExtResource("14_v47q7")
+texture_hover = ExtResource("15_qwy2v")
+
+[node name="RuneSlot2" type="TextureButton" parent="Background/Content/HBoxContainer/Column5/Arena1/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("13_wp3ci")
+texture_pressed = ExtResource("14_v47q7")
+texture_hover = ExtResource("15_qwy2v")
+
+[node name="RuneSlot3" type="TextureButton" parent="Background/Content/HBoxContainer/Column5/Arena1/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("13_wp3ci")
+texture_pressed = ExtResource("14_v47q7")
+texture_hover = ExtResource("15_qwy2v")
+
+[node name="Label" type="Label" parent="Background/Content/HBoxContainer/Column5"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "ASTRAL
+ARENA"
+label_settings = ExtResource("5_ubltt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton8" type="TextureButton" parent="Background"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+offset_left = 25.0
+offset_top = 957.0
+offset_right = 125.0
+offset_bottom = 1057.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("6_f0db0")
+texture_pressed = ExtResource("6_f0db0")
+texture_hover = ExtResource("6_f0db0")
+ignore_texture_size = true
+stretch_mode = 0
