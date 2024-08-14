@@ -1,0 +1,661 @@
+[gd_scene load_steps=22 format=3 uid="uid://cuy3itlb6l263"]
+
+[ext_resource type="Texture2D" uid="uid://8legreastj53" path="res://assets/panels/background_panel/bg_1920x1080.png" id="1_ufyqy"]
+[ext_resource type="Texture2D" uid="uid://cw0ubdyceu8qi" path="res://assets/panels/combat_panels/chat_panels/log_panel_470x730.png" id="2_s412a"]
+[ext_resource type="Texture2D" uid="uid://dg41lx52hiyck" path="res://assets/panels/combat_panels/arena_panel_1390x730.png" id="3_caoe8"]
+[ext_resource type="Texture2D" uid="uid://bptj4ppee3obb" path="res://assets/panels/combat_panels/chat_panels/chat_panel_450x568.png" id="3_kw84p"]
+[ext_resource type="Texture2D" uid="uid://c1wbikqd48y5o" path="res://assets/panels/combat_panels/combat_dice_panel_1870x290.png" id="4_8rlik"]
+[ext_resource type="Texture2D" uid="uid://cst3iymifwvcm" path="res://assets/sprites/bedroom/robot_placeholder.png" id="4_y88wd"]
+[ext_resource type="Texture2D" uid="uid://dda6y4eua7oip" path="res://assets/panels/combat_panels/dice_tray_panels/dice_tray_panel_outer_230x230.png" id="5_84del"]
+[ext_resource type="Texture2D" uid="uid://dxbmmwn4wg7wy" path="res://assets/sprites/bedroom/mail_placeholder.png" id="5_87y0h"]
+[ext_resource type="Texture2D" uid="uid://cripqslx5lux5" path="res://assets/panels/combat_panels/chat_panels/gameplay_log_panel_470x142.png" id="6_nwsiy"]
+[ext_resource type="Texture2D" uid="uid://p64o6olfi2nm" path="res://assets/panels/combat_panels/dice_tray_panels/dice_tray_panel_inner_200x200.png" id="6_wfexm"]
+[ext_resource type="Texture2D" uid="uid://cwb3b8rmfo3mu" path="res://assets/panels/combat_panels/dice_tray_panels/dice_tray_panel_inner_pressed_200x200.png" id="7_tmshu"]
+[ext_resource type="Texture2D" uid="uid://dw4bcb4hxqvkh" path="res://assets/panels/combat_panels/dice_tray_panels/dice_tray_panel_inner_hover_200x200.png" id="8_tgbui"]
+[ext_resource type="Texture2D" uid="uid://cw75kl522s4dk" path="res://assets/panels/combat_panels/dice_tray_panels/dice_tray_panel_name_150x40.png" id="9_4qp3b"]
+[ext_resource type="LabelSettings" uid="uid://c0r3vu37o7tx8" path="res://assets/fonts/orbitron_16_so.tres" id="10_opfli"]
+[ext_resource type="Texture2D" uid="uid://c0t5g444tousf" path="res://assets/buttons_dice/tech_110x110.png" id="11_2rgit"]
+[ext_resource type="Texture2D" uid="uid://b21k6cm3b4yh" path="res://assets/buttons_dice/magic_110x110.png" id="12_77u35"]
+[ext_resource type="Texture2D" uid="uid://d7k3ccw8sufe" path="res://assets/buttons_dice/bio_110x110.png" id="13_nj0at"]
+[ext_resource type="Texture2D" uid="uid://yegcig020ksk" path="res://assets/panels/combat_panels/dice_tray_panels/dice_tray_roll_button_80x230.png" id="14_o8pwf"]
+[ext_resource type="Texture2D" uid="uid://cif5trtgiifrl" path="res://assets/panels/combat_panels/dice_tray_panels/dice_tray_roll_button_pressed_80x230.png" id="15_om1yy"]
+[ext_resource type="Texture2D" uid="uid://bssnk1tdmoxnp" path="res://assets/panels/combat_panels/dice_tray_panels/dice_tray_roll_button_hover_80x230.png" id="16_fjqsp"]
+[ext_resource type="LabelSettings" uid="uid://bnintpa14r1ev" path="res://assets/fonts/orbitron_32_so.tres" id="17_usr0t"]
+
+[node name="CombatScene" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ufyqy")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="LogPanel" type="HBoxContainer" parent="TextureRect/MarginContainer"]
+custom_minimum_size = Vector2(480, 740)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+alignment = 1
+
+[node name="LogPanelImage" type="TextureRect" parent="TextureRect/MarginContainer/LogPanel"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_s412a")
+stretch_mode = 2
+
+[node name="LogPanelMC" type="MarginContainer" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="LogPanelVbox" type="VBoxContainer" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC"]
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 1
+
+[node name="ChatPanel" type="TextureRect" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox"]
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("3_kw84p")
+
+[node name="ChatLogMC" type="MarginContainer" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ChatLogVbox" type="VBoxContainer" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox"]
+layout_mode = 2
+
+[node name="AvatarImage" type="TextureRect" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_y88wd")
+
+[node name="SpeechBubble" type="TextureRect" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_87y0h")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox"]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox"]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox"]
+layout_mode = 2
+
+[node name="GameplayLogPanel" type="TextureRect" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox"]
+layout_mode = 2
+texture = ExtResource("6_nwsiy")
+
+[node name="ArenaBox" type="HBoxContainer" parent="TextureRect/MarginContainer"]
+custom_minimum_size = Vector2(1400, 740)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_caoe8")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="DiceDisplay" type="HBoxContainer" parent="TextureRect/MarginContainer"]
+custom_minimum_size = Vector2(1880, 300)
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/MarginContainer/DiceDisplay"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_8rlik")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Dice1Outer" type="TextureRect" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_84del")
+stretch_mode = 2
+
+[node name="Dice1Inner" type="TextureButton" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_wfexm")
+texture_pressed = ExtResource("7_tmshu")
+texture_hover = ExtResource("8_tgbui")
+
+[node name="Dice1Name" type="TextureRect" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer/Dice1Inner"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -40.0
+offset_right = 75.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("9_4qp3b")
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer/Dice1Inner/Dice1Name"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dice Name"
+label_settings = ExtResource("10_opfli")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DiceImage1" type="TextureRect" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer/Dice1Inner"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_2rgit")
+
+[node name="Dice1Outer2" type="TextureRect" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_84del")
+stretch_mode = 2
+
+[node name="Dice1Inner" type="TextureButton" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_wfexm")
+texture_pressed = ExtResource("7_tmshu")
+texture_hover = ExtResource("8_tgbui")
+
+[node name="Dice1Name" type="TextureRect" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer2/Dice1Inner"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -40.0
+offset_right = 75.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("9_4qp3b")
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer2/Dice1Inner/Dice1Name"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dice Name"
+label_settings = ExtResource("10_opfli")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DiceImage2" type="TextureRect" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer2/Dice1Inner"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_77u35")
+
+[node name="Dice1Outer3" type="TextureRect" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_84del")
+stretch_mode = 2
+
+[node name="Dice1Inner" type="TextureButton" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_wfexm")
+texture_pressed = ExtResource("7_tmshu")
+texture_hover = ExtResource("8_tgbui")
+
+[node name="Dice1Name" type="TextureRect" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer3/Dice1Inner"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -40.0
+offset_right = 75.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("9_4qp3b")
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer3/Dice1Inner/Dice1Name"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dice Name"
+label_settings = ExtResource("10_opfli")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DiceImage3" type="TextureRect" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer3/Dice1Inner"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_nj0at")
+
+[node name="Dice1Outer4" type="TextureRect" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_84del")
+stretch_mode = 2
+
+[node name="Dice1Inner" type="TextureButton" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_wfexm")
+texture_pressed = ExtResource("7_tmshu")
+texture_hover = ExtResource("8_tgbui")
+
+[node name="Dice1Name" type="TextureRect" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer4/Dice1Inner"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -40.0
+offset_right = 75.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("9_4qp3b")
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer4/Dice1Inner/Dice1Name"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dice Name"
+label_settings = ExtResource("10_opfli")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DiceImage4" type="TextureRect" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer4/Dice1Inner"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_2rgit")
+
+[node name="Dice1Outer5" type="TextureRect" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_84del")
+stretch_mode = 2
+
+[node name="Dice1Inner" type="TextureButton" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_wfexm")
+texture_pressed = ExtResource("7_tmshu")
+texture_hover = ExtResource("8_tgbui")
+
+[node name="Dice1Name" type="TextureRect" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer5/Dice1Inner"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -40.0
+offset_right = 75.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("9_4qp3b")
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer5/Dice1Inner/Dice1Name"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dice Name"
+label_settings = ExtResource("10_opfli")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DiceImage5" type="TextureRect" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer5/Dice1Inner"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_77u35")
+
+[node name="Dice1Outer6" type="TextureRect" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_84del")
+stretch_mode = 2
+
+[node name="Dice1Inner" type="TextureButton" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer6"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_wfexm")
+texture_pressed = ExtResource("7_tmshu")
+texture_hover = ExtResource("8_tgbui")
+
+[node name="Dice1Name" type="TextureRect" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer6/Dice1Inner"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -40.0
+offset_right = 75.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("9_4qp3b")
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer6/Dice1Inner/Dice1Name"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dice Name"
+label_settings = ExtResource("10_opfli")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DiceImage6" type="TextureRect" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer6/Dice1Inner"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_nj0at")
+
+[node name="Dice1Outer7" type="TextureRect" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_84del")
+stretch_mode = 2
+
+[node name="Dice1Inner" type="TextureButton" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer7"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_wfexm")
+texture_pressed = ExtResource("7_tmshu")
+texture_hover = ExtResource("8_tgbui")
+
+[node name="Dice1Name" type="TextureRect" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer7/Dice1Inner"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -40.0
+offset_right = 75.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("9_4qp3b")
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer7/Dice1Inner/Dice1Name"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dice Name"
+label_settings = ExtResource("10_opfli")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DiceImage7" type="TextureRect" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/Dice1Outer7/Dice1Inner"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_2rgit")
+
+[node name="DiceRollButton" type="TextureButton" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("14_o8pwf")
+texture_pressed = ExtResource("15_om1yy")
+texture_hover = ExtResource("16_fjqsp")
+
+[node name="DiceRollLabel" type="Label" parent="TextureRect/MarginContainer/DiceDisplay/TextureRect/MarginContainer/HBoxContainer/DiceRollButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 65.0
+offset_top = 15.0
+offset_right = 182.0
+offset_bottom = -165.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.57143
+text = "ROLL DICE"
+label_settings = ExtResource("17_usr0t")
+horizontal_alignment = 1
+vertical_alignment = 1

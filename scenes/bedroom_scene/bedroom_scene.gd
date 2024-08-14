@@ -16,21 +16,34 @@ func _ready():
 	setup_interactive_items()
 
 func setup_interactive_items():
-	for item_name in popup_scenes.keys():
-		var button = get_node(item_name)
-		if button is TextureButton:
-			button.connect("pressed", Callable(self, "show_popup").bind(item_name))
-			if button.material:
-				button.material.set_shader_parameter("outline_width", 0.0)
+	var items = {
+		"Column1": ["Workbench", "Altar", "Jukebox"],
+		"Column2": ["Mailbox"],
+		"Column3": ["Door"],
+		"Column4": ["Robot"],
+		"Column5": ["Computer", "Library"]
+	}
 	
-	var door_button = get_node("Door")
-	if door_button is TextureButton:
-		door_button.connect("pressed", Callable(self, "_on_Door_pressed"))
-		if door_button.material:
-			door_button.material.set_shader_parameter("outline_width", 0.0)
+	for column in items:
+		for item_name in items[column]:
+			var button = get_node("TextureRect/Content/HBoxContainer/" + column + "/" + item_name)
+			if button is TextureButton:
+				if item_name in popup_scenes:
+					button.connect("pressed", Callable(self, "show_popup").bind(item_name))
+				elif item_name == "Door":
+					button.connect("pressed", Callable(self, "_on_Door_pressed"))
+				if button.material:
+					button.material.set_shader_parameter("outline_width", 0.0)
 
 func show_popup(item_name):
-	var selected_item = get_node(item_name)
+	var columns = ["Column1", "Column2", "Column3", "Column4", "Column5"]
+	var selected_item = null
+	
+	for column in columns:
+		selected_item = get_node_or_null("TextureRect/Content/HBoxContainer/" + column + "/" + item_name)
+		if selected_item:
+			break
+	
 	if selected_item is TextureButton:
 		highlight_item(selected_item)
 	
@@ -70,7 +83,7 @@ func _on_Door_pressed():
 		current_highlighted_item.material.set_shader_parameter("outline_width", 0.0)
 		current_highlighted_item = null
 	
-	var door_button = get_node("Door")
+	var door_button = get_node("TextureRect/Content/HBoxContainer/Column3/Door")
 	if door_button is TextureButton and door_button.material:
 		door_button.material.set_shader_parameter("outline_width", 2.0)
 		
