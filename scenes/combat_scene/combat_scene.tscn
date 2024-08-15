@@ -1,25 +1,32 @@
-[gd_scene load_steps=22 format=3 uid="uid://cuy3itlb6l263"]
+[gd_scene load_steps=29 format=3 uid="uid://cuy3itlb6l263"]
 
 [ext_resource type="Texture2D" uid="uid://8legreastj53" path="res://assets/panels/background_panel/bg_1920x1080.png" id="1_ufyqy"]
 [ext_resource type="Texture2D" uid="uid://cw0ubdyceu8qi" path="res://assets/panels/combat_panels/chat_panels/log_panel_470x730.png" id="2_s412a"]
 [ext_resource type="Texture2D" uid="uid://dg41lx52hiyck" path="res://assets/panels/combat_panels/arena_panel_1390x730.png" id="3_caoe8"]
 [ext_resource type="Texture2D" uid="uid://bptj4ppee3obb" path="res://assets/panels/combat_panels/chat_panels/chat_panel_450x568.png" id="3_kw84p"]
 [ext_resource type="Texture2D" uid="uid://c1wbikqd48y5o" path="res://assets/panels/combat_panels/combat_dice_panel_1870x290.png" id="4_8rlik"]
-[ext_resource type="Texture2D" uid="uid://cst3iymifwvcm" path="res://assets/sprites/bedroom/robot_placeholder.png" id="4_y88wd"]
+[ext_resource type="Texture2D" uid="uid://b4di6wegvxgvj" path="res://assets/panels/button_panel/button_panel_110x110/button_panel_110x110_pressed.png" id="4_25d54"]
 [ext_resource type="Texture2D" uid="uid://dda6y4eua7oip" path="res://assets/panels/combat_panels/dice_tray_panels/dice_tray_panel_outer_230x230.png" id="5_84del"]
-[ext_resource type="Texture2D" uid="uid://dxbmmwn4wg7wy" path="res://assets/sprites/bedroom/mail_placeholder.png" id="5_87y0h"]
+[ext_resource type="Texture2D" uid="uid://c7ff3v6av12m1" path="res://assets/sprites/combat/player_avatar_placeholder_100x100.png" id="5_or8bf"]
+[ext_resource type="Texture2D" uid="uid://b3p30jmhfp31v" path="res://assets/panels/combat_panels/speech_panel/speech_bubble_left_330x110.png" id="5_vu447"]
 [ext_resource type="Texture2D" uid="uid://cripqslx5lux5" path="res://assets/panels/combat_panels/chat_panels/gameplay_log_panel_470x142.png" id="6_nwsiy"]
 [ext_resource type="Texture2D" uid="uid://p64o6olfi2nm" path="res://assets/panels/combat_panels/dice_tray_panels/dice_tray_panel_inner_200x200.png" id="6_wfexm"]
 [ext_resource type="Texture2D" uid="uid://cwb3b8rmfo3mu" path="res://assets/panels/combat_panels/dice_tray_panels/dice_tray_panel_inner_pressed_200x200.png" id="7_tmshu"]
+[ext_resource type="Texture2D" uid="uid://pehdr7ckbbcl" path="res://assets/sprites/combat/enemy_avatar_placeholder_100x100.png" id="8_eogjd"]
 [ext_resource type="Texture2D" uid="uid://dw4bcb4hxqvkh" path="res://assets/panels/combat_panels/dice_tray_panels/dice_tray_panel_inner_hover_200x200.png" id="8_tgbui"]
 [ext_resource type="Texture2D" uid="uid://cw75kl522s4dk" path="res://assets/panels/combat_panels/dice_tray_panels/dice_tray_panel_name_150x40.png" id="9_4qp3b"]
 [ext_resource type="LabelSettings" uid="uid://c0r3vu37o7tx8" path="res://assets/fonts/orbitron_16_so.tres" id="10_opfli"]
 [ext_resource type="Texture2D" uid="uid://c0t5g444tousf" path="res://assets/buttons_dice/tech_110x110.png" id="11_2rgit"]
+[ext_resource type="Texture2D" uid="uid://csr67bcpu5ttp" path="res://assets/panels/combat_panels/arena_box/arenabox_top_1360x190.png" id="11_r6pub"]
 [ext_resource type="Texture2D" uid="uid://b21k6cm3b4yh" path="res://assets/buttons_dice/magic_110x110.png" id="12_77u35"]
+[ext_resource type="Texture2D" uid="uid://bdxnkdtp31yi0" path="res://assets/panels/combat_panels/arena_box/hpbar_placeholder.png" id="12_b4t6u"]
+[ext_resource type="Texture2D" uid="uid://1t58voilyvii" path="res://assets/panels/button_panel/button_panel_110x110/button_panel_110x110.png" id="13_21ft5"]
 [ext_resource type="Texture2D" uid="uid://d7k3ccw8sufe" path="res://assets/buttons_dice/bio_110x110.png" id="13_nj0at"]
 [ext_resource type="Texture2D" uid="uid://yegcig020ksk" path="res://assets/panels/combat_panels/dice_tray_panels/dice_tray_roll_button_80x230.png" id="14_o8pwf"]
+[ext_resource type="LabelSettings" uid="uid://cikkld844vyvt" path="res://assets/fonts/orbitron_24_so.tres" id="15_20dit"]
 [ext_resource type="Texture2D" uid="uid://cif5trtgiifrl" path="res://assets/panels/combat_panels/dice_tray_panels/dice_tray_roll_button_pressed_80x230.png" id="15_om1yy"]
 [ext_resource type="Texture2D" uid="uid://bssnk1tdmoxnp" path="res://assets/panels/combat_panels/dice_tray_panels/dice_tray_roll_button_hover_80x230.png" id="16_fjqsp"]
+[ext_resource type="Texture2D" uid="uid://3bu4usbj42as" path="res://assets/panels/combat_panels/arena_box/vs_placeholder.png" id="16_ubfag"]
 [ext_resource type="LabelSettings" uid="uid://bnintpa14r1ev" path="res://assets/fonts/orbitron_32_so.tres" id="17_usr0t"]
 
 [node name="CombatScene" type="Node2D"]
@@ -87,33 +94,175 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
 
 [node name="ChatLogVbox" type="VBoxContainer" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC"]
 layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 30
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox"]
+[node name="Dialogue1" type="HBoxContainer" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox"]
 layout_mode = 2
 
-[node name="AvatarImage" type="TextureRect" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox/HBoxContainer"]
+[node name="PlayerAvatarFrame" type="TextureRect" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox/Dialogue1"]
 layout_mode = 2
-texture = ExtResource("4_y88wd")
+texture = ExtResource("4_25d54")
 
-[node name="SpeechBubble" type="TextureRect" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("5_87y0h")
+[node name="PlayerAvatar" type="TextureRect" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox/Dialogue1/PlayerAvatarFrame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_or8bf")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox"]
+[node name="SpeechBubble" type="TextureRect" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox/Dialogue1"]
+layout_mode = 2
+texture = ExtResource("5_vu447")
+
+[node name="PlayerChatter1" type="Label" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox/Dialogue1/SpeechBubble"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = 4.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "My Tech Dice will destroy you, you don't stand a chance in the battle I will be victorious today !"
+label_settings = ExtResource("10_opfli")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Dialogue2" type="HBoxContainer" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox"]
 layout_mode = 2
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox"]
+[node name="SpeechBubble" type="TextureRect" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox/Dialogue2"]
+layout_mode = 2
+texture = ExtResource("5_vu447")
+flip_h = true
+
+[node name="EnemyChatter1" type="Label" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox/Dialogue2/SpeechBubble"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 259.0
+offset_bottom = 106.0
+text = "A DOUBLE CRIT, bruh you don't even know how sauced you are no coming back now."
+label_settings = ExtResource("10_opfli")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="EnemyAvatarFrame" type="TextureRect" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox/Dialogue2"]
+layout_mode = 2
+texture = ExtResource("4_25d54")
+
+[node name="EnemyAvatar" type="TextureRect" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox/Dialogue2/EnemyAvatarFrame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_eogjd")
+
+[node name="Dialogue3" type="HBoxContainer" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox"]
 layout_mode = 2
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox"]
+[node name="PlayerAvatarFrame" type="TextureRect" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox/Dialogue3"]
 layout_mode = 2
+texture = ExtResource("4_25d54")
+
+[node name="PlayerAvatar" type="TextureRect" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox/Dialogue3/PlayerAvatarFrame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_or8bf")
+
+[node name="SpeechBubble" type="TextureRect" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox/Dialogue3"]
+layout_mode = 2
+texture = ExtResource("5_vu447")
+
+[node name="PlayerChatter2" type="Label" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox/Dialogue3/SpeechBubble"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = 4.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "My build doesn't even use crit bro I'm stacking number of dice with high base damage watch ur hp fade"
+label_settings = ExtResource("10_opfli")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Dialogue4" type="HBoxContainer" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox"]
+layout_mode = 2
+
+[node name="SpeechBubble" type="TextureRect" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox/Dialogue4"]
+layout_mode = 2
+texture = ExtResource("5_vu447")
+flip_h = true
+
+[node name="EnemyChatter2" type="Label" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox/Dialogue4/SpeechBubble"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 4.0
+offset_right = 259.0
+offset_bottom = 106.0
+text = "What kind of meta is this? How are you doing so much damage bro you didn't even roll any snake eyes..."
+label_settings = ExtResource("10_opfli")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="EnemyAvatarFrame" type="TextureRect" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox/Dialogue4"]
+layout_mode = 2
+texture = ExtResource("4_25d54")
+
+[node name="EnemyAvatar" type="TextureRect" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/ChatPanel/ChatLogMC/ChatLogVbox/Dialogue4/EnemyAvatarFrame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_eogjd")
 
 [node name="GameplayLogPanel" type="TextureRect" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox"]
 layout_mode = 2
@@ -147,14 +296,249 @@ theme_override_constants/margin_bottom = 10
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer"]
+[node name="TopRow" type="HBoxContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TopRowPanel" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/TopRow"]
+layout_mode = 2
+texture = ExtResource("11_r6pub")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/TopRow/TopRowPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/TopRow/TopRowPanel/MarginContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer"]
+[node name="PlayerInfo" type="VBoxContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/TopRow/TopRowPanel/MarginContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/TopRow/TopRowPanel/MarginContainer/HBoxContainer/PlayerInfo"]
 layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("12_b4t6u")
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/TopRow/TopRowPanel/MarginContainer/HBoxContainer/PlayerInfo"]
+layout_mode = 2
+text = "100$ LEFT"
+label_settings = ExtResource("10_opfli")
+
+[node name="PlayerArenaFrame" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/TopRow/TopRowPanel/MarginContainer/HBoxContainer/PlayerInfo"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("13_21ft5")
+stretch_mode = 2
+
+[node name="PlayerArenaAvatar" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/TopRow/TopRowPanel/MarginContainer/HBoxContainer/PlayerInfo/PlayerArenaFrame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_or8bf")
+
+[node name="Spacer" type="Control" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/TopRow/TopRowPanel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/TopRow/TopRowPanel/MarginContainer/HBoxContainer/Spacer"]
+layout_mode = 0
+offset_right = 241.0
+offset_bottom = 49.0
+text = "REPLACE THIS SPACER WITH ANIMATED AVATAR
+
+AND PLAYER HAND W/ HOVER OVER DETAILS FOR RINGS AND GEM & DICE LOADOUT"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ArenaInfo" type="VBoxContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/TopRow/TopRowPanel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/TopRow/TopRowPanel/MarginContainer/HBoxContainer/ArenaInfo"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "ARENA LABEL"
+label_settings = ExtResource("17_usr0t")
+
+[node name="Label2" type="Label" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/TopRow/TopRowPanel/MarginContainer/HBoxContainer/ArenaInfo"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "ROUND LABEL"
+label_settings = ExtResource("15_20dit")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/TopRow/TopRowPanel/MarginContainer/HBoxContainer/ArenaInfo"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("16_ubfag")
+stretch_mode = 2
+
+[node name="Spacer2" type="Control" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/TopRow/TopRowPanel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/TopRow/TopRowPanel/MarginContainer/HBoxContainer/Spacer2"]
+layout_mode = 0
+offset_right = 241.0
+offset_bottom = 49.0
+text = "REPLACE THIS SPACER WITH ANIMATED AVATAR
+
+AND PLAYER HAND W/ HOVER OVER DETAILS FOR RINGS AND GEM & DICE LOADOUT"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="EnemyInfo" type="VBoxContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/TopRow/TopRowPanel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/TopRow/TopRowPanel/MarginContainer/HBoxContainer/EnemyInfo"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("12_b4t6u")
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/TopRow/TopRowPanel/MarginContainer/HBoxContainer/EnemyInfo"]
+layout_mode = 2
+text = "100$ LEFT"
+label_settings = ExtResource("10_opfli")
+horizontal_alignment = 2
+
+[node name="EnemyArenaFrame" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/TopRow/TopRowPanel/MarginContainer/HBoxContainer/EnemyInfo"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("13_21ft5")
+stretch_mode = 2
+
+[node name="EnemyArenaAvatar" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/TopRow/TopRowPanel/MarginContainer/HBoxContainer/EnemyInfo/EnemyArenaFrame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_eogjd")
+
+[node name="MiddleRow" type="HBoxContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="LeftCrowd" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/MiddleRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+stretch_mode = 5
+
+[node name="DiceTray" type="VBoxContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/MiddleRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="RightCrowd" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/MiddleRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+stretch_mode = 5
+
+[node name="BottomRow" type="HBoxContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="LeftAnnouncer" type="VBoxContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AnnouncerAvatar" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/LeftAnnouncer"]
+layout_mode = 2
+stretch_mode = 5
+
+[node name="AnnouncerChatBox" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/LeftAnnouncer"]
+layout_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/LeftAnnouncer/AnnouncerChatBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Left Announcer Text"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Sponsors" type="HBoxContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Sponsor1" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/Sponsors"]
+layout_mode = 2
+stretch_mode = 5
+
+[node name="Sponsor2" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/Sponsors"]
+layout_mode = 2
+stretch_mode = 5
+
+[node name="Sponsor3" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/Sponsors"]
+layout_mode = 2
+stretch_mode = 5
+
+[node name="Sponsor4" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/Sponsors"]
+layout_mode = 2
+stretch_mode = 5
+
+[node name="Cheerleaders" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+stretch_mode = 5
+
+[node name="RightAnnouncer" type="VBoxContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AnnouncerAvatar" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/RightAnnouncer"]
+layout_mode = 2
+stretch_mode = 5
+
+[node name="AnnouncerChatBox" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/RightAnnouncer"]
+layout_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/RightAnnouncer/AnnouncerChatBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Right Announcer Text"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="DiceDisplay" type="HBoxContainer" parent="TextureRect/MarginContainer"]
 custom_minimum_size = Vector2(1880, 300)
