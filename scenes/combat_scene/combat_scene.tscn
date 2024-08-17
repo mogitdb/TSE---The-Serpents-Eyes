@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cuy3itlb6l263"]
+[gd_scene load_steps=42 format=3 uid="uid://cuy3itlb6l263"]
 
 [ext_resource type="Texture2D" uid="uid://8legreastj53" path="res://assets/panels/background_panel/bg_1920x1080.png" id="1_ufyqy"]
 [ext_resource type="Texture2D" uid="uid://cw0ubdyceu8qi" path="res://assets/panels/combat_panels/chat_panels/log_panel_470x730.png" id="2_s412a"]
@@ -27,7 +27,20 @@
 [ext_resource type="Texture2D" uid="uid://cif5trtgiifrl" path="res://assets/panels/combat_panels/dice_tray_panels/dice_tray_roll_button_pressed_80x230.png" id="15_om1yy"]
 [ext_resource type="Texture2D" uid="uid://bssnk1tdmoxnp" path="res://assets/panels/combat_panels/dice_tray_panels/dice_tray_roll_button_hover_80x230.png" id="16_fjqsp"]
 [ext_resource type="Texture2D" uid="uid://3bu4usbj42as" path="res://assets/panels/combat_panels/arena_box/vs_placeholder.png" id="16_ubfag"]
+[ext_resource type="Texture2D" uid="uid://b5al1wv4jervb" path="res://assets/sprites/combat/combat_crowd_left_250x320_placeholder.png" id="17_5qvno"]
 [ext_resource type="LabelSettings" uid="uid://bnintpa14r1ev" path="res://assets/fonts/orbitron_32_so.tres" id="17_usr0t"]
+[ext_resource type="Texture2D" uid="uid://bry0skedyhn0n" path="res://assets/sprites/combat/combat_dicetray_placeholder.png" id="18_kng53"]
+[ext_resource type="Texture2D" uid="uid://brtqgap6b61oy" path="res://assets/sprites/combat/combat_crowd_right_250x320_placeholder.png" id="19_e5l1o"]
+[ext_resource type="Texture2D" uid="uid://bi8ru7bptfmse" path="res://assets/panels/button_panel/button_panel_100x200/button_panel_100x200.png" id="20_gktoy"]
+[ext_resource type="Texture2D" uid="uid://ka812248mfp0" path="res://assets/panels/combat_panels/arena_box/sponsor1_placeholder.png" id="21_6a155"]
+[ext_resource type="Texture2D" uid="uid://c8dt014wj636b" path="res://assets/panels/combat_panels/arena_box/sponsor2_placeholder.png" id="22_oggdi"]
+[ext_resource type="Texture2D" uid="uid://b7hak70t6d852" path="res://assets/panels/button_panel/button_panel_200x200/button_panel_200x200.png" id="23_qvuyc"]
+[ext_resource type="Texture2D" uid="uid://b4g64lbhiu3n3" path="res://assets/panels/combat_panels/arena_box/announcer_placeholder.png" id="24_qc6dh"]
+[ext_resource type="Texture2D" uid="uid://s7htoaiy8owb" path="res://assets/panels/combat_panels/speech_panel/speech_bubble_left_150x200.png" id="25_yhrx3"]
+[ext_resource type="Texture2D" uid="uid://s85a1ge7hyfi" path="res://assets/panels/combat_panels/arena_box/combat_cheerleaders_placeholder.png" id="26_cu0go"]
+[ext_resource type="Texture2D" uid="uid://thmwhgr8xaih" path="res://assets/panels/combat_panels/speech_panel/speech_bubble_right_150x200.png" id="27_w5e2i"]
+[ext_resource type="Texture2D" uid="uid://cbfm3toeyj64d" path="res://assets/panels/combat_panels/arena_box/sponsor3_placeholder.png" id="28_2gkb7"]
+[ext_resource type="Texture2D" uid="uid://5vl27xulqfsv" path="res://assets/panels/combat_panels/arena_box/sponsor4_placeholder.png" id="29_0fn7n"]
 
 [node name="CombatScene" type="Node2D"]
 
@@ -268,6 +281,52 @@ texture = ExtResource("8_eogjd")
 layout_mode = 2
 texture = ExtResource("6_nwsiy")
 
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/GameplayLogPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/GameplayLogPanel/MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/GameplayLogPanel/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+
+[node name="LogLine1" type="Label" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/GameplayLogPanel/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Player rolled 6 on Tech Dice"
+label_settings = ExtResource("10_opfli")
+
+[node name="LogLine2" type="Label" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/GameplayLogPanel/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Enemy took 15 damage"
+label_settings = ExtResource("10_opfli")
+
+[node name="LogLine3" type="Label" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/GameplayLogPanel/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Enemy rolled 4 on Bio Dice"
+label_settings = ExtResource("10_opfli")
+
+[node name="LogLine4" type="Label" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/GameplayLogPanel/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Player healed for 5 HP"
+label_settings = ExtResource("10_opfli")
+
+[node name="LogLine5" type="Label" parent="TextureRect/MarginContainer/LogPanel/LogPanelImage/LogPanelMC/LogPanelVbox/GameplayLogPanel/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Player used special ability: Tech Surge"
+label_settings = ExtResource("10_opfli")
+
 [node name="ArenaBox" type="HBoxContainer" parent="TextureRect/MarginContainer"]
 custom_minimum_size = Vector2(1400, 740)
 layout_mode = 2
@@ -450,95 +509,177 @@ alignment = 1
 [node name="LeftCrowd" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/MiddleRow"]
 layout_mode = 2
 size_flags_horizontal = 3
+texture = ExtResource("17_5qvno")
 stretch_mode = 5
 
-[node name="DiceTray" type="VBoxContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/MiddleRow"]
+[node name="DiceTray" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/MiddleRow"]
 layout_mode = 2
 size_flags_horizontal = 3
-alignment = 1
+texture = ExtResource("18_kng53")
+stretch_mode = 5
 
 [node name="RightCrowd" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/MiddleRow"]
 layout_mode = 2
 size_flags_horizontal = 3
+texture = ExtResource("19_e5l1o")
 stretch_mode = 5
 
 [node name="BottomRow" type="HBoxContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="LeftAnnouncer" type="VBoxContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow"]
+[node name="Sponsor1Frame" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow"]
 layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="AnnouncerAvatar" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/LeftAnnouncer"]
-layout_mode = 2
+texture = ExtResource("20_gktoy")
 stretch_mode = 5
 
-[node name="AnnouncerChatBox" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/LeftAnnouncer"]
-layout_mode = 2
+[node name="Sponsor1Avatar" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/Sponsor1Frame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_6a155")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/LeftAnnouncer/AnnouncerChatBox"]
+[node name="Sponsor2Frame" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow"]
+layout_mode = 2
+texture = ExtResource("20_gktoy")
+stretch_mode = 5
+
+[node name="Sponsor2Avatar" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/Sponsor2Frame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_oggdi")
+stretch_mode = 5
+
+[node name="Announcer1Frame" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow"]
+layout_mode = 2
+texture = ExtResource("23_qvuyc")
+stretch_mode = 5
+
+[node name="Announcer1Avatar" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/Announcer1Frame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("24_qc6dh")
+stretch_mode = 5
+
+[node name="Announcer1Speech" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow"]
+layout_mode = 2
+texture = ExtResource("25_yhrx3")
+stretch_mode = 5
+
+[node name="Announcer1Text" type="Label" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/Announcer1Speech"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = 8.0
+offset_right = -13.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Left Announcer Text"
+text = "WOW WHAT A ROLL STRAIGHT RNG BRO"
+label_settings = ExtResource("10_opfli")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Sponsors" type="HBoxContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow"]
+[node name="CheerleadersFrame" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow"]
 layout_mode = 2
 size_flags_horizontal = 3
-alignment = 1
-
-[node name="Sponsor1" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/Sponsors"]
-layout_mode = 2
+texture = ExtResource("26_cu0go")
+expand_mode = 2
 stretch_mode = 5
 
-[node name="Sponsor2" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/Sponsors"]
+[node name="Announcer2Speech" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow"]
 layout_mode = 2
+texture = ExtResource("27_w5e2i")
 stretch_mode = 5
 
-[node name="Sponsor3" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/Sponsors"]
-layout_mode = 2
-stretch_mode = 5
-
-[node name="Sponsor4" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/Sponsors"]
-layout_mode = 2
-stretch_mode = 5
-
-[node name="Cheerleaders" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow"]
-layout_mode = 2
-size_flags_horizontal = 3
-stretch_mode = 5
-
-[node name="RightAnnouncer" type="VBoxContainer" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="AnnouncerAvatar" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/RightAnnouncer"]
-layout_mode = 2
-stretch_mode = 5
-
-[node name="AnnouncerChatBox" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/RightAnnouncer"]
-layout_mode = 2
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/RightAnnouncer/AnnouncerChatBox"]
+[node name="Announcer2Text" type="Label" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/Announcer2Speech"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = -40.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Right Announcer Text"
+text = "I CANT BELIEVE WHAT I AM SEEING HERE HOLY COW"
+label_settings = ExtResource("10_opfli")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Announcer1Frame2" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow"]
+layout_mode = 2
+texture = ExtResource("23_qvuyc")
+stretch_mode = 5
+
+[node name="Announcer1Avatar" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/Announcer1Frame2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("24_qc6dh")
+stretch_mode = 5
+
+[node name="Sponsor3Frame" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow"]
+layout_mode = 2
+texture = ExtResource("20_gktoy")
+stretch_mode = 5
+
+[node name="Sponsor3Avatar" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/Sponsor3Frame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("28_2gkb7")
+stretch_mode = 5
+
+[node name="Sponsor4Frame" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow"]
+layout_mode = 2
+texture = ExtResource("20_gktoy")
+stretch_mode = 5
+
+[node name="Sponsor4Avatar" type="TextureRect" parent="TextureRect/MarginContainer/ArenaBox/TextureRect/MarginContainer/VBoxContainer/BottomRow/Sponsor4Frame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("29_0fn7n")
+stretch_mode = 5
 
 [node name="DiceDisplay" type="HBoxContainer" parent="TextureRect/MarginContainer"]
 custom_minimum_size = Vector2(1880, 300)

@@ -1,0 +1,144 @@
+[gd_scene load_steps=9 format=3 uid="uid://cod048rtkt2pq"]
+
+[ext_resource type="Texture2D" uid="uid://c4raotdsqdcbh" path="res://assets/panels/button_panel/button_panel_800x800.png" id="1_xxxxx"]
+[ext_resource type="Script" path="res://scenes/post_battle_screen/post_battle_screen.gd" id="1_yyyyy"]
+[ext_resource type="LabelSettings" uid="uid://bnintpa14r1ev" path="res://assets/fonts/orbitron_32_so.tres" id="2_xxxxx"]
+[ext_resource type="LabelSettings" uid="uid://ckg0j8haan05w" path="res://assets/fonts/orbitron_48_so.tres" id="3_xxxxx"]
+[ext_resource type="Texture2D" uid="uid://bbobfn5s0a72r" path="res://assets/panels/next_button/next_button_150x80.png" id="5_xxxxx"]
+[ext_resource type="Texture2D" uid="uid://c66d4tjw6s8rc" path="res://assets/panels/next_button/next_button_150x80_pressed.png" id="6_xxxxx"]
+[ext_resource type="Texture2D" uid="uid://c5bayin3o83gi" path="res://assets/panels/next_button/next_button_150x80_hover.png" id="7_xxxxx"]
+[ext_resource type="Texture2D" uid="uid://cimtj75m1wmoe" path="res://assets/panels/button_panel/button_panel_400x100.png" id="8_xxxxx"]
+
+[node name="PostBattleScreen" type="Node2D"]
+script = ExtResource("1_yyyyy")
+
+[node name="Panel" type="TextureRect" parent="."]
+offset_right = 800.0
+offset_bottom = 800.0
+texture = ExtResource("1_xxxxx")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Earnings" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+texture = ExtResource("8_xxxxx")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer/Earnings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/Earnings/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/Earnings/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Earnings"
+label_settings = ExtResource("2_xxxxx")
+horizontal_alignment = 1
+
+[node name="MoneyEarned" type="Label" parent="Panel/MarginContainer/VBoxContainer/Earnings/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "$1000"
+label_settings = ExtResource("3_xxxxx")
+horizontal_alignment = 1
+
+[node name="MaterialsGained" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("8_xxxxx")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer/MaterialsGained"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/MaterialsGained/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/MaterialsGained/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Materials Gained"
+label_settings = ExtResource("2_xxxxx")
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/VBoxContainer/MaterialsGained/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 5
+
+[node name="Unlocks" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("8_xxxxx")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer/Unlocks"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/Unlocks/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/Unlocks/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Unlocks"
+label_settings = ExtResource("2_xxxxx")
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer/VBoxContainer/Unlocks/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/Unlocks/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="NextButton" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_xxxxx")
+texture_pressed = ExtResource("6_xxxxx")
+texture_hover = ExtResource("7_xxxxx")
+
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/NextButton" to="." method="_on_next_button_pressed"]
