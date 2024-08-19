@@ -6,7 +6,7 @@ uniform float outline_width : hint_range(0, 10) = 2.0;
 void fragment() {
     vec4 col = texture(TEXTURE, UV);
     vec2 ps = TEXTURE_PIXEL_SIZE;
-    
+
     float a;
     float maxa = col.a;
     float mina = col.a;
