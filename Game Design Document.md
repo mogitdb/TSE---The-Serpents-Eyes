@@ -1,39 +1,51 @@
 # The Serpent's Eyes (TSE) - Comprehensive Game Design Document
 
 ## Table of Contents
-1. [[#1. Core Concepts|Core Concepts]]
-2. [[#2. Dice System|Dice System]]
-   2.1 [[#2.1 Type Advantage|Type Advantage]]
-   2.2 [[#2.2 Dice Loadout|Dice Loadout]]
-   2.3 [[#2.3 Dice Mastery System|Dice Mastery System]]
-   2.4 [[#2.4 Dice Upgrade System|Dice Upgrade System]]
-   2.5 [[#2.5 Dice Special Effects|Dice Special Effects]]
-3. [[#3. Ring and Gem System|Ring and Gem System]]
-   3.1 [[#3.1 Ring Types|Ring Types]]
-   3.2 [[#3.2 Effect Application Order|Effect Application Order]]
-   3.3 [[#3.3 Gem System|Gem System]]
-      3.3.1 [[#3.3.1 Gem Tiers|Gem Tiers]]
-      3.3.2 [[#3.3.2 Basic Gem Types|Basic Gem Types]]
-      3.3.3 [[#3.3.3 Modifier Categories|Modifier Categories]]
-      3.3.4 [[#3.3.4 Modifier Types|Modifier Types]]
-   3.4 [[#3.4 Gem Types and Effects|Gem Types and Effects]]
-4. [[#4. Combat System|Combat System]]
-5. [[#5. Progression System|Progression System]]
-6. [[#6. UI Elements|UI Elements]]
-7. [[#7. Game Flow|Game Flow]]
-8. [[#8. Game Structure|Game Structure]]
-   8.1 [[#8.1 MasterScene|MasterScene]]
-   8.2 [[#8.2 CutsceneScene|CutsceneScene]]
-   8.3 [[#8.3 BedroomScene|BedroomScene]]
-   8.4 [[#8.4 MapScene|MapScene]]
-   8.5 [[#8.5 BattleScene|BattleScene]]
-   8.6 [[#8.6 PostBattleScene|PostBattleScene]]
-9. [[#9. Endgame Setup|Endgame Setup]]
-   9.1 [[#9.1 Map Scene Overview|Map Scene Overview]]
-   9.2 [[#9.2 Progression System|Progression System]]
-   9.3 [[#9.3 Rune System|Rune System]]
-   9.4 [[#9.4 Lore|Lore]]
-10. [[#10. Future Considerations|Future Considerations]]
+1. [[#1. Core Concepts]]
+2. [[#2. Dice System]]
+   2.1 [[#2.1 Type Advantage]]
+   2.2 [[#2.2 Dice Loadout]]
+   2.3 [[#2.3 Dice Mastery System]]
+   2.4 [[#2.4 Dice Upgrade System]]
+   2.5 [[#2.5 Dice Special Effects]]
+3. [[#3. Ring and Modifier System]]
+   3.1 [[#3.1 Ring Types]]
+   3.2 [[#3.2 Damage Application Formula]]
+   3.3 [[#3.3 Defensive Application Formula]]
+   3.4 [[#3.4 Complete Damage Calculation Formulas]]
+      3.4.1 [[#3.4.1 Additive Multiplicative Formula]]
+      3.4.2 [[#3.4.2 Multiplicative Formula]]
+   3.5 [[#3.5 Gem System]]
+      3.5.1 [[#3.5.1 Gem Tiers]]
+      3.5.2 [[#3.5.2 Gem Modifier System]]
+         3.5.2.1 [[#3.5.2.1 Modifier Types]]
+         3.5.2.2 [[#3.5.2.2 Modifier Categories]]
+   3.6 [[#3.6 Modifier Types and Effects]]
+      3.6.1 [[#3.6.1 Pre-Roll Effects]]
+      3.6.2 [[#3.6.2 Damage Modifier Effects]]
+      3.6.3 [[#3.6.3 Critical Strike Effects]]
+      3.6.4 [[#3.6.4 Post-Roll Effects]]
+      3.6.5 [[#3.6.5 Post-Final Damage Effects]]
+      3.6.6 [[#3.6.6 Reduction Effects]]
+      3.6.7 [[#3.6.7 Type Modifier Effects]]
+      3.6.8 [[#3.6.8 Post-Battle Effects]]
+4. [[#4. Combat System]]
+5. [[#5. Progression System]]
+6. [[#6. UI Elements]]
+7. [[#7. Game Flow]]
+8. [[#8. Game Structure]]
+   8.1 [[#8.1 MasterScene]]
+   8.2 [[#8.2 CutsceneScene]]
+   8.3 [[#8.3 BedroomScene]]
+   8.4 [[#8.4 MapScene]]
+   8.5 [[#8.5 BattleScene]]
+   8.6 [[#8.6 PostBattleScene]]
+9. [[#9. Endgame Setup]]
+   9.1 [[#9.1 Map Scene Overview]]
+   9.2 [[#9.2 Progression System]]
+   9.3 [[#9.3 Rune System]]
+   9.4 [[#9.4 Lore]]
+10. [[#10. Future Considerations]]
 
 # 1. Core Concepts
 
@@ -133,18 +145,163 @@ Upgrade Tiers and Requirements:
 Note: Players must reach both the required Mastery Level and Robot Friendship Level to access each tier of upgrades.
 ## 2.5 Dice Special Effects
 
-**NEEDS COMPLETE REWORK STILL**
+### D4:
+0. Plain Dice no modifier
+1. Dice Modifier passive effect
+   - +1 minimum roll #
+2. Dice Modifier Pre-Roll effect
+   - +5 Dice Rolled
+3. Dice Modifier Post-Roll Effect
+   - +5 Reroll of non Max Roll
+4. Dice Modifier Flat Bonus
+   - +10 Flat Bonus
+5. Dice Modifier Multiplier bonus
+   - +3x Multiplier
+6. Dice Modifier Critical Chance bonus
+   - 88% Crit Chance Bonus
+7. Dice Modifier Critical Strike Damage bonus
+   - +3x Crit Multiplier
+8. Dice Ultimate Effect
+   - -1 minimum roll #
+   - Rolls of 1 = 11
 
-- d3: Roll three times and take the highest result. + Two ones = Add the base numbers to damage for the turn and Roll another set of 3 dice, SNAKE EYES All 3 dice 1's = Add base numbers without taking highest result and roll 3 more sets of 3 dice.
-- d4: x2 damage dice roll on a 2, x3 on 3, 4 Damage + Re-roll
-- d6: On a 6, double the effect of all Gems this round
-- d10: On a 10, Disable Enemy Gems this round
-- d12: Leech 1$ x whatever the number on the face is
-- d20: On a 20, Triple damage + Dice is free; on a 1, does nothing.
-- d30: Rolling 1-9 +1 Dice Rolled next turn, 10-19 +2 Dice next turn, 20-29 +3 Dice next turn, 30 x5 Dice next turn.
-- d100: No special effect (raw damage potential)
+### D6:
+0. Plain Dice no modifier
+1. Dice Modifier passive effect
+   - +2 minimum roll #
+2. Dice Modifier Pre-Roll effect
+   - +4 Dice Rolled
+3. Dice Modifier Post-Roll Effect
+   - +4 Reroll of non Max Roll
+4. Dice Modifier Flat Bonus
+   - +8 Flat Bonus
+5. Dice Modifier Multiplier bonus
+   - +2.5x Multiplier
+6. Dice Modifier Critical Chance bonus
+   - 77% Crit Chance Bonus
+7. Dice Modifier Critical Strike Damage bonus
+   - +2.5x Crit Multiplier
+8. Dice Ultimate Effect
+   - +1 Dice Rolled for every 6 Rolled
 
-# 3. Ring and Gem System
+### D8:
+0. Plain Dice no modifier
+1. Dice Modifier passive effect
+   - +3 minimum roll #
+2. Dice Modifier Pre-Roll effect
+   - +3 Dice Rolled
+3. Dice Modifier Post-Roll Effect
+   - +3 Reroll of non Max Roll
+4. Dice Modifier Flat Bonus
+   - +6 Flat Bonus
+5. Dice Modifier Multiplier bonus
+   - +2x Multiplier
+6. Dice Modifier Critical Chance bonus
+   - 66% Crit Chance Bonus
+7. Dice Modifier Critical Strike Damage bonus
+   - +2x Crit Multiplier
+8. Dice Ultimate Effect
+   - +8 Reroll of non Max Roll
+
+### D10:
+0. Plain Dice no modifier
+1. Dice Modifier passive effect
+   - +4 minimum Roll #
+2. Dice Modifier Pre-Roll effect
+   - +2 Dice Rolled
+3. Dice Modifier Post-Roll Effect
+   - +2 Reroll of non Max Roll
+4. Dice Modifier Flat Bonus
+   - +4 Flat Bonus
+5. Dice Modifier Multiplier bonus
+   - +1.8x Multiplier
+6. Dice Modifier Critical Chance bonus
+   - 55% Crit Chance Bonus
+7. Dice Modifier Critical Strike Damage bonus
+   - +1.8x Crit Multiplier
+8. Dice Ultimate Effect
+   - Rolls of 10 = 20
+
+### D12:
+0. Plain Dice no modifier
+1. Dice Modifier passive effect
+   - +5 minimum Roll #
+2. Dice Modifier Pre-Roll effect
+   - +1 Dice Rolled
+3. Dice Modifier Post-Roll Effect
+   - +1 Reroll of non Max Roll
+4. Dice Modifier Flat Bonus
+   - +2 Flat Bonus
+5. Dice Modifier Multiplier bonus
+   - +1.6x Multiplier
+6. Dice Modifier Critical Chance bonus
+   - 44% Crit Chance Bonus
+7. Dice Modifier Critical Strike Damage bonus
+   - +1.6x Crit Multiplier
+8. Dice Ultimate Effect
+   - +4 minimum Roll #
+   - +6% Crit Chance Bonus
+
+### D20:
+0. Plain Dice no modifier
+1. Dice Modifier passive effect
+   - +4 minimum Roll #
+2. Dice Modifier Pre-Roll effect
+   - +3 Dice Rolled
+3. Dice Modifier Post-Roll Effect
+   - +3 Reroll of non Max Roll
+4. Dice Modifier Flat Bonus
+   - +6 Flat Bonus
+5. Dice Modifier Multiplier bonus
+   - +1.4x Multiplier
+6. Dice Modifier Critical Chance bonus
+   - 33% Crit Chance Bonus
+7. Dice Modifier Critical Strike Damage bonus
+   - +1.4x Crit Multiplier
+8. Dice Ultimate Effect
+   - Rolls of 20 = 69
+
+### D30:
+0. Plain Dice no modifier
+1. Dice Modifier passive effect
+   - +9 minimum Roll #
+2. Dice Modifier Pre-Roll effect
+   - +2 Dice Rolled
+3. Dice Modifier Post-Roll Effect
+   - +2 Reroll of non Max Roll
+4. Dice Modifier Flat Bonus
+   - +4 Flat Bonus
+5. Dice Modifier Multiplier bonus
+   - +1.2x Multiplier
+6. Dice Modifier Critical Chance bonus
+   - 22% Crit Chance Bonus
+7. Dice Modifier Critical Strike Damage bonus
+   - +1.2x Crit Multiplier
+8. Dice Ultimate Effect
+   - +3 Dice Rolled
+   - +5 minimum Roll #
+
+### D100:
+0. Plain Dice no modifier
+1. Dice Modifier passive effect
+   - +32 minimum Roll #
+2. Dice Modifier Pre-Roll effect
+   - +1 Dice Rolled
+3. Dice Modifier Post-Roll Effect
+   - +1 Reroll of non Max Roll
+4. Dice Modifier Flat Bonus
+   - +2 Flat Bonus
+5. Dice Modifier Multiplier bonus
+   - +1.1x Multiplier
+6. Dice Modifier Critical Chance bonus
+   - 11% Crit Chance Bonus
+7. Dice Modifier Critical Strike Damage bonus
+   - +1.1x Crit Multiplier
+8. Dice Ultimate Effect
+   - +17 minimum Roll #
+   - +1 Dice Rolled
+
+# 3. Ring and Modifier System
 
 - Basic Rings can be equipped on each Finger (second hand unlocked in endgame)
 - Each ring has up to 5 gem slots (unlocked through progression)
@@ -204,7 +361,7 @@ Note: Players must reach both the required Mastery Level and Robot Friendship Le
    - 3 Slots
    - Effect: Applies 12x (1200%) effect to gems for 3 turns. After 3 turns, amplification removed and .10x (10%) current health damage taken per turn for 6 turns. If alive on turn 7, amplification returns at 25x (2500%) effect for the rest of the battle.
 
-## 3.2 Effect Application Order
+## 3.2 Damage Application Formula
 
 1. Apply Dice Modifier Passive Effects
 2. Apply Ring modifiers to Gems (passive/pre/post)
@@ -222,108 +379,89 @@ Note: Players must reach both the required Mastery Level and Robot Friendship Le
 14. Sum up Flat modifiers to Damage value
 15. Apply Multiplier Dice Modifiers to Damage value
 16. Apply Multiplier Gem Modifiers to Damage value
-17. Apply Dice Critical Chance Modifiers
-18. Apply Gem Critical Chance Modifiers
-19. Sum Critical Chance and calculate if the crit succeeds
-20. If crit fails -> Output final damage
-21. If overcrit occurs -> Calculate Overcrit value (150% = 1.5 flat critical strike damage value)
-22. When crit succeeds:
-23. Apply Dice Critical Strike Damage Modifiers to Damage value
-24. Apply Gem Critical Strike Damage Modifiers to Damage value
-25. Sum Critical Strike Modifier Damage + Overcrit Damage value
-26. Output Final damage (Multiply Final Damage Value by Type Advantage Outcome)
+17. Sum up Multiplier modifiers
+18. Apply Type Advantage Modifier
+19. Apply Dice Critical Chance Modifiers
+20. Apply Gem Critical Chance Modifiers
+21. Sum Critical Chance and calculate if the crit succeeds
+22. If crit fails -> Go to step 27
+23. If crit succeeds:
+24. Apply Dice Critical Strike Damage Modifiers to Damage value
+25. Apply Gem Critical Strike Damage Modifiers to Damage value
+26. If overcrit occurs -> Calculate Overcrit value (150% = 1.5 flat critical strike damage value)
+27. Sum Critical Strike Modifier Damage + Overcrit Damage value
+28. Calculate Final Damage
+29. Apply Post-Final Damage Effects (e.g., Poison Damage)
+30. Output Final Damage
 
-#### Examples:
+## 3.3 Defensive Application Formula
 
-**Simple Example:**
-Player uses a d6 with no modifiers and a gem with "Add 2 flat damage (post-roll)" in a basic ring.
+1. Apply True Strike effect (if attacker has it)
+   - If successful, skip to step 5
+2. Apply Dodge Chance (Pre-Roll Effect, Evasion)
+   - If successful, nullify incoming damage and end formula
+3. Apply Damage Reduction (Reduction Effect)
+   - Reduce incoming damage by reduction percentage
+4. Apply Shield Generator (Pre-Roll Effect, Damage Absorption)
+   - Subtract shield value from incoming damage
+5. Calculate and apply final damage to Bet Pool
+6. Apply Post-Final Damage Effects (e.g., Poison Damage)
+   - Add to ongoing Damage Over Time effects
+7. Apply Top Up Value (Post-Roll Effect, Resource Management)
+   - Recover a portion of lost Bet Pool from Banked $
 
-8. Roll Dice: d6 rolls 4
-10. Gem Post-Roll: Add 2 flat damage
-11-14. Flat Modifier: 4 + 2 = 6 damage
-15-20. No further modifications
-26. Final Damage: 6
+## 3.4 Complete Damage Calculation Formulas
 
-**Moderate Example:**
+*NOTE:* *Neither is finalized, they are both included as both will need to be tested to see which system is better*
 
-Player uses a d10 with "10% critical chance" and "1.2x critical damage" dice modifiers. They have a gem with "1.1x damage multiplier (passive)" and "20% critical chance" in a Silver Amplifier Ring (quadruples gem effects).
+#### 3.4.1 Additive Multiplicative Formula
 
-2. Ring Modifier: Amplifies gem effects (1.4x multiplier, 80% crit chance)
-3-4. Gem Passive: 1.4x damage multiplier noted
-8. Roll Dice: d10 rolls 7
-15. Dice Multiplier: No change
-16. Gem Multiplier: 7 * 1.4 = 9.8 damage
-17. Dice Crit Chance: 10%
-18. Gem Crit Chance: 80%
-19. Total Crit Chance: 90%, crit succeeds
-23. Dice Crit Modifier: 1.2x
-24. Gem Crit Modifier: No additional modifier
-25. Crit Damage: 9.8 * 1.2 = 11.76
-26. Final Damage: 11.76 (rounded as needed)
+`FinalDamage = ((BaseDamage + FlatModifiers) * (1 + ∑MultiplicativeModifiers) * TypeAdvantage * (1 + CriticalMultiplier)) - DefensiveReduction`
 
-Ultra-Complex Example:
+`Where:`
+- `BaseDamage = DiceRoll + PassiveEffects + PreRollEffects + PostRollEffects`
+- `FlatModifiers = ∑(FlatDiceModifiers + FlatGemModifiers)`
+- `MultiplicativeModifiers = ∑(DiceMultipliers + GemMultipliers + DamageMultipliers) - 1`
+- `TypeAdvantage = 1 + TypeAdvantageModifier`
+- `CriticalMultiplier = CriticalDamageModifier * CriticalChance`
+- `DefensiveReduction = DodgeChance * IncomingDamage + DamageReduction + ShieldAbsorption`
 
-Player uses a d12 with the following dice modifiers:
-- "10% increased damage (passive)"
-- "Add 2-4 flat damage (pre-roll)"
-- "15% chance to double roll (post-roll)"
-- "Add 5 flat damage (post-roll)"
-- "1.2x damage multiplier"
-- "25% critical chance"
-- "1.4x critical damage"
+`PostFinalDamage = FinalDamage + PoisonDamage`
+`PlayerBetPoolDamage = PostFinalDamage - TopUpValue`
 
-They have a gem with the following modifiers in a Gold Amplifier Ring (triples the effects of slotted gems):
-- "1.15x damage multiplier (passive)"
-- "Add 3 flat damage (pre-roll)"
-- "20% chance to add 1d6 damage (post-roll)"
-- "Add 2 flat damage"
-- "1.1x damage multiplier"
-- "30% critical chance"
-- "1.3x critical damage"
+#### 3.4.2 Multiplicative Formula
 
-Calculation process:
+`FinalDamage = ((BaseDamage + FlatModifiers) * ∏(1 + MultiplicativeModifier) * TypeAdvantage * (1 + CriticalMultiplier)) - DefensiveReduction`
 
-1. Dice Passive: 10% increased damage noted
-2. Ring Modifier: Triples all gem effects
-   - 1.45x damage multiplier (tripled from 1.15x)
-   - Add 9 flat damage pre-roll (tripled from 3)
-   - 60% chance to add 1d6 damage post-roll (tripled from 20%)
-   - Add 6 flat damage (tripled from 2)
-   - 1.3x damage multiplier (tripled from 1.1x)
-   - 90% critical chance (tripled from 30%)
-   - 1.9x critical damage (tripled from 1.3x)
-3. Apply Gem Passive: 45% increased damage from gem
-4. Sum Passive Effects: 10% (dice) + 45% (gem) = 55% total increased damage
-5. Dice Pre-Roll: Add 3 flat damage (rolled 3 from 2-4 range)
-6. Gem Pre-Roll: Add 9 flat damage
-7. Sum Pre-Roll: 3 + 9 = 12 flat damage to be added
-8. Roll Dice: d12 rolls 8, total is now 20 (8 + 12)
-9. Dice Post-Roll: 
-   - 15% chance to double roll succeeds: 20 * 2 = 40
-   - Add 5 flat damage: 40 + 5 = 45
-10. Gem Post-Roll: 60% chance to add 1d6 succeeds, rolls 4
-11. Sum Post-Roll: 45 + 4 = 49 damage
-12. Dice Flat: No additional flat modifier
-13. Gem Flat: Add 6 flat damage
-14. Sum Flat: 49 + 6 = 55 damage
-15. Dice Multiplier: 55 * 1.2 = 66 damage
-16. Gem Multiplier: 66 * 1.3 = 85.8 damage
-17. Dice Crit Chance: 25%
-18. Gem Crit Chance: 90%
-19. Total Crit Chance: 115%, crit succeeds with overcrit
-20. (Crit succeeds, skip to step 21)
-21. Overcrit: 15% over 100%, so 1.15x overcrit multiplier
-22. (Crit succeeds, continue calculation)
-23. Dice Crit Modifier: 1.4x
-24. Gem Crit Modifier: 1.9x
-25. Crit Damage: 85.8 * 1.4 * 1.9 * 1.15 (overcrit) = 329.8314
-26. Final Damage: 329.8314 (rounded as needed)
+`Where:`
+- `BaseDamage = DiceRoll + PassiveEffects + PreRollEffects + PostRollEffects`
+- `FlatModifiers = ∑(FlatDiceModifiers + FlatGemModifiers)`
+- `MultiplicativeModifier = Each individual multiplier from DiceMultipliers, GemMultipliers, and DamageMultipliers`
+- `TypeAdvantage = 1 + TypeAdvantageModifier`
+- `CriticalMultiplier = CriticalDamageModifier * CriticalChance`
+- `DefensiveReduction = DodgeChance * IncomingDamage + DamageReduction + ShieldAbsorption`
 
-## 3.3 Gem System
+`PostFinalDamage = FinalDamage + PoisonDamage`
+`PlayerBetPoolDamage = PostFinalDamage - TopUpValue`
+
+`**Key differences:**`
+
+1. `In the Additive formula, we sum all multiplicative modifiers and add 1 to the total.`
+2. `In the Multiplicative formula, we multiply each modifier (plus 1) separately.`
+
+`**Notes:**`
+
+- `∑ represents the sum of all values`
+- `∏ represents the product of all values`
+- `Both formulas include the defensive calculations and post-final damage effects`
+- `True Strike effect is not explicitly shown but would bypass the DefensiveReduction when active`
+- `The formulas assume CriticalChance and DodgeChance are expressed as decimals (e.g., 0.25 for 25%)`
+
+## 3.5 Gem System
 
 The gem system provides deep customization options for players, allowing them to tailor their strategy through various combinations of gems and modifiers.
 
-### 3.3.1 Gem Tiers
+### 3.5.1 Gem Tiers
 
 Gems come in 8 tiers, each named after a precious stone and offering increasing complexity and power:
 
@@ -338,65 +476,145 @@ Gems come in 8 tiers, each named after a precious stone and offering increasing 
 
 Higher-tier gems are rarer and more powerful, offering more modifier lines and potentially stronger effects.
 
-### 3.3.2 Basic Gem Types
+### 3.5.2 Gem Modifier System
 
-Gems are categorized into four basic types, each supporting different playstyles:
+#### 3.5.2.1 Modifier Types
 
-1. Offensive Gems
-2. Defensive Gems
-3. Utility Gems
-4. Hybrid Gems
+Modifiers come in two primary forms:
 
-Players can mix and match these types to create balanced loadouts or specialize in specific strategies.
+1. Flat Modifiers: Add or subtract a specific value
+   - Example: +10 Flat Damage
 
-### 3.3.3 Modifier Categories
+2. Multiplicative Modifiers: Multiply the effect by a value
+   - Example: 1.20x (120% Multiplier)
 
-Gem effects are divided into three categories based on when they're applied during combat:
+The interplay between Flat and Multiplicative modifiers creates opportunities for complex and powerful combinations.
 
+#### 3.5.2.2 Modifier Categories
+
+Modifiers are divided into several categories based on when and how they're applied during combat:
+
+Offensive Modifier Categories:
 1. Passive Effects
 2. Pre-Roll Effects
-3. Post-Roll Effects
-4. Damage Modifier Effects
-5. Critical Strike Chance Effects
-6. Critical Strike Damage Effects
+3. Damage Modifier Effects
+4. Critical Strike Effects
+5. Post-Roll Effects
+6. Type Modifier Effects
+7. Post-Final Damage Effects
+8. Post-Battle Effects
+
+Defensive Modifier Categories:
+1. Evasion
+2. Damage Absorption
+3. Reduction Effects
+4. Stat Modification
+5. Defense Penetration
+6. Resource Management
 
 This categorization allows for intricate combinations of effects that can dramatically influence battle outcomes.
 
-### 3.3.4 Modifier Types
+## 3.6 Modifier Types and Effects
 
-Gem modifiers come in two primary forms:
+### 3.6.1 Pre-Roll Effects
 
-1. Flat Modifiers: Add or subtract a specific value
-2. Multiplicative modifiers: Multiply the effect by a value
- - ex. 2.5x(250% Multiplier) 
+1. Dice Rolled:
+   - Explanation: Increases the number of dice rolled in a turn.
+   - Type: Flat
+   - Effect: +1/+2/+3/+4/+5/+6/+7/+8/+10
 
-The interplay between flat and Multiplicative modifiers creates opportunities for complex and powerful gem combinations.
+2. Dodge Chance:
+   - Explanation: Chance to completely avoid damage from an opponent's dice roll.
+   - Category: Evasion
+   - Type: Flat
+   - Effect: 1%/2%/3%/4%/5%/6%/7%/8%/10%
 
-## 3.4 Gem Types and Effects
+3. Shield Generator:
+   - Explanation: Creates a shield that absorbs a portion of incoming damage before it affects the player's Bet Pool.
+   - Category: Damage Absorption
+   - Type: Multiplicative
+   - Effect: 0.02/0.04/0.06/0.08/0.10/0.12/0.14/0.16/0.20
 
-1. Offensive Gems:
-   - Ruby: Increases damage by 5%/10%/15%
-   - Garnet: 5%/10%/15% of damage repeats for 1/2/3 turns (DoT effect)
-   - Sapphire: 10%/20%/30% chance to deal double damage
-   - Topaz: Increases critical hit chance by 5%/10%/15%
+4. Sapper:
+   - Explanation: Reduces the opponent's Minimum Roll number, potentially lowering their damage output.
+   - Category: Stat Modification
+   - Type: Flat
+   - Effect: 1/2/3/4/5/6/7/8/10
 
-2. Defensive Gems:
-   - Emerald: Reduces incoming damage by 5%/10%/15%
-   - Jade: 2%/4%/6% chance to avoid an attack
-   - Amethyst: Recovers 1%/2%/3% of max money before damage calculations each turn
-   - Opal: Creates a shield absorbing 2%/4%/6% of incoming damage
+5. True Strike:
+   - Explanation: Chance for a dice roll to ignore all enemy defenses when calculating final damage.
+   - Category: Defense Penetration
+   - Type: Flat
+   - Effect: 0.02/0.04/0.06/0.08/0.10/0.12/0.14/0.16/0.20
 
-3. Utility Gems:
-   - Diamond: Increases money gained from winning by 10%/20%/30%
-   - Quartz: 10%/20%/30% chance to add an extra die roll. If total value from Quartz gems reaches 100%, guarantees 1 extra roll, with a chance for more based on excess percentage
-   - Peridot: Increases the effectiveness of type advantages by 5%/10%/15%
-   - Aquamarine: 2%/4%/6% chance to force all enemy dice to switch to your selected dice's weakness before damage calculations
+6. Cheat Roll:
+   - Explanation: Chance for a dice roll to cost 0 $, preserving the player's resources.
+   - Category: Resource Management
+   - Type: Flat
+   - Effect: 0.02/0.04/0.06/0.08/0.10/0.12/0.14/0.16/0.20
 
-4. Special Effect Gems:
-   - Onyx: 2%/4%/6% chance to stun the enemy for one turn
-   - Amber: Increases the effect of all other gems in the same ring by 10%/20%/30%
-   - Moonstone: 2%/4%/6% chance for True Strike, negating all defenses and evasion properties of the opponent's dice
-   - Turquoise: 5%/10%/15% chance your dice cost no money to use this turn
+### 3.6.2 Damage Modifier Effects
+
+7. Damage Multiplier:
+   - Explanation: Multiplies the final damage output of the dice roll.
+   - Type: Multiplicative
+   - Effect: 1.02/1.04/1.06/1.08/1.10/1.12/1.14/1.16/1.20x
+
+8. Flat Damage:
+   - Explanation: Adds a fixed amount of damage to the final damage calculation.
+   - Type: Flat
+   - Effect: 1/2/3/4/5/6/7/8/10
+
+### 3.6.3 Critical Strike Effects
+
+9. Critical Strike Chance:
+   - Explanation: Increases the chance of landing a critical hit.
+   - Type: Flat
+   - Effect: 2%/4%/6%/8%/10%/12%/14%/16%/20%
+
+10. Critical Strike Damage:
+    - Explanation: Increases the damage multiplier applied on critical hits.
+    - Type: Multiplicative
+    - Effect: 1.02/1.04/1.06/1.08/1.10/1.12/1.14/1.16/1.20x
+
+### 3.6.4 Post-Roll Effects
+
+11. Top Up Value:
+    - Explanation: Withdraws from player's Banked $ to recover Player Bet Pool after damage calculation.
+    - Category: Resource Management
+    - Type: Multiplicative
+    - Effect: 0.02/0.04/0.06/0.08/0.10/0.12/0.14/0.16/0.20
+
+### 3.6.5 Post-Final Damage Effects
+
+12. Poison Damage:
+    - Explanation: Applies additional damage over time after the final damage calculation.
+    - Category: Damage Over Time
+    - Type: Multiplicative
+    - Effect: 1.02/1.04/1.06/1.08/1.10/1.12/1.14/1.16/1.20x of Final Damage
+    - Repeats for 1/2/3/4/5/6/7/8/10 turns
+    - Different instances stack together
+
+### 3.6.6 Reduction Effects
+
+13. Damage Reduction:
+    - Explanation: Reduces the final incoming damage from all opponent's dice rolls.
+    - Type: Multiplicative
+    - Effect: 0.02/0.04/0.06/0.08/0.10/0.12/0.14/0.16/0.20
+
+### 3.6.7 Type Modifier Effects
+
+14. Advantage Modifier:
+    - Explanation: Enhances the damage bonus received when attacking with a type advantage.
+    - Type: Multiplicative
+    - Effect: 0.02/0.04/0.06/0.08/0.10/0.12/0.14/0.16/0.20
+
+### 3.6.8 Post-Battle Effects
+
+15. Extortion:
+    - Explanation: Increases the amount of $ received after winning a battle, capped at the opponent's total bank value.
+    - Type: Multiplicative
+    - Effect: 1.02/1.04/1.06/1.08/1.10/1.12/1.14/1.16/1.20x
 
 
 
