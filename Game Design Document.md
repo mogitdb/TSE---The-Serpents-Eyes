@@ -21,31 +21,70 @@
          3.5.2.1 [[#3.5.2.1 Modifier Types]]
          3.5.2.2 [[#3.5.2.2 Modifier Categories]]
    3.6 [[#3.6 Modifier Types and Effects]]
-      3.6.1 [[#3.6.1 Pre-Roll Effects]]
-      3.6.2 [[#3.6.2 Damage Modifier Effects]]
-      3.6.3 [[#3.6.3 Critical Strike Effects]]
-      3.6.4 [[#3.6.4 Post-Roll Effects]]
-      3.6.5 [[#3.6.5 Post-Final Damage Effects]]
-      3.6.6 [[#3.6.6 Reduction Effects]]
-      3.6.7 [[#3.6.7 Type Modifier Effects]]
-      3.6.8 [[#3.6.8 Post-Battle Effects]]
-4. [[#4. Combat System]]
-5. [[#5. Progression System]]
-6. [[#6. UI Elements]]
-7. [[#7. Game Flow]]
-8. [[#8. Game Structure]]
-   8.1 [[#8.1 MasterScene]]
-   8.2 [[#8.2 CutsceneScene]]
-   8.3 [[#8.3 BedroomScene]]
-   8.4 [[#8.4 MapScene]]
-   8.5 [[#8.5 BattleScene]]
-   8.6 [[#8.6 PostBattleScene]]
-9. [[#9. Endgame Setup]]
-   9.1 [[#9.1 Map Scene Overview]]
-   9.2 [[#9.2 Progression System]]
-   9.3 [[#9.3 Rune System]]
-   9.4 [[#9.4 Lore]]
-10. [[#10. Future Considerations]]
+      3.6.1 [[#3.6.1 Modifier Tiers and Ranges]]
+      3.6.2 [[#3.6.2 Pre-Roll Effects]]
+      3.6.3 [[#3.6.3 Damage Modifier Effects]]
+      3.6.4 [[#3.6.4 Critical Strike Effects]]
+      3.6.5 [[#3.6.5 Post-Roll Effects]]
+      3.6.6 [[#3.6.6 Post-Final Damage Effects]]
+      3.6.7 [[#3.6.7 Reduction Effects]]
+      3.6.8 [[#3.6.8 Type Modifier Effects]]
+      3.6.9 [[#3.6.9 Post-Battle Effects]]
+4. [[#4. Robot Companion System]]
+   4.1 [[#4.1 Initial Activation]]
+   4.2 [[#4.2 Robot Personalities]]
+   4.3 [[#4.3 Friendship Levels]]
+      4.3.1 [[#4.3.1 Levels (0-8)]]
+      4.3.2 [[#4.3.2 Leveling Up]]
+   4.4 [[#4.4 Upgrade System]]
+   4.5 [[#4.5 Dialogue Events]]
+      4.5.1 [[#4.5.1 Structure]]
+      4.5.2 [[#4.5.2 Topics]]
+   4.6 [[#4.6 Faction-Specific Traits]]
+      4.6.1 [[#4.6.1 Kawaii (Bio Cult)]]
+      4.6.2 [[#4.6.2 Strict (Tech Cult)]]
+      4.6.3 [[#4.6.3 Logical (Magic Cult)]]
+      4.6.4 [[#4.6.4 Cold (Ancient Gods)]]
+   4.7 [[#4.7 Friendship Benefits]]
+   4.8 [[#4.8 Gift System]]
+   4.9 [[#4.9 Robot Switching]]
+5. [[#5. Crafting System]]
+   5.1 [[#5.1 Gem System]]
+      5.1.1 [[#5.1.1 Gem Levels]]
+      5.1.2 [[#5.1.2 Gem Crafting Materials]]
+         5.1.2.1 [[#5.1.2.1 Gem Transfigurator]]
+         5.1.2.2 [[#5.1.2.2 Gem Transformer]]
+         5.1.2.3 [[#5.1.2.3 Gem Polisher]]
+         5.1.2.4 [[#5.1.2.4 Gem Waxer]]
+   5.2 [[#5.2 Modifier System]]
+      5.2.1 [[#5.2.1 Modifier Rarity Tiers]]
+      5.2.2 [[#5.2.2 Modifier Crafting Materials]]
+         5.2.2.1 [[#5.2.2.1 Chaotic Gem Reformers]]
+         5.2.2.2 [[#5.2.2.2 Gem Slammers]]
+         5.2.2.3 [[#5.2.2.3 Gem Tweakers]]
+      5.2.3 [[#5.2.3 Additional Crafting Materials]]
+         5.2.3.1 [[#5.2.3.1 Gem Locksmith's Kits]]
+         5.2.3.2 [[#5.2.3.2 Gem Erasers]]
+         5.2.3.3 [[#5.2.3.3 Gem Enhancer]]
+         5.2.3.4 [[#5.2.3.4 Gem Resonators]]
+         5.2.3.5 [[#5.2.3.5 Gem Party Hat]]
+6. [[#6. Combat System]]
+7. [[#7. Progression System]]
+8. [[#8. UI Elements]]
+9. [[#9. Game Flow]]
+10. [[#10. Game Structure]]
+    10.1 [[#10.1 Master Scene]]
+    10.2 [[#10.2 Cutscene Scene]]
+    10.3 [[#10.3 Bedroom Scene]]
+    10.4 [[#10.4 Map Scene]]
+    10.5 [[#10.5 Battle Scene]]
+    10.6 [[#10.6 Post Battle Scene]]
+11. [[#11. Endgame Setup]]
+    11.1 [[#11.1 Map Scene Overview]]
+    11.2 [[#11.2 Progression System]]
+    11.3 [[#11.3 Rune System]]
+    11.4 [[#11.4 Lore]]
+12. [[#12. Future Considerations]]
 
 # 1. Core Concepts
 
@@ -516,120 +555,492 @@ This categorization allows for intricate combinations of effects that can dramat
 
 ## 3.6 Modifier Types and Effects
 
-### 3.6.1 Pre-Roll Effects
+### 3.6.1 Modifier Tiers and Ranges
+
+Modifiers are divided into 8 tiers, each with increasing power:
+
+Tier 1: 0.25% - 0.29% (or 1.02 - 1.029 for multiplicative effects)
+Tier 2: 0.50% - 0.59% (or 1.04 - 1.049 for multiplicative effects)
+Tier 3: 0.75% - 0.89% (or 1.06 - 1.069 for multiplicative effects)
+Tier 4: 1.00% - 1.19% (or 1.08 - 1.089 for multiplicative effects)
+Tier 5: 1.25% - 1.49% (or 1.10 - 1.109 for multiplicative effects)
+Tier 6: 1.50% - 1.69% (or 1.12 - 1.129 for multiplicative effects)
+Tier 7: 1.75% - 1.89% (or 1.14 - 1.149 for multiplicative effects)
+Tier 8: 1.90% - 2.00% (or 1.16 - 1.20 for multiplicative effects)
+
+Flat vs. Multiplicative Effects:
+- Flat effects: These are straightforward additions or subtractions to a value. For percentage-based flat effects, the percentage is directly added or subtracted from the base value.
+- Multiplicative effects: These multiply the base value by the given amount. For example, a 1.05 multiplicative effect increases the base value by 5%.
+
+Static Values:
+Some modifiers (e.g., Dice Rolled, Sapper, Flat Damage, Poison Damage turns) have static values per tier instead of ranges. These values are fixed and do not vary within the tier.
+
+Note: When applying multiple modifiers, flat effects are calculated before multiplicative effects to ensure consistent scaling.
+### 3.6.2 Pre-Roll Effects
 
 1. Dice Rolled:
    - Explanation: Increases the number of dice rolled in a turn.
    - Type: Flat
-   - Effect: +1/+2/+3/+4/+5/+6/+7/+8/+10
+   - Effect: 
+     Tier 1: +1
+     Tier 2: +2
+     Tier 3: +3
+     Tier 4: +4
+     Tier 5: +5
+     Tier 6: +6
+     Tier 7: +7
+     Tier 8: +10
 
 2. Dodge Chance:
    - Explanation: Chance to completely avoid damage from an opponent's dice roll.
    - Category: Evasion
    - Type: Flat
-   - Effect: 1%/2%/3%/4%/5%/6%/7%/8%/10%
+   - Effect:
+     Tier 1: 0.25% - 0.29%
+     Tier 2: 0.50% - 0.59%
+     Tier 3: 0.75% - 0.89%
+     Tier 4: 1.00% - 1.19%
+     Tier 5: 1.25% - 1.49%
+     Tier 6: 1.50% - 1.69%
+     Tier 7: 1.75% - 1.89%
+     Tier 8: 1.90% - 2.00%
 
 3. Shield Generator:
    - Explanation: Creates a shield that absorbs a portion of incoming damage before it affects the player's Bet Pool.
    - Category: Damage Absorption
-   - Type: Multiplicative
-   - Effect: 0.02/0.04/0.06/0.08/0.10/0.12/0.14/0.16/0.20
+   - Type: Flat
+   - Effect:
+     Tier 1: 0.25% - 0.29%
+     Tier 2: 0.50% - 0.59%
+     Tier 3: 0.75% - 0.89%
+     Tier 4: 1.00% - 1.19%
+     Tier 5: 1.25% - 1.49%
+     Tier 6: 1.50% - 1.69%
+     Tier 7: 1.75% - 1.89%
+     Tier 8: 1.90% - 2.00%
 
 4. Sapper:
    - Explanation: Reduces the opponent's Minimum Roll number, potentially lowering their damage output.
    - Category: Stat Modification
    - Type: Flat
-   - Effect: 1/2/3/4/5/6/7/8/10
+   - Effect:
+     Tier 1: 1
+     Tier 2: 2
+     Tier 3: 3
+     Tier 4: 4
+     Tier 5: 5
+     Tier 6: 6
+     Tier 7: 7
+     Tier 8: 10
 
 5. True Strike:
    - Explanation: Chance for a dice roll to ignore all enemy defenses when calculating final damage.
    - Category: Defense Penetration
    - Type: Flat
-   - Effect: 0.02/0.04/0.06/0.08/0.10/0.12/0.14/0.16/0.20
+   - Effect:
+     Tier 1: 0.25% - 0.29%
+     Tier 2: 0.50% - 0.59%
+     Tier 3: 0.75% - 0.89%
+     Tier 4: 1.00% - 1.19%
+     Tier 5: 1.25% - 1.49%
+     Tier 6: 1.50% - 1.69%
+     Tier 7: 1.75% - 1.89%
+     Tier 8: 1.90% - 2.00%
 
 6. Cheat Roll:
    - Explanation: Chance for a dice roll to cost 0 $, preserving the player's resources.
    - Category: Resource Management
    - Type: Flat
-   - Effect: 0.02/0.04/0.06/0.08/0.10/0.12/0.14/0.16/0.20
+   - Effect:
+     Tier 1: 0.25% - 0.29%
+     Tier 2: 0.50% - 0.59%
+     Tier 3: 0.75% - 0.89%
+     Tier 4: 1.00% - 1.19%
+     Tier 5: 1.25% - 1.49%
+     Tier 6: 1.50% - 1.69%
+     Tier 7: 1.75% - 1.89%
+     Tier 8: 1.90% - 2.00%
 
-### 3.6.2 Damage Modifier Effects
+### 3.6.3 Damage Modifier Effects
 
 7. Damage Multiplier:
    - Explanation: Multiplies the final damage output of the dice roll.
    - Type: Multiplicative
-   - Effect: 1.02/1.04/1.06/1.08/1.10/1.12/1.14/1.16/1.20x
+   - Effect:
+     Tier 1: 1.02 - 1.029
+     Tier 2: 1.04 - 1.049
+     Tier 3: 1.06 - 1.069
+     Tier 4: 1.08 - 1.089
+     Tier 5: 1.10 - 1.109
+     Tier 6: 1.12 - 1.129
+     Tier 7: 1.14 - 1.149
+     Tier 8: 1.16 - 1.20
 
 8. Flat Damage:
    - Explanation: Adds a fixed amount of damage to the final damage calculation.
    - Type: Flat
-   - Effect: 1/2/3/4/5/6/7/8/10
+   - Effect:
+     Tier 1: 1
+     Tier 2: 2
+     Tier 3: 3
+     Tier 4: 4
+     Tier 5: 5
+     Tier 6: 6
+     Tier 7: 7
+     Tier 8: 10
 
-### 3.6.3 Critical Strike Effects
+### 3.6.4 Critical Strike Effects
 
 9. Critical Strike Chance:
    - Explanation: Increases the chance of landing a critical hit.
    - Type: Flat
-   - Effect: 2%/4%/6%/8%/10%/12%/14%/16%/20%
+   - Effect:
+     Tier 1: 0.25% - 0.29%
+     Tier 2: 0.50% - 0.59%
+     Tier 3: 0.75% - 0.89%
+     Tier 4: 1.00% - 1.19%
+     Tier 5: 1.25% - 1.49%
+     Tier 6: 1.50% - 1.69%
+     Tier 7: 1.75% - 1.89%
+     Tier 8: 1.90% - 2.00%
 
 10. Critical Strike Damage:
     - Explanation: Increases the damage multiplier applied on critical hits.
     - Type: Multiplicative
-    - Effect: 1.02/1.04/1.06/1.08/1.10/1.12/1.14/1.16/1.20x
+    - Effect:
+      Tier 1: 1.02 - 1.029
+      Tier 2: 1.04 - 1.049
+      Tier 3: 1.06 - 1.069
+      Tier 4: 1.08 - 1.089
+      Tier 5: 1.10 - 1.109
+      Tier 6: 1.12 - 1.129
+      Tier 7: 1.14 - 1.149
+      Tier 8: 1.16 - 1.20
 
-### 3.6.4 Post-Roll Effects
+### 3.6.5 Post-Roll Effects
 
 11. Top Up Value:
     - Explanation: Withdraws from player's Banked $ to recover Player Bet Pool after damage calculation.
     - Category: Resource Management
-    - Type: Multiplicative
-    - Effect: 0.02/0.04/0.06/0.08/0.10/0.12/0.14/0.16/0.20
+    - Type: Flat
+    - Effect:
+     Tier 1: 0.25% - 0.29%
+     Tier 2: 0.50% - 0.59%
+     Tier 3: 0.75% - 0.89%
+     Tier 4: 1.00% - 1.19%
+     Tier 5: 1.25% - 1.49%
+     Tier 6: 1.50% - 1.69%
+     Tier 7: 1.75% - 1.89%
+     Tier 8: 1.90% - 2.00%
 
-### 3.6.5 Post-Final Damage Effects
+### 3.6.6 Post-Final Damage Effects
 
 12. Poison Damage:
     - Explanation: Applies additional damage over time after the final damage calculation.
     - Category: Damage Over Time
     - Type: Multiplicative
-    - Effect: 1.02/1.04/1.06/1.08/1.10/1.12/1.14/1.16/1.20x of Final Damage
-    - Repeats for 1/2/3/4/5/6/7/8/10 turns
+    - Effect:
+      Tier 1: 1.02 - 1.029
+      Tier 2: 1.04 - 1.049
+      Tier 3: 1.06 - 1.069
+      Tier 4: 1.08 - 1.089
+      Tier 5: 1.10 - 1.109
+      Tier 6: 1.12 - 1.129
+      Tier 7: 1.14 - 1.149
+      Tier 8: 1.16 - 1.20
+    - Repeats for:
+      Tier 1: 1 turn
+      Tier 2: 2 turns
+      Tier 3: 3 turns
+      Tier 4: 4 turns
+      Tier 5: 5 turns
+      Tier 6: 6 turns
+      Tier 7: 7 turns
+      Tier 8: 8 turns
     - Different instances stack together
 
-### 3.6.6 Reduction Effects
+### 3.6.7 Reduction Effects
 
 13. Damage Reduction:
     - Explanation: Reduces the final incoming damage from all opponent's dice rolls.
-    - Type: Multiplicative
-    - Effect: 0.02/0.04/0.06/0.08/0.10/0.12/0.14/0.16/0.20
+    - Type: Flat
+    - Effect:
+     Tier 1: 0.25% - 0.29%
+     Tier 2: 0.50% - 0.59%
+     Tier 3: 0.75% - 0.89%
+     Tier 4: 1.00% - 1.19%
+     Tier 5: 1.25% - 1.49%
+     Tier 6: 1.50% - 1.69%
+     Tier 7: 1.75% - 1.89%
+     Tier 8: 1.90% - 2.00%
 
-### 3.6.7 Type Modifier Effects
+### 3.6.8 Type Modifier Effects
 
 14. Advantage Modifier:
     - Explanation: Enhances the damage bonus received when attacking with a type advantage.
-    - Type: Multiplicative
-    - Effect: 0.02/0.04/0.06/0.08/0.10/0.12/0.14/0.16/0.20
+    - Type: Flat
+    - Effect:
+     Tier 1: 0.25% - 0.29%
+     Tier 2: 0.50% - 0.59%
+     Tier 3: 0.75% - 0.89%
+     Tier 4: 1.00% - 1.19%
+     Tier 5: 1.25% - 1.49%
+     Tier 6: 1.50% - 1.69%
+     Tier 7: 1.75% - 1.89%
+     Tier 8: 1.90% - 2.00%
 
-### 3.6.8 Post-Battle Effects
+### 3.6.9 Post-Battle Effects
 
 15. Extortion:
     - Explanation: Increases the amount of $ received after winning a battle, capped at the opponent's total bank value.
     - Type: Multiplicative
-    - Effect: 1.02/1.04/1.06/1.08/1.10/1.12/1.14/1.16/1.20x
+    - Effect:
+      Tier 1: 1.02 - 1.029
+      Tier 2: 1.04 - 1.049
+      Tier 3: 1.06 - 1.069
+      Tier 4: 1.08 - 1.089
+      Tier 5: 1.10 - 1.109
+      Tier 6: 1.12 - 1.129
+      Tier 7: 1.14 - 1.149
+      Tier 8: 1.16 - 1.20
 
 
+# 4. Robot Companion System
 
+## 4.1 Initial Activation
 
+When the player first enters their bedroom after selecting their initial dice, the Robot Companion activates. The Robot's personality is determined by the player's dice choice:
+
+1. Bio Dice: Kawaii Robot (Bio Cult)
+2. Tech Dice: Strict Robot (Tech Cult)
+3. Magic Dice: Logical Robot (Magic Cult)
+4. Ancient Dice: Cold Robot (Ancient Gods)
+
+The Robot introduces itself and explains its purpose.
+
+## 4.2 Robot Personalities
+
+4.2.1 Kawaii (Bio Cult): Bubbly, energetic, and adorable
+4.2.2 Strict (Tech Cult): Disciplined, perfectionist, and stern
+4.2.3 Logical (Magic Cult): Analytical, calm, and methodical
+4.2.4 Cold (Ancient Gods): Distant, mysterious, and aloof
+
+## 4.3 Friendship Levels
+
+### 4.3.1 Levels (0-8):
+0. Stranger (0/3)
+1. Acquaintance (3/6)
+2. Friend (6/12)
+3. Close Friend (12/24)
+4. BFF (24/48)
+5. Soulmate (48/96)
+6. Eternal Bond (96/192)
+7. Cosmic Connection (192/384)
+8. Transcendent Unity (384/768)
+
+### 4.3.2 Leveling Up:
+- Displayed as a progress bar with current/total points
+- Choosing correct response: +1 point
+- Choosing incorrect response: -1 point (minimum 0)
+- Cannot lose a friendship level once achieved
+
+## 4.4 Upgrade System
+
+- Dice upgrade levels capped by Robot friendship level
+- Modifier roll levels at crafting table capped by Robot friendship level
+
+## 4.5 Dialogue Events
+
+### 4.5.1 Structure:
+1. Robot initiates conversation (available between rounds)
+2. Player chooses from 3-4 response options
+3. Robot reacts based on chosen response
+4. Friendship points adjusted
+
+### 4.5.2 Topics:
+- Personal growth and self-improvement
+- Game strategy and tips
+- Lore and world-building (faction-specific)
+- Personal experiences and emotions
+
+## 4.6 Faction-Specific Traits
+
+### 4.6.1 Kawaii (Bio Cult):
+- Uses lots of emojis and cute expressions
+- Gives encouragement with stickers and virtual hugs
+- Reveals lore about the Bio Cult faction
+
+### 4.6.2 Strict (Tech Cult):
+- Critiques player's performance
+- Offers tough love and harsh truths
+- Reveals lore about the Tech Cult faction
+
+### 4.6.3 Logical (Magic Cult):
+- Provides detailed statistical analysis
+- Discusses game mechanics in-depth
+- Reveals lore about the Magic Cult faction
+
+### 4.6.4 Cold (Ancient Gods):
+- Gives cryptic responses
+- Slowly opens up as friendship grows
+- Reveals lore about the Ancient Gods faction
+
+## 4.7 Friendship Benefits
+
+- Unlock exclusive upgrades and crafting options
+- Receive helpful hints and strategy tips
+- Uncover secret lore and backstory elements
+- Unique Modifiers unlocked at levels 3, 6, and 8:
+  - Level 3: Passive type advantage modifier
+  - Level 6: Pre-roll modifier
+  - Level 8: Post-roll modifier
+
+## 4.8 Gift System
+
+- Players can gift crafting materials to the Robot
+- +5 flat friendship points per gift
+- Limited to once every 3 matches
+
+## 4.9 Robot Switching
+
+- Players can switch Robots at any time using the computer
+- Each Robot maintains its own friendship level
+- Switching allows players to unlock all faction-specific lore and modifiers
 
 
 
 
 **(NEEDS TO BE EDITED AND UPDATED)**
 
+# 5. Crafting System
+
+## 5.1 Gem System
+
+### 5.1.1 Gem Levels
+1. Quartz (1 modifier line)
+2. Amethyst (2 modifier lines)
+3. Topaz (3 modifier lines)
+4. Emerald (4 modifier lines)
+5. Sapphire (5 modifier lines)
+6. Ruby (6 modifier lines)
+7. Diamond (7 modifier lines)
+8. Opal (8 modifier lines)
+
+### 5.1.2 Gem Crafting Materials
+
+#### 5.1.2.1 Gem Transfigurator
+- Effect: Randomizes the Gem upgrade level
+- Scaling chances:
+  - Level 1-3: 25% each
+  - Level 4-5: 10% each
+  - Level 6: 5%
+  - Level 7: 2%
+  - Level 8: 1%
+- Explanation: Use this to gamble on potentially jumping multiple gem levels at once
+
+#### 5.1.2.2 Gem Transformer
+- Effect: Upgrades Gem level by +1 or -1
+- Scaling chances for upgrade:
+  - Level 1-3: 80%
+  - Level 4-5: 50%
+  - Level 6: 25%
+  - Level 7-8: 5%
+- Failed upgrades result in -1 level
+- Explanation: A more controlled way to level up gems, but with increasing risk at higher levels
+
+#### 5.1.2.3 Gem Polisher
+- Effect: Randomly changes Gem Quality by ±(1-5)
+- Difficulty increases every 5 quality levels
+- Scaling chances for positive change:
+  - Quality 1-20: 80%
+  - Quality 21-40: 70%
+  - Quality 41-60: 60%
+  - Quality 61-80: 50%
+  - Quality 81-95: 25%
+  - Quality 96-100: 5%
+- Quality range: 1-100 (1.01x to 2.00x modifier multiplier)
+- Explanation: Use to gradually improve gem quality, with increasing risk at higher qualities
+
+#### 5.1.2.4 Gem Waxer
+- Effect: Flat 5% quality upgrade per use
+- Material cost scaling:
+  - Quality 1-20: 1 Waxer
+  - Quality 21-40: 2 Waxers
+  - Quality 41-60: 5 Waxers
+  - Quality 61-80: 10 Waxers
+  - Quality 81-95: 15 Waxers
+  - Quality 96-100: 20 Waxers
+- Explanation: A guaranteed way to increase quality, but becomes very expensive at higher levels
+
+## 5.2 Modifier System
+
+### 5.2.1 Modifier Rarity Tiers
+- T1: Lines 1/2 only
+- T2: Lines 3/4 only
+- T3: Lines 5/6 only
+- T4: Lines 7/8 only
+
+### 5.2.2 Modifier Crafting Materials
+
+#### 5.2.2.1 Chaotic Gem Reformers
+- T1/2/3/4 Chaotic Dull Gem Reformer (Tier 1-3 Mods)
+- T1/2/3/4 Chaotic Sharp Gem Reformer (Tier 4-6 Mods)
+- T1/2/3/4 Chaotic Perfect Gem Reformer (Tier 7-8 Mods)
+- Effect: Randomly rolls both mods in the specified ranges
+- Explanation: Use these to quickly reroll multiple mod lines, with control over the general power level
+
+#### 5.2.2.2 Gem Slammers
+- 1/2/3/4/5/6/7/8 Dull Gem Slammer (Tier 1-3 Mods)
+- 1/2/3/4/5/6/7/8 Sharp Gem Slammer (Tier 4-6 Mods)
+- 1/2/3/4/5/6/7/8 Perfect Gem Slammer (Tier 7-8 Mods)
+- Effect: Randomly rolls a single mod on the corresponding line
+- Explanation: For precise modification of individual mod lines
+
+#### 5.2.2.3 Gem Tweakers
+- 1/2/3/4/5/6/7/8 Dull Gem Tweaker (Tier 1-3 Mods)
+- 1/2/3/4/5/6/7/8 Sharp Gem Tweaker (Tier 4-6 Mods)
+- 1/2/3/4/5/6/7/8 Perfect Gem Tweaker (Tier 7-8 Mods)
+- Effect: Randomly rolls the values on the specified line within its tier range
+- Explanation: Use to adjust the strength of a mod without changing its type or tier.
+
+### 5.2.3 Additional Crafting Materials
+
+#### 5.2.3.1 Gem Locksmith's Kits
+- Single Line Locksmith's Kit: Locks one modifier line
+- Dual Line Locksmith's Kit: Locks two modifier lines
+- Quad Line Locksmith's Kit: Locks four modifier lines
+- Effect: Prevents locked lines from being changed by other crafting materials
+- Explanation: Use to protect valuable mods while working on other parts of the gem
+
+#### 5.2.3.2 Gem Erasers
+- 1/2/3/4/5/6/7/8 Gem Eraser
+- Effect: Removes the modifier on the corresponding line, leaving it blank
+- Explanation: Use to selectively remove unwanted mods without affecting others
+
+### 5.2.3.3 Gem Enhancer
+- Effect: Slightly increases the values of all modifiers on a gem (within their current tier range)
+- Scaling: 
+  - For percentage-based effects: Increases the value by 0.01% within the current tier range
+  - For multiplicative effects: Increases the value by 0.001 within the current tier range
+- Exceptions: Does not affect modifiers with static values (Dice Rolled, Sapper, Flat Damage, Poison Damage turns)
+- Explanation: A rare and powerful tool for perfecting nearly-ideal gems, allowing fine-tuning of modifier values without changing tiers
+
+#### 5.2.3.4 Gem Resonators
+- 1/2/3/4/5/6/7/8 Gem Resonator
+- Effect: Randomly upgrades or downgrades the tier of the mod on the corresponding line by ±1
+- Scaling chances:
+  - Upgrade: 40%
+  - No change: 20%
+  - Downgrade: 40%
+- Explanation: A risky way to potentially increase the power of a specific mod
+
+#### 5.2.3.5 Gem Party Hat
+- Effect: Completely randomizes all aspects of a gem (level, quality, and modifiers)
+- Explanation: For those who enjoy chaos and surprise in their crafting
 
 
 
-
-# 4. Combat System
+# 6. Combat System
 
 1. Players select dice and their types
 2. Players choose which dice to roll (considering money cost)
@@ -638,7 +1049,7 @@ This categorization allows for intricate combinations of effects that can dramat
 5. Calculate and apply damage
 6. Repeat until a player is out of money
 
-# 5. Progression System
+# 7. Progression System
 
 - Winning battles rewards money and experience
 - Experience levels up the player, unlocking new features and increasing stats
@@ -653,7 +1064,7 @@ This categorization allows for intricate combinations of effects that can dramat
   3. Unlock second hand for endgame customization
   4. Access to special endgame content (Astral Arena, etc.)
 
-# 6. UI Elements
+# 8. UI Elements
 
 - Top bar: Area name, enemy name, money/health display
 - Left side: Character dialogue/interaction
@@ -662,7 +1073,7 @@ This categorization allows for intricate combinations of effects that can dramat
 - Center: Dice rolling area
 - Background: Animated crowd reacting to gameplay
 
-# 7. Game Flow
+# 9. Game Flow
 
 1. Start with one dice and no gems
 2. Battle opponents, earning money and experience
@@ -672,8 +1083,8 @@ This categorization allows for intricate combinations of effects that can dramat
 6. Unlock new game features as you progress
 7. Access endgame content and continue to improve character
 
-# 8. Game Structure
-## 8.1 MasterScene
+# 10. Game Structure
+## 10.1 Master Scene
 
 - Main entry point for the game
 - Contains:
@@ -682,7 +1093,7 @@ This categorization allows for intricate combinations of effects that can dramat
     - Settings
     - Discord integration
 
-## 8.2 CutsceneScene
+## 10.2 Cutscene Scene
 
 - Dedicated node for storing and displaying cutscenes
 - Features:
@@ -692,7 +1103,7 @@ This categorization allows for intricate combinations of effects that can dramat
     - Character pop-ups
     - Image display with minor animations
 
-## 8.3 BedroomScene
+## 10.3 Bedroom Scene
 
 - Main hub of the game
 - Contains:
@@ -709,7 +1120,7 @@ This categorization allows for intricate combinations of effects that can dramat
 - Door (This transitions to the map_scene) 
 - Mailbox (A place where the player will receive various letters from corresponding game events)
 
-## 8.4 MapScene
+## 10.4 Map Scene
 
 - Arena selection screen
 - Features:
@@ -719,7 +1130,7 @@ This categorization allows for intricate combinations of effects that can dramat
     - Progression system (wealth and status)
     - Fourth area unlocked for final boss
 
-## 8.5 BattleScene
+## 10.5 Battle Scene
 
 - Main gameplay screen
 - Layout as per provided mockup image
@@ -730,40 +1141,40 @@ This categorization allows for intricate combinations of effects that can dramat
     - Health/Money tracking
     - Animated crowd reactions
 
-## 8.6 PostBattleScene
+## 10.6 Post Battle Scene
 
 - Displayed after each fight
 - Options:
     - Continue to next round
     - Exit event (return to bedroom)
 
-# 9. Endgame Setup
+# 11. Endgame Setup
 
-## 9.1 Map Scene Overview
+## 11.1 Map Scene Overview
 
 - Initially, only the playground & schoolyard arenas are visible.
 - Players must become the schoolyard champion to unlock Arena Tournaments.
 - Arena Tournaments consist of 6 tiers for each archetype, increasing in difficulty.
 - A 7th tier (initially hidden) represents the Master of each archetype.
 
-## 9.2 Progression System
+## 11.2 Progression System
 
  - Defeating Masters drops rune pieces for the Astral Arena Device.
  - The Astral Arena becomes visible after completing all three Master battles.
  - Unlocking the Astral Arena allows replaying previous arenas at higher difficulty.
  - Each arena drops unique rune pieces for varying combinations.
 
-## 9.3 Rune System
+## 11.3 Rune System
 
 - Runes act as modifiers, affecting difficulty scaling and rewards.
 - Different rune combinations unlock various challenges in the Astral Arena.
 - The system allows for easy content expansion and endgame progression.
 
-## 9.4 Lore
+## 11.4 Lore
 
 - After defeating the Ancient Gods Cult Leaders, players enter the gods' domain.
 - Gods have taken up the game in their celestial realms out of boredom and we find out it's actually the gods who invented the game in the first place merely using it as a tool to spread awareness of them amongst the humans without directly intervening while reliving their escapades in the Great War on Earth.
-# 10. Future Considerations
+# 12. Future Considerations
 
 - Unique, unmodifiable rings with powerful static effects
 - Expanded storyline and character development
