@@ -18,58 +18,29 @@
    3.5 [[#3.5 Gem System]]
       3.5.1 [[#3.5.1 Gem Tiers]]
       3.5.2 [[#3.5.2 Gem Modifier System]]
-         3.5.2.1 [[#3.5.2.1 Modifier Types]]
-         3.5.2.2 [[#3.5.2.2 Modifier Categories]]
    3.6 [[#3.6 Modifier Types and Effects]]
-      3.6.1 [[#3.6.1 Modifier Tiers and Ranges]]
-      3.6.2 [[#3.6.2 Pre-Roll Effects]]
-      3.6.3 [[#3.6.3 Damage Modifier Effects]]
-      3.6.4 [[#3.6.4 Critical Strike Effects]]
-      3.6.5 [[#3.6.5 Post-Roll Effects]]
-      3.6.6 [[#3.6.6 Post-Final Damage Effects]]
-      3.6.7 [[#3.6.7 Reduction Effects]]
-      3.6.8 [[#3.6.8 Type Modifier Effects]]
-      3.6.9 [[#3.6.9 Post-Battle Effects]]
 4. [[#4. Robot Companion System]]
    4.1 [[#4.1 Initial Activation]]
    4.2 [[#4.2 Robot Personalities]]
    4.3 [[#4.3 Friendship Levels]]
-      4.3.1 [[#4.3.1 Levels (0-8)]]
-      4.3.2 [[#4.3.2 Leveling Up]]
    4.4 [[#4.4 Upgrade System]]
    4.5 [[#4.5 Dialogue Events]]
-      4.5.1 [[#4.5.1 Structure]]
-      4.5.2 [[#4.5.2 Topics]]
    4.6 [[#4.6 Faction-Specific Traits]]
-      4.6.1 [[#4.6.1 Kawaii (Bio Cult)]]
-      4.6.2 [[#4.6.2 Strict (Tech Cult)]]
-      4.6.3 [[#4.6.3 Logical (Magic Cult)]]
-      4.6.4 [[#4.6.4 Cold (Ancient Gods)]]
    4.7 [[#4.7 Friendship Benefits]]
    4.8 [[#4.8 Gift System]]
    4.9 [[#4.9 Robot Switching]]
 5. [[#5. Crafting System]]
    5.1 [[#5.1 Gem System]]
-      5.1.1 [[#5.1.1 Gem Levels]]
-      5.1.2 [[#5.1.2 Gem Crafting Materials]]
-         5.1.2.1 [[#5.1.2.1 Gem Transfigurator]]
-         5.1.2.2 [[#5.1.2.2 Gem Transformer]]
-         5.1.2.3 [[#5.1.2.3 Gem Polisher]]
-         5.1.2.4 [[#5.1.2.4 Gem Waxer]]
-   5.2 [[#5.2 Modifier System]]
-      5.2.1 [[#5.2.1 Modifier Rarity Tiers]]
-      5.2.2 [[#5.2.2 Modifier Crafting Materials]]
-         5.2.2.1 [[#5.2.2.1 Chaotic Gem Reformers]]
-         5.2.2.2 [[#5.2.2.2 Gem Slammers]]
-         5.2.2.3 [[#5.2.2.3 Gem Tweakers]]
-      5.2.3 [[#5.2.3 Additional Crafting Materials]]
-         5.2.3.1 [[#5.2.3.1 Gem Locksmith's Kits]]
-         5.2.3.2 [[#5.2.3.2 Gem Erasers]]
-         5.2.3.3 [[#5.2.3.3 Gem Enhancer]]
-         5.2.3.4 [[#5.2.3.4 Gem Resonators]]
-         5.2.3.5 [[#5.2.3.5 Gem Party Hat]]
+   5.2 [[#5.2 Modifier Crafting Materials]]
 6. [[#6. Combat System]]
-7. [[#7. Progression System]]
+7. [[#7. Economy and Progression System]]
+   7.1 [[#7.1 Currency System]]
+   7.2 [[#7.2 Combat Economy]]
+   7.3 [[#7.3 Sponsorship System]]
+   7.4 [[#7.4 Risk vs. Reward]]
+   7.5 [[#7.5 Progression System]]
+   7.6 [[#7.6 Endgame System]]
+   7.7 [[#7.7 Additional Notes]]
 8. [[#8. UI Elements]]
 9. [[#9. Game Flow]]
 10. [[#10. Game Structure]]
@@ -85,8 +56,7 @@
     11.3 [[#11.3 Rune System]]
     11.4 [[#11.4 Lore]]
 12. [[#12. Future Considerations]]
-
-# 1. Core Concepts
+## 1. Core Concepts
 
 - A dice-based combat RPG with strategic elements
 - Money serves as both health and a resource
@@ -95,11 +65,11 @@
 - Long-term progression with multiple areas and increasing difficulty
 - Mastery System: Players gain bonuses for consistently using certain dice types or strategies
 
-# 2. Dice System
+## 2. Dice System
 
 The game features four types of dice: Bio, Tech, Magic, and Ancient (neutral). Players select their dice loadout before battles, with no hot-swapping during combat.
 
-## 2.1 Type Advantage
+### 2.1 Type Advantage
 
 - Tech beats Magic
 - Magic beats Bio
@@ -115,7 +85,7 @@ Type advantage modifiers:
 
 Players can use gems to amplify or reduce these type advantage bonuses.
 
-## 2.2 Dice Loadout
+### 2.2 Dice Loadout
 
 - Players set their dice loadout in the BedroomScenes Dice Loadout section (Altar)
 - The loadout determines which dice types are available during battle
@@ -124,7 +94,7 @@ Players can use gems to amplify or reduce these type advantage bonuses.
  - Slot 2/3 Unlocked after being School Boss
  - Slot 3/4/5 Unlocked after beating Tech/Magic/Bio Final Bosses.
  - Slot 6/7 Unlocked After defeating the final boss that unlocks the Astral Arena.
-## 2.3 Dice Mastery System
+### 2.3 Dice Mastery System
 
 - Each die type (d6, d10, d20, etc.) has its own mastery level
 - Mastery increases through use of dice in battle, every single roll that inflicts damage successfully will add +1 to mastery for the corresponding dice. 
@@ -140,7 +110,7 @@ Mastery Levels:
 6. Heroic (3001-5000 points)
 7. Master (5001-9000 points)
 8. Grandmaster (9001+ points)
-## 2.4 Dice Upgrade System
+### 2.4 Dice Upgrade System
 
 - Upgrades are unlocked by reaching certain mastery levels
 - To apply upgrades, players must interact with their Robot companion
@@ -182,9 +152,9 @@ Upgrade Tiers and Requirements:
    - Requires Robot Friendship Level 8
 
 Note: Players must reach both the required Mastery Level and Robot Friendship Level to access each tier of upgrades.
-## 2.5 Dice Special Effects
+### 2.5 Dice Special Effects
 
-### D4:
+#### D4:
 0. Plain Dice no modifier
 1. Dice Modifier passive effect
    - +1 minimum roll #
@@ -204,7 +174,7 @@ Note: Players must reach both the required Mastery Level and Robot Friendship Le
    - -1 minimum roll #
    - Rolls of 1 = 11
 
-### D6:
+#### D6:
 0. Plain Dice no modifier
 1. Dice Modifier passive effect
    - +2 minimum roll #
@@ -223,7 +193,7 @@ Note: Players must reach both the required Mastery Level and Robot Friendship Le
 8. Dice Ultimate Effect
    - +1 Dice Rolled for every 6 Rolled
 
-### D8:
+#### D8:
 0. Plain Dice no modifier
 1. Dice Modifier passive effect
    - +3 minimum roll #
@@ -242,7 +212,7 @@ Note: Players must reach both the required Mastery Level and Robot Friendship Le
 8. Dice Ultimate Effect
    - +8 Reroll of non Max Roll
 
-### D10:
+#### D10:
 0. Plain Dice no modifier
 1. Dice Modifier passive effect
    - +4 minimum Roll #
@@ -261,7 +231,7 @@ Note: Players must reach both the required Mastery Level and Robot Friendship Le
 8. Dice Ultimate Effect
    - Rolls of 10 = 20
 
-### D12:
+#### D12:
 0. Plain Dice no modifier
 1. Dice Modifier passive effect
    - +5 minimum Roll #
@@ -281,7 +251,7 @@ Note: Players must reach both the required Mastery Level and Robot Friendship Le
    - +4 minimum Roll #
    - +6% Crit Chance Bonus
 
-### D20:
+#### D20:
 0. Plain Dice no modifier
 1. Dice Modifier passive effect
    - +4 minimum Roll #
@@ -300,7 +270,7 @@ Note: Players must reach both the required Mastery Level and Robot Friendship Le
 8. Dice Ultimate Effect
    - Rolls of 20 = 69
 
-### D30:
+#### D30:
 0. Plain Dice no modifier
 1. Dice Modifier passive effect
    - +9 minimum Roll #
@@ -320,7 +290,7 @@ Note: Players must reach both the required Mastery Level and Robot Friendship Le
    - +3 Dice Rolled
    - +5 minimum Roll #
 
-### D100:
+#### D100:
 0. Plain Dice no modifier
 1. Dice Modifier passive effect
    - +32 minimum Roll #
@@ -340,16 +310,16 @@ Note: Players must reach both the required Mastery Level and Robot Friendship Le
    - +17 minimum Roll #
    - +1 Dice Rolled
 
-# 3. Ring and Modifier System
+## 3. Ring and Modifier System
 
 - Basic Rings can be equipped on each Finger (second hand unlocked in endgame)
 - Each ring has up to 5 gem slots (unlocked through progression)
 - Gems provide various effects and can be upgraded through multiple tiers
 - Gem effects apply to all dice and are separated into Pre-Roll/Post-Roll/Passive/Damage Modifier Effects/Critical Strike Chance Effects/Critical Strike Damage Effects
 
-## 3.1 Ring Types
+### 3.1 Ring Types
 
-### Basic Rings
+#### Basic Rings
 
 1. Candy Ring
    - 1 Slot
@@ -371,7 +341,7 @@ Note: Players must reach both the required Mastery Level and Robot Friendship Le
    - 5 Slots
    - No innate effects
 
-### Amplifier Rings
+#### Amplifier Rings
 
 1. Silver Amplifier Ring
    - 1 Slot
@@ -385,7 +355,7 @@ Note: Players must reach both the required Mastery Level and Robot Friendship Le
    - 3 Slots
    - 2x (Doubles the effects of slotted gems)
 
-### Cursed Rings
+#### Cursed Rings
 
 1. Sealed Ring
    - 9 Slots
@@ -400,7 +370,7 @@ Note: Players must reach both the required Mastery Level and Robot Friendship Le
    - 3 Slots
    - Effect: Applies 12x (1200%) effect to gems for 3 turns. After 3 turns, amplification removed and .10x (10%) current health damage taken per turn for 6 turns. If alive on turn 7, amplification returns at 25x (2500%) effect for the rest of the battle.
 
-## 3.2 Damage Application Formula
+### 3.2 Damage Application Formula
 
 1. Apply Dice Modifier Passive Effects
 2. Apply Ring modifiers to Gems (passive/pre/post)
@@ -433,7 +403,7 @@ Note: Players must reach both the required Mastery Level and Robot Friendship Le
 29. Apply Post-Final Damage Effects (e.g., Poison Damage)
 30. Output Final Damage
 
-## 3.3 Defensive Application Formula
+### 3.3 Defensive Application Formula
 
 1. Apply True Strike effect (if attacker has it)
    - If successful, skip to step 5
@@ -449,7 +419,7 @@ Note: Players must reach both the required Mastery Level and Robot Friendship Le
 7. Apply Top Up Value (Post-Roll Effect, Resource Management)
    - Recover a portion of lost Bet Pool from Banked $
 
-## 3.4 Complete Damage Calculation Formulas
+### 3.4 Complete Damage Calculation Formulas
 
 *NOTE:* *Neither is finalized, they are both included as both will need to be tested to see which system is better*
 
@@ -496,11 +466,11 @@ Note: Players must reach both the required Mastery Level and Robot Friendship Le
 - `True Strike effect is not explicitly shown but would bypass the DefensiveReduction when active`
 - `The formulas assume CriticalChance and DodgeChance are expressed as decimals (e.g., 0.25 for 25%)`
 
-## 3.5 Gem System
+### 3.5 Gem System
 
 The gem system provides deep customization options for players, allowing them to tailor their strategy through various combinations of gems and modifiers.
 
-### 3.5.1 Gem Tiers
+#### 3.5.1 Gem Tiers
 
 Gems come in 8 tiers, each named after a precious stone and offering increasing complexity and power:
 
@@ -515,22 +485,18 @@ Gems come in 8 tiers, each named after a precious stone and offering increasing 
 
 Higher-tier gems are rarer and more powerful, offering more modifier lines and potentially stronger effects.
 
-### 3.5.2 Gem Modifier System
+#### 3.5.2 Gem Modifier System
 
-#### 3.5.2.1 Modifier Types
-
+##### Modifier Types
 Modifiers come in two primary forms:
-
 1. Flat Modifiers: Add or subtract a specific value
    - Example: +10 Flat Damage
-
 2. Multiplicative Modifiers: Multiply the effect by a value
    - Example: 1.20x (120% Multiplier)
 
 The interplay between Flat and Multiplicative modifiers creates opportunities for complex and powerful combinations.
 
-#### 3.5.2.2 Modifier Categories
-
+##### Modifier Categories
 Modifiers are divided into several categories based on when and how they're applied during combat:
 
 Offensive Modifier Categories:
@@ -553,10 +519,8 @@ Defensive Modifier Categories:
 
 This categorization allows for intricate combinations of effects that can dramatically influence battle outcomes.
 
-## 3.6 Modifier Types and Effects
-
-### 3.6.1 Modifier Tiers and Ranges
-
+### 3.6 Modifier Types and Effects
+#### 3.6.1 Modifier Tiers and Ranges
 Modifiers are divided into 8 tiers, each with increasing power:
 
 Tier 1: 0.25% - 0.29% (or 1.02 - 1.029 for multiplicative effects)
@@ -805,9 +769,9 @@ Note: When applying multiple modifiers, flat effects are calculated before multi
       Tier 8: 1.16 - 1.20
 
 
-# 4. Robot Companion System
+## 4. Robot Companion System
 
-## 4.1 Initial Activation
+### 4.1 Initial Activation
 
 When the player first enters their bedroom after selecting their initial dice, the Robot Companion activates. The Robot's personality is determined by the player's dice choice:
 
@@ -818,16 +782,22 @@ When the player first enters their bedroom after selecting their initial dice, t
 
 The Robot introduces itself and explains its purpose.
 
-## 4.2 Robot Personalities
+### 4.2 Robot Personalities
 
-4.2.1 Kawaii (Bio Cult): Bubbly, energetic, and adorable
-4.2.2 Strict (Tech Cult): Disciplined, perfectionist, and stern
-4.2.3 Logical (Magic Cult): Analytical, calm, and methodical
-4.2.4 Cold (Ancient Gods): Distant, mysterious, and aloof
+#### 4.2.1 Kawaii (Bio Cult)
+Bubbly, energetic, and adorable
 
-## 4.3 Friendship Levels
+#### 4.2.2 Strict (Tech Cult)
+Disciplined, perfectionist, and stern
 
-### 4.3.1 Levels (0-8):
+#### 4.2.3 Logical (Magic Cult)
+Analytical, calm, and methodical
+
+#### 4.2.4 Cold (Ancient Gods)
+Distant, mysterious, and aloof
+### 4.3 Friendship Levels
+
+#### 4.3.1 Levels (0-8):
 0. Stranger (0/3)
 1. Acquaintance (3/6)
 2. Friend (6/12)
@@ -838,54 +808,72 @@ The Robot introduces itself and explains its purpose.
 7. Cosmic Connection (192/384)
 8. Transcendent Unity (384/768)
 
-### 4.3.2 Leveling Up:
+#### 4.3.2 Leveling Up:
 - Displayed as a progress bar with current/total points
 - Choosing correct response: +1 point
 - Choosing incorrect response: -1 point (minimum 0)
 - Cannot lose a friendship level once achieved
 
-## 4.4 Upgrade System
+### 4.4 Upgrade System
 
+#### 4.4.1 Friendship Level Requirements:
+- Level 0-1: Available from the start (T1 mods)
+- Level 2: Unlocked after defeating School Area Mini-Boss (T2 mods)
+- Level 3: Unlocked after defeating First Faction Area Mini-Boss (T3 mods)
+- Level 4: Unlocked after defeating First Faction Area Boss (T4 mods)
+- Level 5: Unlocked after defeating Second Faction Area Mini-Boss (T5 mods)
+- Level 6: Unlocked after defeating Second Faction Area Boss (T6 mods)
+- Level 7: Unlocked after defeating Third Faction Area Mini-Boss (T7 mods)
+- Level 8: Unlocked after defeating Third Faction Area Boss (T8 mods)
+#### 4.4.2 Upgrade Restrictions:
 - Dice upgrade levels capped by Robot friendship level
 - Modifier roll levels at crafting table capped by Robot friendship level
+- Players must defeat a boss with corresponding tier of mods to unlock the next tier
 
-## 4.5 Dialogue Events
+#### 4.4.3 Progression Gates:
+- School Area: T1-T2 mods available
+- First Faction Area: T2-T4 mods available
+- Second Faction Area: T4-T6 mods available
+- Third Faction Area: T6-T8 mods available
+- Astral Arena: All mod tiers available
 
-### 4.5.1 Structure:
+### 4.5 Dialogue Events
+
+#### 4.5.1 Structure:
 1. Robot initiates conversation (available between rounds)
 2. Player chooses from 3-4 response options
 3. Robot reacts based on chosen response
 4. Friendship points adjusted
 
-### 4.5.2 Topics:
+#### 4.5.2 Topics:
 - Personal growth and self-improvement
 - Game strategy and tips
 - Lore and world-building (faction-specific)
 - Personal experiences and emotions
 
-## 4.6 Faction-Specific Traits
+### 4.6 Faction-Specific Traits
 
-### 4.6.1 Kawaii (Bio Cult):
+#### 4.6.1 Kawaii (Bio Cult):
 - Uses lots of emojis and cute expressions
 - Gives encouragement with stickers and virtual hugs
 - Reveals lore about the Bio Cult faction
 
-### 4.6.2 Strict (Tech Cult):
+#### 4.6.2 Strict (Tech Cult):
 - Critiques player's performance
 - Offers tough love and harsh truths
 - Reveals lore about the Tech Cult faction
 
-### 4.6.3 Logical (Magic Cult):
+#### 4.6.3 Logical (Magic Cult):
 - Provides detailed statistical analysis
 - Discusses game mechanics in-depth
 - Reveals lore about the Magic Cult faction
 
-### 4.6.4 Cold (Ancient Gods):
+#### 4.6.4 Cold (Ancient Gods):
 - Gives cryptic responses
 - Slowly opens up as friendship grows
 - Reveals lore about the Ancient Gods faction
 
-## 4.7 Friendship Benefits
+### 4.7 Friendship Benefits
 
 - Unlock exclusive upgrades and crafting options
 - Receive helpful hints and strategy tips
@@ -895,28 +883,23 @@ The Robot introduces itself and explains its purpose.
   - Level 6: Pre-roll modifier
   - Level 8: Post-roll modifier
 
-## 4.8 Gift System
+### 4.8 Gift System
 
 - Players can gift crafting materials to the Robot
 - +5 flat friendship points per gift
 - Limited to once every 3 matches
 
-## 4.9 Robot Switching
+### 4.9 Robot Switching
 
 - Players can switch Robots at any time using the computer
 - Each Robot maintains its own friendship level
 - Switching allows players to unlock all faction-specific lore and modifiers
 
+## 5. Crafting System
 
+### 5.1 Gem System
 
-
-**(NEEDS TO BE EDITED AND UPDATED)**
-
-# 5. Crafting System
-
-## 5.1 Gem System
-
-### 5.1.1 Gem Levels
+#### 5.1.1 Gem Levels
 1. Quartz (1 modifier line)
 2. Amethyst (2 modifier lines)
 3. Topaz (3 modifier lines)
@@ -926,9 +909,9 @@ The Robot introduces itself and explains its purpose.
 7. Diamond (7 modifier lines)
 8. Opal (8 modifier lines)
 
-### 5.1.2 Gem Crafting Materials
+#### 5.1.2 Gem Crafting Materials
 
-#### 5.1.2.1 Gem Transfigurator
+##### 5.1.2.1 Gem Transfigurator
 - Effect: Randomizes the Gem upgrade level
 - Scaling chances:
   - Level 1-3: 25% each
@@ -938,7 +921,7 @@ The Robot introduces itself and explains its purpose.
   - Level 8: 1%
 - Explanation: Use this to gamble on potentially jumping multiple gem levels at once
 
-#### 5.1.2.2 Gem Transformer
+##### 5.1.2.2 Gem Transformer
 - Effect: Upgrades Gem level by +1 or -1
 - Scaling chances for upgrade:
   - Level 1-3: 80%
@@ -948,7 +931,7 @@ The Robot introduces itself and explains its purpose.
 - Failed upgrades result in -1 level
 - Explanation: A more controlled way to level up gems, but with increasing risk at higher levels
 
-#### 5.1.2.3 Gem Polisher
+##### 5.1.2.3 Gem Polisher
 - Effect: Randomly changes Gem Quality by ±(1-5)
 - Difficulty increases every 5 quality levels
 - Scaling chances for positive change:
@@ -961,7 +944,7 @@ The Robot introduces itself and explains its purpose.
 - Quality range: 1-100 (1.01x to 2.00x modifier multiplier)
 - Explanation: Use to gradually improve gem quality, with increasing risk at higher qualities
 
-#### 5.1.2.4 Gem Waxer
+##### 5.1.2.4 Gem Waxer
 - Effect: Flat 5% quality upgrade per use
 - Material cost scaling:
   - Quality 1-20: 1 Waxer
@@ -972,52 +955,52 @@ The Robot introduces itself and explains its purpose.
   - Quality 96-100: 20 Waxers
 - Explanation: A guaranteed way to increase quality, but becomes very expensive at higher levels
 
-## 5.2 Modifier System
+### 5.2 Modifier Crafting Materials
 
-### 5.2.1 Modifier Rarity Tiers
+#### 5.2.1 Modifier Rarity Tiers
 - T1: Lines 1/2 only
 - T2: Lines 3/4 only
 - T3: Lines 5/6 only
 - T4: Lines 7/8 only
 
-### 5.2.2 Modifier Crafting Materials
+#### 5.2.2 Modifier Crafting Materials
 
-#### 5.2.2.1 Chaotic Gem Reformers
+##### 5.2.2.1 Chaotic Gem Reformers
 - T1/2/3/4 Chaotic Dull Gem Reformer (Tier 1-3 Mods)
 - T1/2/3/4 Chaotic Sharp Gem Reformer (Tier 4-6 Mods)
 - T1/2/3/4 Chaotic Perfect Gem Reformer (Tier 7-8 Mods)
 - Effect: Randomly rolls both mods in the specified ranges
 - Explanation: Use these to quickly reroll multiple mod lines, with control over the general power level
 
-#### 5.2.2.2 Gem Slammers
+##### 5.2.2.2 Gem Slammers
 - 1/2/3/4/5/6/7/8 Dull Gem Slammer (Tier 1-3 Mods)
 - 1/2/3/4/5/6/7/8 Sharp Gem Slammer (Tier 4-6 Mods)
 - 1/2/3/4/5/6/7/8 Perfect Gem Slammer (Tier 7-8 Mods)
 - Effect: Randomly rolls a single mod on the corresponding line
 - Explanation: For precise modification of individual mod lines
 
-#### 5.2.2.3 Gem Tweakers
+##### 5.2.2.3 Gem Tweakers
 - 1/2/3/4/5/6/7/8 Dull Gem Tweaker (Tier 1-3 Mods)
 - 1/2/3/4/5/6/7/8 Sharp Gem Tweaker (Tier 4-6 Mods)
 - 1/2/3/4/5/6/7/8 Perfect Gem Tweaker (Tier 7-8 Mods)
 - Effect: Randomly rolls the values on the specified line within its tier range
 - Explanation: Use to adjust the strength of a mod without changing its type or tier.
 
-### 5.2.3 Additional Crafting Materials
+#### 5.2.3 Additional Crafting Materials
 
-#### 5.2.3.1 Gem Locksmith's Kits
+##### 5.2.3.1 Gem Locksmith's Kits
 - Single Line Locksmith's Kit: Locks one modifier line
 - Dual Line Locksmith's Kit: Locks two modifier lines
 - Quad Line Locksmith's Kit: Locks four modifier lines
 - Effect: Prevents locked lines from being changed by other crafting materials
 - Explanation: Use to protect valuable mods while working on other parts of the gem
 
-#### 5.2.3.2 Gem Erasers
+##### 5.2.3.2 Gem Erasers
 - 1/2/3/4/5/6/7/8 Gem Eraser
 - Effect: Removes the modifier on the corresponding line, leaving it blank
 - Explanation: Use to selectively remove unwanted mods without affecting others
 
-### 5.2.3.3 Gem Enhancer
+##### 5.2.3.3 Gem Enhancer
 - Effect: Slightly increases the values of all modifiers on a gem (within their current tier range)
 - Scaling: 
   - For percentage-based effects: Increases the value by 0.01% within the current tier range
@@ -1025,7 +1008,7 @@ The Robot introduces itself and explains its purpose.
 - Exceptions: Does not affect modifiers with static values (Dice Rolled, Sapper, Flat Damage, Poison Damage turns)
 - Explanation: A rare and powerful tool for perfecting nearly-ideal gems, allowing fine-tuning of modifier values without changing tiers
 
-#### 5.2.3.4 Gem Resonators
+##### 5.2.3.4 Gem Resonators
 - 1/2/3/4/5/6/7/8 Gem Resonator
 - Effect: Randomly upgrades or downgrades the tier of the mod on the corresponding line by ±1
 - Scaling chances:
@@ -1034,13 +1017,14 @@ The Robot introduces itself and explains its purpose.
   - Downgrade: 40%
 - Explanation: A risky way to potentially increase the power of a specific mod
 
-#### 5.2.3.5 Gem Party Hat
-- Effect: Completely randomizes all aspects of a gem (level, quality, and modifiers)
-- Explanation: For those who enjoy chaos and surprise in their crafting
+##### 5.2.3.5 Gem Party Hat
+- Effect: Completely randomizes all aspects of a gem (level, quality, and modifiers), ignoring all present unlock restrictions
+- Explanation: An ultra-rare item that can create gems with mods far beyond the player's current level, making it incredibly valuable especially in early game
+- Drop rate: 1% (Extremely Rare)
 
 
 
-# 6. Combat System
+## 6. Combat System
 
 1. Players select dice and their types
 2. Players choose which dice to roll (considering money cost)
@@ -1049,22 +1033,402 @@ The Robot introduces itself and explains its purpose.
 5. Calculate and apply damage
 6. Repeat until a player is out of money
 
-# 7. Progression System
+## 7. Economy and Progression System
 
-- Winning battles rewards money and experience
-- Experience levels up the player, unlocking new features and increasing stats
-- Money can be spent between battles to:
-  1. Buy new Gems
-  2. Upgrade Gem Levels
-  3. Unlock new dice types
-  4. Improve base stats
-- Progression milestones:
-  1. Unlock new areas on the map
-  2. Gain access to higher tier gems
-  3. Unlock second hand for endgame customization
-  4. Access to special endgame content (Astral Arena, etc.)
+### 7.1 Currency System
 
-# 8. UI Elements
+#### 7.1.1 Bet Pool
+- Functions as both health and currency in battles
+- Determined by the value of each particular combat
+- Can be modified by sponsorships (see 13.3)
+
+#### 7.1.2 Piggy Bank System
+- Represents overall player wealth
+- 5 upgrade stages:
+  1. Piggy Bank (Default): 1,000$ maximum
+  2. Money Case: 10,000$ maximum
+     - Unlocked after defeating the "Bully" (School Area final boss)
+  3. Small Safe: 100,000$ maximum
+     - Unlocked after completing any Bio/Tech/Magic final boss
+  4. Medium Safe Portfolio: 500,000$ maximum
+     - Unlocked after completing 2/3 Bio/Tech/Magic final bosses
+  5. Large Safe: 1,000,000$ maximum
+     - Unlocked after completing all Bio/Tech/Magic final bosses
+  6. Underground Vault Safe: 10,000,000$ maximum
+     - Unlocked after defeating the Vault Keeper in Astral Arena
+
+### 7.2 Combat Economy
+
+- Players must spend money from their bank to engage in battles
+- If a player runs out of money:
+  1. Receive sponsorship offer (100$)
+  2. Must forfeit one of four sponsorship slots until debt is repaid
+  3. If all slots are filled with debt, receive 100$ from parents between rounds
+
+#### 7.2.1 Money Management
+- Excess money beyond Piggy Bank capacity is "sent to parents" (removed from player)
+- Encourages resource management and spending
+- Prevents excessive money hoarding
+
+#### 7.2.2 Self-Imposed Challenges
+- Players can choose to play without sponsors for increased difficulty
+- Potential achievement for no-sponsor runs
+
+### 7.3 Sponsorship System
+
+- Accessible from the computer
+- 4 sponsorship slots available
+- 4 factions (Bio/Tech/Magic/Ancient) offer sponsorships through sub-companies
+- 8 tiers of sponsorship with increasing benefits:
+  - Increased crafting mat reward drops: +1 to +8
+  - Increased money rewards: 10% to 80%
+  - Lowered Bet costs: 10% to 25%
+  - Higher maximum Bet pool: 10% to 25%
+- Players can stack sponsors of the same type for increased benefits
+
+### 7.4 Risk vs. Reward
+
+- Players can choose to:
+  1. Fight risk-free (by stacking sponsorships to remove Bet costs)
+  2. Increase odds of winning (by starting with a higher Bet pool)
+  3. Maximize reward potential (by forgoing bet pool modifiers for increased rewards)
+
+### 7.5 Progression System
+
+#### 7.5.1 Area Structure
+- 4 main areas: School, and 3 faction areas (Bio, Tech, Magic)
+- 7 fights in each area
+- Players must complete School area first
+- Players choose one faction area to progress through initially
+- Other two areas locked until first chosen area is completed
+
+#### 7.5.2 Bet Pool Scaling
+1. School Area:
+   1. 100$   (10% of max bet pool)
+   2. 200$   (20% of max bet pool)
+   3. 300$   (30% of max bet pool)
+   4. 400$   (40% of max bet pool)
+   5. 500$   (50% of max bet pool)
+   6. 600$   (60% of max bet pool)
+   7. 800$   (80% of max bet pool - Boss)
+
+2. First Faction Area:
+   1. 1,000$  (10% of max bet pool)
+   2. 2,000$  (20% of max bet pool)
+   3. 3,000$  (30% of max bet pool)
+   4. 4,000$  (40% of max bet pool)
+   5. 5,000$  (50% of max bet pool)
+   6. 6,000$  (60% of max bet pool)
+   7. 8,000$  (80% of max bet pool - Boss)
+
+3. Second Faction Area:
+   1. 10,000$  (10% of max bet pool)
+   2. 20,000$  (20% of max bet pool)
+   3. 30,000$  (30% of max bet pool)
+   4. 40,000$  (40% of max bet pool)
+   5. 50,000$  (50% of max bet pool)
+   6. 60,000$  (60% of max bet pool)
+   7. 80,000$  (80% of max bet pool - Boss)
+
+4. Third Faction Area:
+   1. 100,000$  (10% of max bet pool)
+   2. 200,000$  (20% of max bet pool)
+   3. 300,000$  (30% of max bet pool)
+   4. 400,000$  (40% of max bet pool)
+   5. 500,000$  (50% of max bet pool)
+   6. 600,000$  (60% of max bet pool)
+   7. 800,000$  (80% of max bet pool - Boss)
+#### 7.5.3 Difficulty Scaling
+- School Area:
+  - Battles 1-3: T1 mods on enemy gems only
+  - Mini-Boss (Battle 4): Static gem set with T2 mods
+  - Battles 5-6: T2 mods and T1 mods applied randomly
+  - Boss (Battle 7): Static gem set with T2 mods
+
+- First Faction Area:
+  - Battles 1-3: Mix of T2 and T3 mods on enemy gems
+  - Mini-Boss (Battle 4): Static gem set with T3 mods
+  - Battles 5-6: Mix of T3 and T4 mods applied randomly
+  - Boss (Battle 7): Static gem set with T4 mods
+
+- Second Faction Area:
+  - Battles 1-3: Mix of T4 and T5 mods on enemy gems
+  - Mini-Boss (Battle 4): Static gem set with T5 mods
+  - Battles 5-6: Mix of T5 and T6 mods applied randomly
+  - Boss (Battle 7): Static gem set with T6 mods
+
+- Third Faction Area:
+  - Battles 1-3: Mix of T6 and T7 mods on enemy gems
+  - Mini-Boss (Battle 4): Static gem set with T7 mods
+  - Battles 5-6: Mix of T7 and T8 mods applied randomly
+  - Boss (Battle 7): Static gem set with T8 mods
+
+- Astral Arena:
+  - Non-boss battles: Randomized T8 mods
+  - Bosses: Static sets of T8 mods and static rings with unique effects
+
+#### 7.5.4 Enemy Equipment Scaling
+
+##### School Area
+###### Zone 1-1:
+- Rings: 1x Candy Ring (1 slot each)
+- Mods: 100% T1
+
+###### Zone 1-2:
+- Rings: 1x Candy Ring (1 slot each)
+- Mods: 90% T1, 10% T2
+
+###### Zone 1-3:
+- Rings: 2x Candy Ring (1 slot each)
+- Mods: 80% T1, 20% T2
+
+###### Zone 1-4 (Mini-Boss):
+- Rings: 2x Copper Ring (2 slots each)
+- Mods: 100% T2
+
+###### Zone 1-5:
+- Rings: 2x Candy Ring (1 slot each)
+- Mods: 60% T1, 40% T2
+
+###### Zone 1-6:
+- Rings: 3x Candy Ring (1 slot each)
+- Mods: 40% T1, 60% T2
+
+###### Zone 1-7 (Boss):
+- Rings: 3x Copper Ring (2 slots each)
+- Mods: 100% T2
+
+##### First Faction Area
+###### Zone 2-1:
+- Rings: 3x Copper Ring (2 slots each)
+- Mods: 80% T2, 20% T3
+
+###### Zone 2-2:
+- Rings: 4x Copper Ring (2 slots each)
+- Mods: 70% T2, 30% T3
+
+###### Zone 2-3:
+- Rings: 4x Copper Ring (2 slots each), 1x Silver Ring (3 slots)
+- Mods: 60% T2, 40% T3
+
+###### Zone 2-4 (Mini-Boss):
+- Rings: 5x Silver Ring (3 slots each)
+- Mods: 100% T3
+
+###### Zone 2-5:
+- Rings: 3x Silver Ring (3 slots each), 2x Copper Ring (2 slots each)
+- Mods: 40% T3, 60% T4
+
+###### Zone 2-6:
+- Rings: 4x Silver Ring (3 slots each), 1x Gold Ring (4 slots)
+- Mods: 30% T3, 70% T4
+
+###### Zone 2-7 (Boss):
+- Rings: 5x Gold Ring (4 slots each)
+- Mods: 100% T4
+
+##### Second Faction Area
+###### Zone 3-1:
+- Rings: 5x Gold Ring (4 slots each)
+- Mods: 80% T4, 20% T5
+
+###### Zone 3-2:
+- Rings: 4x Gold Ring (4 slots each), 1x Titanium Ring (5 slots)
+- Mods: 70% T4, 30% T5
+
+###### Zone 3-3:
+- Rings: 3x Gold Ring (4 slots each), 2x Titanium Ring (5 slots)
+- Mods: 60% T4, 40% T5
+
+###### Zone 3-4 (Mini-Boss):
+- Rings: 5x Titanium Ring (5 slots each)
+- Mods: 100% T5
+
+###### Zone 3-5:
+- Rings: 4x Titanium Ring (5 slots each), 1x Silver Amplifier Ring (1 slot, 4x effect)
+- Mods: 40% T5, 60% T6
+
+###### Zone 3-6:
+- Rings: 3x Titanium Ring (5 slots each), 2x Silver Amplifier Ring (1 slot, 4x effect)
+- Mods: 30% T5, 70% T6
+
+###### Zone 3-7 (Boss):
+- Rings: 4x Titanium Ring (5 slots each), 1x Gold Amplifier Ring (2 slots, 3x effect)
+- Mods: 100% T6
+
+##### Third Faction Area
+###### Zone 4-1:
+- Rings: 4x Titanium Ring (5 slots each), 1x Gold Amplifier Ring (2 slots, 3x effect)
+- Mods: 80% T6, 20% T7
+
+###### Zone 4-2:
+- Rings: 3x Titanium Ring (5 slots each), 2x Gold Amplifier Ring (2 slots, 3x effect)
+- Mods: 70% T6, 30% T7
+
+###### Zone 4-3:
+- Rings: 3x Titanium Ring (5 slots each), 1x Gold Amplifier Ring (2 slots, 3x effect), 1x Titanium Amplifier Ring (3 slots, 2x effect)
+- Mods: 60% T6, 40% T7
+
+###### Zone 4-4 (Mini-Boss):
+- Rings: 3x Titanium Ring (5 slots each), 2x Titanium Amplifier Ring (3 slots, 2x effect)
+- Mods: 100% T7
+
+###### Zone 4-5:
+- Rings: 2x Titanium Ring (5 slots each), 3x Titanium Amplifier Ring (3 slots, 2x effect)
+- Mods: 40% T7, 60% T8
+
+###### Zone 4-6:
+- Rings: 1x Titanium Ring (5 slots), 4x Titanium Amplifier Ring (3 slots, 2x effect)
+- Mods: 30% T7, 70% T8
+
+###### Zone 4-7 (Boss):
+- Rings: 5x Titanium Amplifier Ring (3 slots, 2x effect)
+- Mods: 100% T8
+
+##### Ultimate Boss
+###### Phase 1:
+- Rings: 5x Titanium Ring (5 slots each)
+- Mods: 100% T8 with unique, boss-specific effects
+
+###### Phase 2:
+- Rings: 2x Silver Amplifier Ring (1 slot, 4x effect), 2x Gold Amplifier Ring (2 slots, 3x effect), 1x Titanium Amplifier Ring (3 slots, 2x effect)
+- Mods: 100% T8 with unique, boss-specific effects
+
+##### Astral Arena
+###### Non-boss battles: 
+- Rings: 5x Titanium Ring (5 slots each) and 3-5x Amplifier Rings (mix of Silver, Gold, and Titanium)
+- Mods: Randomized T8
+
+###### Bosses: 
+- Rings: Unique combinations of 5-10 Amplifier Rings (both hands)
+- Mods: Static sets of T8 with unique, boss-specific effects
+
+#### 7.5.5 Loot Drop System
+
+##### Drop Type Distribution
+- Gem Crafting Materials: 40%
+- Modifier Crafting Materials: 40%
+- Additional Crafting Materials: 20%
+
+##### Gem Crafting Materials (40% of drops)
+- Gem Transfigurator: 10%
+- Gem Transformer: 15%
+- Gem Polisher: 30%
+- Gem Waxer: 45%
+
+##### Modifier Crafting Materials (40% of drops)
+- Chaotic Gem Reformers: 20%
+- Gem Slammers: 30%
+- Gem Tweakers: 50%
+
+##### Additional Crafting Materials (20% of drops)
+- Gem Locksmith's Kits: 15%
+- Gem Erasers: 40%
+- Gem Enhancer: 2%
+- Gem Resonators: 18%
+- Gem Party Hat: 1%
+- [Reserved for future materials]: 20%
+
+##### Tier Distribution by Zone
+###### School Area
+- T1: 70%
+- T2: 25%
+- T3: 5%
+
+###### First Faction Area
+- T2: 50%
+- T3: 40%
+- T4: 10%
+
+###### Second Faction Area
+- T4: 50%
+- T5: 40%
+- T6: 10%
+
+###### Third Faction Area
+- T6: 50%
+- T7: 40%
+- T8: 10%
+
+###### Ultimate Boss
+- Phase 1: T7 (70%), T8 (30%)
+- Phase 2: T7 (40%), T8 (60%)
+
+###### Astral Arena
+- Non-boss battles: T8 (100%)
+- Bosses: T8 (100%), plus one guaranteed Extremely Rare material
+
+##### Number of Drops per Battle
+###### Regular Battles
+- 1-3 drops (weighted towards lower numbers)
+  - 1 drop: 50%
+  - 2 drops: 35%
+  - 3 drops: 15%
+
+###### Mini-Bosses
+- 3-5 drops (weighted towards middle numbers)
+  - 3 drops: 30%
+  - 4 drops: 40%
+  - 5 drops: 30%
+
+###### Area Bosses
+- 5-7 drops (weighted towards higher numbers)
+  - 5 drops: 20%
+  - 6 drops: 35%
+  - 7 drops: 45%
+
+###### Ultimate Boss
+- Phase 1: 7-10 drops
+- Phase 2: 10-15 drops
+
+###### Astral Arena
+- Regular battles: 3-5 drops
+- Bosses: 10-15 drops
+
+##### Special Rules
+1. Mini-Bosses have a 10% chance to drop one item from the next tier.
+2. Area Bosses have a 20% chance to drop one item from the next tier.
+3. The Ultimate Boss and Astral Arena Bosses always drop at least one Extremely Rare material.
+4. Astral Arena regular battles have a 5% chance to drop an Extremely Rare material.
+
+#### 7.5.6 Enemy Types
+- Enemies use mixed dice types until final boss
+- Final boss uses entirely faction-specific dice type
+
+#### 7.5.7 Progression Gating
+- Players required to "farm" and improve gear between stages
+- Enemy dice have increasingly powerful mods in higher tiers
+- Crafting system and Robot friendship levels indirectly control progression pace
+- Players must beat a boss with corresponding tier of mods to unlock the next tier
+
+### 7.6 Endgame System
+
+#### 7.6.1 Ultimate Boss
+- Unlocked after completing all 3 faction final bosses
+- Requires 100% of player's bank to challenge
+- Acts as progression gate to Astral Arena
+
+#### 7.6.2 Honor System
+- Replaces Money as currency after defeating Ultimate Boss
+- Functions similarly to Bet Pool
+- Allows for reset of scaling without interfering with previous accomplishments
+- Players retain ability to battle and farm in regular areas using Money
+
+#### 7.6.3 Astral Arena
+- Provides unique base rings to expand gameplay possibilities
+- Pushes limits of crafting system for Gem mod perfection
+- Offers static boss challenges
+- Expandable with new mod tiers and increased stakes
+
+### 7.7 Additional Notes
+- No perfect wins possible due to constant Bet Pool loss
+- No catch-up mechanisms; players must farm and craft to progress
+- Designed as an RNG-grindfest for players who enjoy the process
+- Clear, defined progression system with no shortcuts (except RNG)
+- Robot companion provides guidance through dialogue
+- Library acts as compendium of knowledge for players
+
+## 8. UI Elements
 
 - Top bar: Area name, enemy name, money/health display
 - Left side: Character dialogue/interaction
@@ -1073,7 +1437,7 @@ The Robot introduces itself and explains its purpose.
 - Center: Dice rolling area
 - Background: Animated crowd reacting to gameplay
 
-# 9. Game Flow
+## 9. Game Flow
 
 1. Start with one dice and no gems
 2. Battle opponents, earning money and experience
@@ -1083,8 +1447,8 @@ The Robot introduces itself and explains its purpose.
 6. Unlock new game features as you progress
 7. Access endgame content and continue to improve character
 
-# 10. Game Structure
-## 10.1 Master Scene
+## 10. Game Structure
+### 10.1 Master Scene
 
 - Main entry point for the game
 - Contains:
@@ -1093,7 +1457,7 @@ The Robot introduces itself and explains its purpose.
     - Settings
     - Discord integration
 
-## 10.2 Cutscene Scene
+### 10.2 Cutscene Scene
 
 - Dedicated node for storing and displaying cutscenes
 - Features:
@@ -1103,7 +1467,7 @@ The Robot introduces itself and explains its purpose.
     - Character pop-ups
     - Image display with minor animations
 
-## 10.3 Bedroom Scene
+### 10.3 Bedroom Scene
 
 - Main hub of the game
 - Contains:
@@ -1120,7 +1484,7 @@ The Robot introduces itself and explains its purpose.
 - Door (This transitions to the map_scene) 
 - Mailbox (A place where the player will receive various letters from corresponding game events)
 
-## 10.4 Map Scene
+### 10.4 Map Scene
 
 - Arena selection screen
 - Features:
@@ -1130,7 +1494,7 @@ The Robot introduces itself and explains its purpose.
     - Progression system (wealth and status)
     - Fourth area unlocked for final boss
 
-## 10.5 Battle Scene
+### 10.5 Battle Scene
 
 - Main gameplay screen
 - Layout as per provided mockup image
@@ -1141,40 +1505,40 @@ The Robot introduces itself and explains its purpose.
     - Health/Money tracking
     - Animated crowd reactions
 
-## 10.6 Post Battle Scene
+### 10.6 Post Battle Scene
 
 - Displayed after each fight
 - Options:
     - Continue to next round
     - Exit event (return to bedroom)
 
-# 11. Endgame Setup
+## 11. Endgame Setup
 
-## 11.1 Map Scene Overview
+### 11.1 Map Scene Overview
 
 - Initially, only the playground & schoolyard arenas are visible.
 - Players must become the schoolyard champion to unlock Arena Tournaments.
 - Arena Tournaments consist of 6 tiers for each archetype, increasing in difficulty.
 - A 7th tier (initially hidden) represents the Master of each archetype.
 
-## 11.2 Progression System
+### 11.2 Progression System
 
  - Defeating Masters drops rune pieces for the Astral Arena Device.
  - The Astral Arena becomes visible after completing all three Master battles.
  - Unlocking the Astral Arena allows replaying previous arenas at higher difficulty.
  - Each arena drops unique rune pieces for varying combinations.
 
-## 11.3 Rune System
+### 11.3 Rune System
 
 - Runes act as modifiers, affecting difficulty scaling and rewards.
 - Different rune combinations unlock various challenges in the Astral Arena.
 - The system allows for easy content expansion and endgame progression.
 
-## 11.4 Lore
+### 11.4 Lore
 
 - After defeating the Ancient Gods Cult Leaders, players enter the gods' domain.
 - Gods have taken up the game in their celestial realms out of boredom and we find out it's actually the gods who invented the game in the first place merely using it as a tool to spread awareness of them amongst the humans without directly intervening while reliving their escapades in the Great War on Earth.
-# 12. Future Considerations
+## 12. Future Considerations
 
 - Unique, unmodifiable rings with powerful static effects
 - Expanded storyline and character development
@@ -1183,3 +1547,4 @@ The Robot introduces itself and explains its purpose.
 - Advanced crafting system for gems and runes
 - Seasonal events and limited-time challenges
 - Multiplayer arena battles
+
