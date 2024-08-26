@@ -1,6 +1,6 @@
 # The Serpent's Eyes (TSE) - Comprehensive Game Design Document
 
-## Table of Contents
+# Table of Contents
 1. [[#1. Core Concepts]]
 2. [[#2. Dice System]]
    2.1 [[#2.1 Type Advantage]]
@@ -8,38 +8,120 @@
    2.3 [[#2.3 Dice Mastery System]]
    2.4 [[#2.4 Dice Upgrade System]]
    2.5 [[#2.5 Dice Special Effects]]
+      2.5.1 [[#D4]]
+      2.5.2 [[#D6]]
+      2.5.3 [[#D8]]
+      2.5.4 [[#D10]]
+      2.5.5 [[#D12]]
+      2.5.6 [[#D20]]
+      2.5.7 [[#D30]]
+      2.5.8 [[#D100]]
 3. [[#3. Ring and Modifier System]]
    3.1 [[#3.1 Ring Types]]
-   3.2 [[#3.2 Damage Application Formula]]
-   3.3 [[#3.3 Defensive Application Formula]]
-   3.4 [[#3.4 Complete Damage Calculation Formulas]]
-      3.4.1 [[#3.4.1 Additive Multiplicative Formula]]
-      3.4.2 [[#3.4.2 Multiplicative Formula]]
-   3.5 [[#3.5 Gem System]]
-      3.5.1 [[#3.5.1 Gem Tiers]]
-      3.5.2 [[#3.5.2 Gem Modifier System]]
-   3.6 [[#3.6 Modifier Types and Effects]]
+      3.1.1 [[#Basic Rings]]
+      3.1.2 [[#Amplifier Rings]]
+      3.1.3 [[#Cursed Rings]]
+   3.2 [[#3.2 Gem System]]
+      3.2.1 [[#3.2.1 Gem Tiers]]
+      3.2.2 [[#3.2.2 Gem Modifier System]]
+   3.3 [[#3.3 Modifier Types and Effects]]
+      3.3.1 [[#3.3.1 Modifier Tiers and Ranges]]
+      3.3.2 [[#3.3.2 Pre-Roll Effects]]
+      3.3.3 [[#3.3.3 Damage Modifier Effects]]
+      3.3.4 [[#3.3.4 Critical Strike Effects]]
+      3.3.5 [[#3.3.5 Post-Roll Effects]]
+      3.3.6 [[#3.3.6 Post-Final Damage Effects]]
+      3.3.7 [[#3.3.7 Reduction Effects]]
+      3.3.8 [[#3.3.8 Type Modifier Effects]]
+      3.3.9 [[#3.3.9 Post-Battle Effects]]
 4. [[#4. Robot Companion System]]
    4.1 [[#4.1 Initial Activation]]
    4.2 [[#4.2 Robot Personalities]]
+      4.2.1 [[#4.2.1 Kawaii (Bio Cult)]]
+      4.2.2 [[#4.2.2 Strict (Tech Cult)]]
+      4.2.3 [[#4.2.3 Logical (Magic Cult)]]
+      4.2.4 [[#4.2.4 Cold (Ancient Gods)]]
    4.3 [[#4.3 Friendship Levels]]
+      4.3.1 [[#4.3.1 Levels (0-8)]]
+      4.3.2 [[#4.3.2 Leveling Up]]
    4.4 [[#4.4 Upgrade System]]
+      4.4.1 [[#4.4.1 Friendship Level Requirements]]
+      4.4.2 [[#4.4.2 Upgrade Restrictions]]
+      4.4.3 [[#4.4.3 Progression Gates]]
    4.5 [[#4.5 Dialogue Events]]
+      4.5.1 [[#4.5.1 Structure]]
+      4.5.2 [[#4.5.2 Topics]]
    4.6 [[#4.6 Faction-Specific Traits]]
+      4.6.1 [[#4.6.1 Kawaii (Bio Cult)]]
+      4.6.2 [[#4.6.2 Strict (Tech Cult)]]
+      4.6.3 [[#4.6.3 Logical (Magic Cult)]]
+      4.6.4 [[#4.6.4 Cold (Ancient Gods)]]
    4.7 [[#4.7 Friendship Benefits]]
    4.8 [[#4.8 Gift System]]
    4.9 [[#4.9 Robot Switching]]
 5. [[#5. Crafting System]]
    5.1 [[#5.1 Gem System]]
+      5.1.1 [[#5.1.1 Gem Levels]]
+      5.1.2 [[#5.1.2 Gem Crafting Materials]]
    5.2 [[#5.2 Modifier Crafting Materials]]
+      5.2.1 [[#5.2.1 Modifier Rarity Tiers]]
+      5.2.2 [[#5.2.2 Modifier Crafting Materials]]
+      5.2.3 [[#5.2.3 Additional Crafting Materials]]
 6. [[#6. Combat System]]
+   6.1 [[#6.1 Dice Selection and Cost]]
+      6.1.1 [[#6.1.1 Dice Loadout]]
+      6.1.2 [[#6.1.2 Dice Cost]]
+      6.1.3 [[#6.1.3 Dice Selection Interface]]
+   6.2 [[#6.2 Combat Flow]]
+      6.2.1 [[#6.2.1 Turn Structure]]
+      6.2.2 [[#6.2.2 Simultaneous Action Resolution]]
+   6.3 [[#6.3 Dice Rolling Mechanics]]
+      6.3.1 [[#6.3.1 Roll Animation]]
+      6.3.2 [[#6.3.2 Result Display]]
+   6.4 [[#6.4 Damage Calculation and Application]]
+      6.4.1 [[#6.4.1 Offensive Calculation]]
+      6.4.2 [[#6.4.2 Defensive Calculation]]
+      6.4.3 [[#6.4.3 Damage Application]]
+      6.4.4 [[#6.4.4 Complete Damage Calculation Formulas]]
+      6.4.5 [[#6.4.5 Formula Explanations]]
+   6.5 [[#6.5 Combat Resolution]]
+      6.5.1 [[#6.5.1 Victory Conditions]]
+      6.5.2 [[#6.5.2 Post-Battle Screen]]
+   6.6 [[#6.6 User Interface Elements]]
+      6.6.1 [[#6.6.1 Health/Bet Pool Display]]
+      6.6.2 [[#6.6.2 Announcer Commentary]]
+      6.6.3 [[#6.6.3 Crowd Reactions]]
+      6.6.4 [[#6.6.4 Player/Enemy Dialogue]]
+      6.6.5 [[#6.6.5 Combat Log]]
+   6.7 [[#6.7 Special Mechanics]]
+      6.7.1 [[#6.7.1 Multiple Dice Rolls]]
+      6.7.2 [[#6.7.2 DoT (Damage over Time) Effects]]
+      6.7.3 [[#6.7.3 Type Advantage System]]
+   6.8 [[#6.8 Example Combat Scenarios]]
+      6.8.1 [[#6.8.1 Early Game Scenario]]
+      6.8.2 [[#6.8.2 Mid Game Scenario]]
+      6.8.3 [[#6.8.3 End Game Scenario]]
 7. [[#7. Economy and Progression System]]
    7.1 [[#7.1 Currency System]]
+      7.1.1 [[#7.1.1 Bet Pool]]
+      7.1.2 [[#7.1.2 Piggy Bank System]]
    7.2 [[#7.2 Combat Economy]]
+      7.2.1 [[#7.2.1 Money Management]]
+      7.2.2 [[#7.2.2 Self-Imposed Challenges]]
    7.3 [[#7.3 Sponsorship System]]
    7.4 [[#7.4 Risk vs. Reward]]
    7.5 [[#7.5 Progression System]]
+      7.5.1 [[#7.5.1 Area Structure]]
+      7.5.2 [[#7.5.2 Bet Pool Scaling]]
+      7.5.3 [[#7.5.3 Difficulty Scaling]]
+      7.5.4 [[#7.5.4 Enemy Equipment Scaling]]
+      7.5.5 [[#7.5.5 Loot Drop System]]
+      7.5.6 [[#7.5.6 Enemy Types]]
+      7.5.7 [[#7.5.7 Progression Gating]]
    7.6 [[#7.6 Endgame System]]
+      7.6.1 [[#7.6.1 Ultimate Boss]]
+      7.6.2 [[#7.6.2 Honor System]]
+      7.6.3 [[#7.6.3 Astral Arena]]
    7.7 [[#7.7 Additional Notes]]
 8. [[#8. UI Elements]]
 9. [[#9. Game Flow]]
@@ -369,108 +451,11 @@ Note: Players must reach both the required Mastery Level and Robot Friendship Le
 3. Trinity of Thorns Ring
    - 3 Slots
    - Effect: Applies 12x (1200%) effect to gems for 3 turns. After 3 turns, amplification removed and .10x (10%) current health damage taken per turn for 6 turns. If alive on turn 7, amplification returns at 25x (2500%) effect for the rest of the battle.
-
-### 3.2 Damage Application Formula
-
-1. Apply Dice Modifier Passive Effects
-2. Apply Ring modifiers to Gems (passive/pre/post)
-3. Apply Gem Passive effects
-4. Sum up Gem Passive Effect Totals
-5. Apply Dice Modifiers to Pre-Roll effects
-6. Apply Gem Modifiers to Pre-Roll effects
-7. Sum up Pre-Roll effects
-8. Roll Dice
-9. Apply Dice Modifier Post-Roll effects
-10. Apply Gem Modifier Post-Roll effects
-11. Sum up Post-Roll effects
-12. Apply Flat Dice Modifiers to Damage value
-13. Apply Flat Gem Modifiers to Damage value
-14. Sum up Flat modifiers to Damage value
-15. Apply Multiplier Dice Modifiers to Damage value
-16. Apply Multiplier Gem Modifiers to Damage value
-17. Sum up Multiplier modifiers
-18. Apply Type Advantage Modifier
-19. Apply Dice Critical Chance Modifiers
-20. Apply Gem Critical Chance Modifiers
-21. Sum Critical Chance and calculate if the crit succeeds
-22. If crit fails -> Go to step 27
-23. If crit succeeds:
-24. Apply Dice Critical Strike Damage Modifiers to Damage value
-25. Apply Gem Critical Strike Damage Modifiers to Damage value
-26. If overcrit occurs -> Calculate Overcrit value (150% = 1.5 flat critical strike damage value)
-27. Sum Critical Strike Modifier Damage + Overcrit Damage value
-28. Calculate Final Damage
-29. Apply Post-Final Damage Effects (e.g., Poison Damage)
-30. Output Final Damage
-
-### 3.3 Defensive Application Formula
-
-1. Apply True Strike effect (if attacker has it)
-   - If successful, skip to step 5
-2. Apply Dodge Chance (Pre-Roll Effect, Evasion)
-   - If successful, nullify incoming damage and end formula
-3. Apply Damage Reduction (Reduction Effect)
-   - Reduce incoming damage by reduction percentage
-4. Apply Shield Generator (Pre-Roll Effect, Damage Absorption)
-   - Subtract shield value from incoming damage
-5. Calculate and apply final damage to Bet Pool
-6. Apply Post-Final Damage Effects (e.g., Poison Damage)
-   - Add to ongoing Damage Over Time effects
-7. Apply Top Up Value (Post-Roll Effect, Resource Management)
-   - Recover a portion of lost Bet Pool from Banked $
-
-### 3.4 Complete Damage Calculation Formulas
-
-*NOTE:* *Neither is finalized, they are both included as both will need to be tested to see which system is better*
-
-#### 3.4.1 Additive Multiplicative Formula
-
-`FinalDamage = ((BaseDamage + FlatModifiers) * (1 + ∑MultiplicativeModifiers) * TypeAdvantage * (1 + CriticalMultiplier)) - DefensiveReduction`
-
-`Where:`
-- `BaseDamage = DiceRoll + PassiveEffects + PreRollEffects + PostRollEffects`
-- `FlatModifiers = ∑(FlatDiceModifiers + FlatGemModifiers)`
-- `MultiplicativeModifiers = ∑(DiceMultipliers + GemMultipliers + DamageMultipliers) - 1`
-- `TypeAdvantage = 1 + TypeAdvantageModifier`
-- `CriticalMultiplier = CriticalDamageModifier * CriticalChance`
-- `DefensiveReduction = DodgeChance * IncomingDamage + DamageReduction + ShieldAbsorption`
-
-`PostFinalDamage = FinalDamage + PoisonDamage`
-`PlayerBetPoolDamage = PostFinalDamage - TopUpValue`
-
-#### 3.4.2 Multiplicative Formula
-
-`FinalDamage = ((BaseDamage + FlatModifiers) * ∏(1 + MultiplicativeModifier) * TypeAdvantage * (1 + CriticalMultiplier)) - DefensiveReduction`
-
-`Where:`
-- `BaseDamage = DiceRoll + PassiveEffects + PreRollEffects + PostRollEffects`
-- `FlatModifiers = ∑(FlatDiceModifiers + FlatGemModifiers)`
-- `MultiplicativeModifier = Each individual multiplier from DiceMultipliers, GemMultipliers, and DamageMultipliers`
-- `TypeAdvantage = 1 + TypeAdvantageModifier`
-- `CriticalMultiplier = CriticalDamageModifier * CriticalChance`
-- `DefensiveReduction = DodgeChance * IncomingDamage + DamageReduction + ShieldAbsorption`
-
-`PostFinalDamage = FinalDamage + PoisonDamage`
-`PlayerBetPoolDamage = PostFinalDamage - TopUpValue`
-
-`**Key differences:**`
-
-1. `In the Additive formula, we sum all multiplicative modifiers and add 1 to the total.`
-2. `In the Multiplicative formula, we multiply each modifier (plus 1) separately.`
-
-`**Notes:**`
-
-- `∑ represents the sum of all values`
-- `∏ represents the product of all values`
-- `Both formulas include the defensive calculations and post-final damage effects`
-- `True Strike effect is not explicitly shown but would bypass the DefensiveReduction when active`
-- `The formulas assume CriticalChance and DodgeChance are expressed as decimals (e.g., 0.25 for 25%)`
-
-### 3.5 Gem System
+### 3.2 Gem System
 
 The gem system provides deep customization options for players, allowing them to tailor their strategy through various combinations of gems and modifiers.
 
-#### 3.5.1 Gem Tiers
+#### 3.2.1 Gem Tiers
 
 Gems come in 8 tiers, each named after a precious stone and offering increasing complexity and power:
 
@@ -485,7 +470,7 @@ Gems come in 8 tiers, each named after a precious stone and offering increasing 
 
 Higher-tier gems are rarer and more powerful, offering more modifier lines and potentially stronger effects.
 
-#### 3.5.2 Gem Modifier System
+#### 3.2.2 Gem Modifier System
 
 ##### Modifier Types
 Modifiers come in two primary forms:
@@ -519,8 +504,8 @@ Defensive Modifier Categories:
 
 This categorization allows for intricate combinations of effects that can dramatically influence battle outcomes.
 
-### 3.6 Modifier Types and Effects
-#### 3.6.1 Modifier Tiers and Ranges
+### 3.3 Modifier Types and Effects
+#### 3.3.1 Modifier Tiers and Ranges
 Modifiers are divided into 8 tiers, each with increasing power:
 
 Tier 1: 0.25% - 0.29% (or 1.02 - 1.029 for multiplicative effects)
@@ -540,7 +525,7 @@ Static Values:
 Some modifiers (e.g., Dice Rolled, Sapper, Flat Damage, Poison Damage turns) have static values per tier instead of ranges. These values are fixed and do not vary within the tier.
 
 Note: When applying multiple modifiers, flat effects are calculated before multiplicative effects to ensure consistent scaling.
-### 3.6.2 Pre-Roll Effects
+### 3.3.2 Pre-Roll Effects
 
 1. Dice Rolled:
    - Explanation: Increases the number of dice rolled in a turn.
@@ -625,7 +610,7 @@ Note: When applying multiple modifiers, flat effects are calculated before multi
      Tier 7: 1.75% - 1.89%
      Tier 8: 1.90% - 2.00%
 
-### 3.6.3 Damage Modifier Effects
+### 3.3.3 Damage Modifier Effects
 
 7. Damage Multiplier:
    - Explanation: Multiplies the final damage output of the dice roll.
@@ -653,7 +638,7 @@ Note: When applying multiple modifiers, flat effects are calculated before multi
      Tier 7: 7
      Tier 8: 10
 
-### 3.6.4 Critical Strike Effects
+### 3.3.4 Critical Strike Effects
 
 9. Critical Strike Chance:
    - Explanation: Increases the chance of landing a critical hit.
@@ -681,7 +666,7 @@ Note: When applying multiple modifiers, flat effects are calculated before multi
       Tier 7: 1.14 - 1.149
       Tier 8: 1.16 - 1.20
 
-### 3.6.5 Post-Roll Effects
+### 3.3.5 Post-Roll Effects
 
 11. Top Up Value:
     - Explanation: Withdraws from player's Banked $ to recover Player Bet Pool after damage calculation.
@@ -697,7 +682,7 @@ Note: When applying multiple modifiers, flat effects are calculated before multi
      Tier 7: 1.75% - 1.89%
      Tier 8: 1.90% - 2.00%
 
-### 3.6.6 Post-Final Damage Effects
+### 3.3.6 Post-Final Damage Effects
 
 12. Poison Damage:
     - Explanation: Applies additional damage over time after the final damage calculation.
@@ -723,7 +708,7 @@ Note: When applying multiple modifiers, flat effects are calculated before multi
       Tier 8: 8 turns
     - Different instances stack together
 
-### 3.6.7 Reduction Effects
+### 3.3.7 Reduction Effects
 
 13. Damage Reduction:
     - Explanation: Reduces the final incoming damage from all opponent's dice rolls.
@@ -738,7 +723,7 @@ Note: When applying multiple modifiers, flat effects are calculated before multi
      Tier 7: 1.75% - 1.89%
      Tier 8: 1.90% - 2.00%
 
-### 3.6.8 Type Modifier Effects
+### 3.3.8 Type Modifier Effects
 
 14. Advantage Modifier:
     - Explanation: Enhances the damage bonus received when attacking with a type advantage.
@@ -753,7 +738,7 @@ Note: When applying multiple modifiers, flat effects are calculated before multi
      Tier 7: 1.75% - 1.89%
      Tier 8: 1.90% - 2.00%
 
-### 3.6.9 Post-Battle Effects
+### 3.3.9 Post-Battle Effects
 
 15. Extortion:
     - Explanation: Increases the amount of $ received after winning a battle, capped at the opponent's total bank value.
@@ -1026,12 +1011,562 @@ Distant, mysterious, and aloof
 
 ## 6. Combat System
 
-1. Players select dice and their types
-2. Players choose which dice to roll (considering money cost)
-3. Both players roll simultaneously
-4. Apply type advantages and special effects
-5. Calculate and apply damage
-6. Repeat until a player is out of money
+### 6.1 Dice Selection and Cost
+
+#### 6.1.1 Dice Loadout
+- Players have a customizable dice loadout displayed at the bottom of the screen
+- Loadout consists of various dice types (d4, d6, d8, d10, d12, d20, d30, d100)
+- Opponents have randomly generated or statically set dice based on the zone
+
+#### 6.1.2 Dice Cost
+- Base cost equals the number of sides on a die for the first $100 battle
+- Costs scale in relation to the bet pool cost for subsequent battles
+- Scaling formula: Dice Cost = (Number of Sides) * (Current Bet Pool / 100)
+- This scaling does not account for any advantages provided by player sponsors
+
+#### 6.1.3 Dice Selection Interface
+- Players select dice by clicking, changing the outline color
+- Hovering over dice displays potential outcomes, including:
+  - Damage range
+  - Crit rate and damage
+  - Number of rolls
+  - Flat damage modifiers
+  - Multiplier modifiers
+  - Pre-roll effects (e.g., Dodge Chance, Shield Generator, Sapper, True Strike, Cheat Roll)
+  - Post-roll effects (e.g., Top Up Value)
+  - Type advantage modifiers
+  - Post-final damage effects (e.g., Poison Damage)
+  - Extortion value (post-battle effect)
+
+### 6.2 Combat Flow
+
+#### 6.2.1 Turn Structure
+1. Player selects dice and clicks roll button
+2. Opponent automatically selects dice (random or predetermined)
+3. Announcers provide commentary
+4. Dice roll animations play out
+5. Additional dice rolls from effects are added and resolved
+6. Results are displayed and calculated
+7. Damage is applied
+8. Round ends, and next round begins if both players are alive
+
+#### 6.2.2 Simultaneous Action Resolution
+- Both players' actions occur simultaneously when the player clicks roll
+- In case of mutual defeat, announcers roll a tie-breaking die
+
+### 6.3 Dice Rolling Mechanics
+
+#### 6.3.1 Roll Animation
+- Visual spectacle of dice rolling in the arena tray
+- No physics simulation for performance reasons
+- Potentially hundreds of dice rolling in late-game scenarios
+- Dice display final results face-up
+
+#### 6.3.2 Result Display
+- Player and opponent dice collect on respective sides of the arena
+- Dice show roll number result faces up
+- Extra dice rolls (from effects) appear as subsequent rounds of throws within the same turn
+- Popup window shows:
+  - Individual roll results separated by commas
+  - Tally number
+  - Step-by-step modifier calculations separated by line breaks
+  - Final damage value
+- Scrollable window for detailed review
+- Window covers the tray and crowd but leaves bottom row (announcers, cheerleaders) visible
+
+### 6.4 Damage Calculation and Application
+
+#### 6.4.1 Offensive Calculation
+
+The offensive calculation determines the raw damage output before defensive reductions are applied. It follows these steps:
+
+1. Apply Dice Modifier Passive Effects
+2. Apply Ring modifiers to Gems (passive/pre/post)
+3. Apply Gem Passive effects
+4. Sum up Gem Passive Effect Totals
+5. Apply Dice Modifiers to Pre-Roll effects
+6. Apply Gem Modifiers to Pre-Roll effects
+7. Sum up Pre-Roll effects
+8. Roll initial dice
+9. Calculate and apply additional dice rolls from Pre-Roll effects
+10. Apply Dice Modifier Post-Roll effects
+11. Apply Gem Modifier Post-Roll effects
+12. Sum up Post-Roll effects
+13. Apply Flat Dice Modifiers to Damage value
+14. Apply Flat Gem Modifiers to Damage value
+15. Sum up Flat modifiers to Damage value
+16. Apply Multiplier Dice Modifiers to Damage value
+17. Apply Multiplier Gem Modifiers to Damage value
+18. Sum up Multiplier modifiers
+19. Apply Type Advantage Modifier
+20. Apply Dice Critical Chance Modifiers
+21. Apply Gem Critical Chance Modifiers
+22. Sum Critical Chance and calculate if the crit succeeds
+23. If crit fails -> Go to step 28
+24. If crit succeeds:
+25. Apply Dice Critical Strike Damage Modifiers to Damage value
+26. Apply Gem Critical Strike Damage Modifiers to Damage value
+27. If overcrit occurs -> Calculate Overcrit value (150% = 1.5 flat critical strike damage value)
+28. Sum Critical Strike Modifier Damage + Overcrit Damage value
+29. Calculate Final Damage
+30. Apply Post-Final Damage Effects (e.g., Poison Damage)
+31. Output Final Damage
+
+**Note on Calculation Methods:**
+
+Two primary methods can be used for calculating damage in this system:
+
+1. Pooled Dice Damage:
+   - All dice rolls are summed together before applying modifiers.
+   - Pros: Computationally less intensive, faster calculations.
+   - Cons: Less granular, may lose some of the nuance of individual die effects.
+
+2. Individual Die Calculation:
+   - Each die roll is calculated separately through the entire process.
+   - Pros: More accurate representation of each die's contribution, allows for more complex interactions between effects.
+   - Cons: Computationally more intensive, may slow down gameplay for very large numbers of dice.
+
+The choice between these methods can significantly impact gameplay, particularly for effects that trigger on individual rolls (like DoTs or on-hit effects). Individual calculation allows for more strategic depth and potentially more exciting moments of extreme damage or effect stacking. However, it may require more optimization to ensure smooth gameplay, especially in late-game scenarios with hundreds of dice rolls.
+
+For initial implementation, pooled dice damage might be easier to balance and optimize. As the game develops, transitioning to individual die calculation could add more depth and strategic options, particularly if combined with effects that trigger on specific roll results or sequences.
+
+The final choice should be based on the desired complexity of the combat system, computational resources available, and the overall game feel you're aiming for. Testing both methods with various scenarios will provide valuable insights into which approach best suits the game's design goals.
+
+#### 6.4.2 Defensive Calculation
+
+The defensive calculation determines how much of the offensive damage is mitigated or avoided. It follows these steps:
+
+1. Apply True Strike effect (if attacker has it)
+   - If successful, skip to step 5
+2. Apply Dodge Chance (Pre-Roll Effect, Evasion)
+   - If successful, nullify incoming damage and end formula
+3. Apply Damage Reduction (Reduction Effect)
+   - Reduce incoming damage by reduction percentage
+4. Apply Shield Generator (Pre-Roll Effect, Damage Absorption)
+   - Subtract shield value from incoming damage
+5. Calculate and apply final damage to Bet Pool
+6. Apply Post-Final Damage Effects (e.g., Poison Damage)
+   - Add to ongoing Damage Over Time effects
+7. Apply Top Up Value (Post-Roll Effect, Resource Management)
+   - Recover a portion of lost Bet Pool from Banked $
+
+#### 6.4.3 Damage Application
+
+The damage application process visualizes the calculations for the player:
+
+- Displayed in a separate popup after offensive calculations
+- Shows step-by-step defensive calculations
+- Final damage applied with announcer commentary
+- Player clicks "Next" button to proceed through calculation stages
+
+#### 6.4.4 Complete Damage Calculation Formulas
+
+We have two potential formulas for calculating damage. Both will need to be tested to determine which system provides better gameplay balance.
+
+##### 6.4.4.1 Additive Multiplicative Formula
+
+`FinalDamage = ((BaseDamage + FlatModifiers) * (1 + ∑MultiplicativeModifiers) * TypeAdvantage * CriticalMultiplier) - DefensiveReduction`
+
+`Where:`
+- `BaseDamage = ∑(DiceRoll * NumRolls) + PassiveEffects + PreRollEffects + PostRollEffects`
+- `FlatModifiers = ∑(FlatDiceModifiers + FlatGemModifiers)`
+- `MultiplicativeModifiers = ∑(DiceMultipliers + GemMultipliers + DamageMultipliers)`
+- `TypeAdvantage = TypeAdvantageModifier`
+- `CriticalMultiplier = 1 + (CriticalDamageModifier * CriticalChance)`
+- `DefensiveReduction = (1 - DodgeChance) * (IncomingDamage * (1 - DamageReduction) - ShieldAbsorption)`
+
+`PostFinalDamage = FinalDamage + PoisonDamage`
+`PlayerBetPoolDamage = PostFinalDamage - TopUpValue`
+
+##### 6.4.4.2 Multiplicative Formula
+
+`FinalDamage = ((BaseDamage + FlatModifiers) * ∏(1 + MultiplicativeModifier) * TypeAdvantage * CriticalMultiplier) - DefensiveReduction`
+
+`Where:`
+- `BaseDamage = ∑(DiceRoll * NumRolls) + PassiveEffects + PreRollEffects + PostRollEffects`
+- `FlatModifiers = ∑(FlatDiceModifiers + FlatGemModifiers)`
+- `MultiplicativeModifier = Each individual multiplier from DiceMultipliers, GemMultipliers, and DamageMultipliers`
+- `TypeAdvantage = TypeAdvantageModifier`
+- `CriticalMultiplier = 1 + (CriticalDamageModifier * CriticalChance)`
+- `DefensiveReduction = (1 - DodgeChance) * (IncomingDamage * (1 - DamageReduction) - ShieldAbsorption)`
+
+`PostFinalDamage = FinalDamage + PoisonDamage`
+`PlayerBetPoolDamage = PostFinalDamage - TopUpValue`
+
+**Key differences:**
+1. In the Additive formula, we sum all multiplicative modifiers.
+2. In the Multiplicative formula, we multiply each modifier (plus 1) separately.
+
+**Notes:**
+- ∑ represents the sum of all values
+- ∏ represents the product of all values
+- BaseDamage includes NumRolls to account for multiple dice rolls
+- CriticalMultiplier represents both the chance and multiplier of critical hits
+- DefensiveReduction accounts for dodge chance, damage reduction, and shield absorption
+- True Strike effect would bypass the DodgeChance when active
+- CriticalChance and DodgeChance are expressed as decimals (e.g., 0.25 for 25%)
+
+#### 6.4.5 Formula Explanations
+
+**BaseDamage:** This represents the core damage from dice rolls, including multiple rolls, and all effects applied before modifiers.
+
+**FlatModifiers:** These are straightforward additions to damage from dice and gem effects.
+
+**MultiplicativeModifiers:** These multiply the damage, potentially leading to significant increases.
+
+**TypeAdvantage:** This modifier adjusts damage based on the type matchup between attacker and defender.
+
+**CriticalMultiplier:** This accounts for both the chance of a critical hit and its damage increase.
+
+**DefensiveReduction:** This complex calculation determines how much damage is mitigated by various defensive effects.
+
+**PostFinalDamage:** This adds any damage over time effects, like poison.
+
+**PlayerBetPoolDamage:** This is the final amount deducted from the player's bet pool, after accounting for any "top-up" effects.
+
+### 6.5 Combat Resolution
+
+#### 6.5.1 Victory Conditions
+- Match ends when a player's bet pool reaches $0
+- Tie-breaker roll in case of simultaneous defeat
+
+#### 6.5.2 Post-Battle Screen
+- Triggered upon match end
+- Displays results, rewards, and penalties
+- Includes animation from cheerleaders
+
+### 6.6 User Interface Elements
+
+#### 6.6.1 Health/Bet Pool Display
+- Shows current bet pool for both players
+- DoT effect icons displayed under health bar, hoverable for effect details
+- Small row displaying opponent's rings, hoverable for detailed ring and gem mod information
+- Small row displaying opponent's dice, hoverable for type and modifier level details
+
+#### 6.6.2 Announcer Commentary
+- Provides ongoing commentary on match events
+- Displayed in dialogue boxes
+- Includes commentary on damage numbers and damage application
+
+#### 6.6.3 Crowd Reactions
+- Animated crowd with random shouts and reactions throughout the match
+
+#### 6.6.4 Player/Enemy Dialogue
+- Updates after each round
+- Displayed on the left side of the screen
+
+#### 6.6.5 Combat Log
+- Shows final damages from each round
+- Displays ongoing DoT information
+
+### 6.7 Special Mechanics
+
+#### 6.7.1 Multiple Dice Rolls
+- Triggered during calculation as per existing formula
+- Visually represented by additional dice joining the roll
+- Subsequent rolls appear as additional rounds of throws within the same turn
+- Builds can take advantage of infinite Dot Stacks with dice that have higher numbers of rolls
+- Smaller dice have increased "Dice Rolled" modifiers and more static minimum numbers
+
+#### 6.7.2 DoT (Damage over Time) Effects
+- Represented by icons under the health bar
+- Can be hovered over for detailed effect information
+
+#### 6.7.3 Type Advantage System
+| Attacker | Defender | Modifier |
+|----------|----------|----------|
+| Tech     | Magic    | 1.2      |
+| Magic    | Bio      | 1.2      |
+| Bio      | Tech     | 1.2      |
+| Ancient  | Any      | 0.8      |
+| Any      | Ancient  | 0.8      |
+| Same     | Same     | 1.0      |
+### 6.8 Example Combat Scenarios
+
+#### 6.8.1 Early Game Scenario
+
+Player Setup:
+- Rings: 2x Candy Ring (1 slot each)
+- Gems:
+  1. Quartz Gem (T1): 
+     - Damage Multiplier 1.02x
+  2. Quartz Gem (T1): 
+     - Flat Damage +1
+- Dice: 1x d6 (Tech)
+
+Opponent Setup:
+- Rings: 2x Candy Ring (1 slot each)
+- Gems:
+  1. Quartz Gem (T1): 
+     - Dodge Chance 0.25%
+  2. Quartz Gem (T1): 
+     - Shield Generator 0.25%
+- Dice: 1x d6 (Bio)
+
+Player's Offensive Calculation:
+1. Apply Dice Modifier Passive Effects: None
+2. Apply Ring modifiers to Gems: None
+3. Apply Gem Passive effects: None
+4. Sum up Gem Passive Effect Totals: 0
+5. Apply Dice Modifiers to Pre-Roll effects: None
+6. Apply Gem Modifiers to Pre-Roll effects: None
+7. Sum up Pre-Roll effects: 0
+8. Roll Dice: 4
+9. Apply Dice Modifier Post-Roll effects: None
+10. Apply Gem Modifier Post-Roll effects: None
+11. Sum up Post-Roll effects: 0
+12. Apply Flat Dice Modifiers to Damage value: 0
+13. Apply Flat Gem Modifiers to Damage value: +1
+14. Sum up Flat modifiers to Damage value: 1
+15. Apply Multiplier Dice Modifiers to Damage value: None
+16. Apply Multiplier Gem Modifiers to Damage value: 1.02x
+17. Sum up Multiplier modifiers: 1.02
+18. Apply Type Advantage Modifier (Tech vs Bio): 1.2x
+19. Apply Dice Critical Chance Modifiers: None
+20. Apply Gem Critical Chance Modifiers: None
+21. Sum Critical Chance and calculate if the crit succeeds: No crit (0% chance)
+22. If crit fails -> Go to step 27: Proceeding to step 27
+23-26. (Skipped due to no crit)
+27. Sum Critical Strike Modifier Damage + Overcrit Damage value: 0
+28. Calculate Final Damage: (4 + 1) * 1.02 * 1.2 = 6.12
+29. Apply Post-Final Damage Effects: None
+30. Output Final Damage: 6.12
+
+Opponent's Defensive Calculation:
+1. Apply True Strike effect: None
+2. Apply Dodge Chance (0.25%): Failed (99.75% chance to fail)
+3. Apply Damage Reduction: None
+4. Apply Shield Generator (0.25%): 6.12 * 0.0025 = 0.0153
+5. Calculate and apply final damage to Bet Pool: 6.12 - 0.0153 = 6.1047
+6. Apply Post-Final Damage Effects: None
+7. Apply Top Up Value: None
+
+Final damage dealt to Opponent: 6.1047
+
+#### 6.8.2 Mid Game Scenario
+
+Player Setup:
+- Rings: 5x Silver Ring (3 slots each)
+- Gems:
+  1. Emerald Gem (T4): 
+     - Damage Multiplier 1.08x
+     - Crit Chance +1.00%
+     - Crit Damage 1.08x
+     - Flat Damage +4
+  2. Emerald Gem (T4): 
+     - Dice Rolled +4
+     - Poison Damage 1.08x for 4 turns
+     - Cheat Roll 1.00%
+     - True Strike 1.00%
+- Dice: 1x d10 (Magic)
+
+Opponent Setup:
+- Rings: 5x Silver Ring (3 slots each)
+- Gems:
+  1. Emerald Gem (T4): 
+     - Dodge Chance 1.00%
+     - Shield Generator 1.00%
+     - Damage Reduction 1.00%
+     - Top Up Value 1.00%
+  2. Emerald Gem (T4): 
+     - Sapper 4
+     - Damage Multiplier 1.08x
+     - Extortion 1.08x
+     - Flat Damage +4
+- Dice: 1x d10 (Tech)
+
+Player's Offensive Calculation:
+1. Apply Dice Modifier Passive Effects: None
+2. Apply Ring modifiers to Gems: None
+3. Apply Gem Passive effects: None
+4. Sum up Gem Passive Effect Totals: 0
+5. Apply Dice Modifiers to Pre-Roll effects: None
+6. Apply Gem Modifiers to Pre-Roll effects: Dice Rolled +4, Cheat Roll 1.00%, True Strike 1.00%
+7. Sum up Pre-Roll effects: Dice Rolled +4, Cheat Roll 1.00%, True Strike 1.00%
+8. Roll Dice: 5x d10 (1 base + 4 from Dice Rolled): 6, 8, 3, 7, 5
+9. Apply Dice Modifier Post-Roll effects: None
+10. Apply Gem Modifier Post-Roll effects: None
+11. Sum up Post-Roll effects: 0
+12. Apply Flat Dice Modifiers to Damage value: 0
+13. Apply Flat Gem Modifiers to Damage value: +4
+14. Sum up Flat modifiers to Damage value: 4
+15. Apply Multiplier Dice Modifiers to Damage value: None
+16. Apply Multiplier Gem Modifiers to Damage value: 1.08x
+17. Sum up Multiplier modifiers: 1.08
+18. Apply Type Advantage Modifier (Magic vs Tech): 1.2x
+19. Apply Dice Critical Chance Modifiers: None
+20. Apply Gem Critical Chance Modifiers: +1.00%
+21. Sum Critical Chance and calculate if the crit succeeds: 1.00% chance, succeeded (assumed for this example)
+22. If crit succeeds: Apply Critical Strike Damage Modifiers
+23. Apply Dice Critical Strike Damage Modifiers: None
+24. Apply Gem Critical Strike Damage Modifiers: 1.08x
+25. No overcrit
+26. Sum Critical Strike Modifier Damage: 1.08x
+27. Sum Critical Strike Modifier Damage + Overcrit Damage value: 1.08x
+28. Calculate Final Damage: ((6 + 8 + 3 + 7 + 5) + 4) * 1.08 * 1.2 * 1.08 = 46.18944
+29. Apply Post-Final Damage Effects: Poison Damage 1.08x for 4 turns
+30. Output Final Damage: 46.18944 + (46.18944 * 0.08 * 4) = 61.13006
+
+Opponent's Defensive Calculation:
+1. Apply True Strike effect (1.00% chance): Failed (99% chance to fail)
+2. Apply Dodge Chance (1.00%): Failed (99% chance to fail)
+3. Apply Damage Reduction (1.00%): 61.13006 * 0.99 = 60.518759
+4. Apply Shield Generator (1.00%): 60.518759 * 0.01 = 0.60518759
+5. Calculate and apply final damage to Bet Pool: 60.518759 - 0.60518759 = 59.91357141
+6. Apply Post-Final Damage Effects: Poison damage will be applied for 4 turns
+7. Apply Top Up Value (1.00%): 59.91357141 * 0.01 = 0.5991357141
+
+Final damage dealt to Opponent: 59.91357141 (plus 4.79308571 poison damage per turn for 4 turns)
+Opponent recovers: 0.5991357141
+
+#### 6.8.3 End Game Scenario
+
+Player Setup:
+- Rings: 10x Titanium Ring (5 slots each)
+- Gems: 50 Opal Gems (T8), each with 8 mod lines
+- Dice: 1x d20 (Ancient)
+
+Pooled Gem Effects:
+1. Damage Multiplier: 50 * 1.20x = 60x
+2. Crit Chance: 50 * 2.00% = 100% (capped)
+3. Crit Damage: 50 * 1.20x = 60x
+4. Flat Damage: 50 * 10 = +500
+5. Dice Rolled: 50 * 10 = +500
+6. True Strike: 50 * 2.00% = 100% (capped)
+7. Poison Damage: 50 * (1.20x for 8 turns) = 60x for 8 turns
+8. Type Advantage: 50 * 2.00% = 100% (adding 1.0 to base multiplier)
+
+Dice Modifiers (d20 Ancient):
+1. Passive effect: +5 minimum roll #
+2. Pre-Roll effect: +3 Dice Rolled
+3. Post-Roll Effect: +3 Reroll of non Max Roll
+4. Flat Bonus: +6
+5. Multiplier bonus: +1.4x
+6. Critical Chance bonus: 33%
+7. Critical Strike Damage bonus: +1.4x
+8. Ultimate Effect: Rolls of 20 = 69
+
+Opponent Setup:
+[Similar complexity to Player Setup, but we'll focus on Player's offensive calculation]
+
+Player's Offensive Calculation:
+
+1. Apply Dice Modifier Passive Effects:
+   - Minimum roll increased to 5
+
+2. Apply Ring modifiers to Gems:
+   - No ring modifiers in this scenario
+
+3. Apply Gem Passive effects:
+   - No passive effects in this scenario
+
+4. Sum up Gem Passive Effect Totals:
+   - 0 (no passive effects)
+
+5. Apply Dice Modifiers to Pre-Roll effects:
+   - +3 Dice Rolled
+
+6. Apply Gem Modifiers to Pre-Roll effects:
+   - +500 Dice Rolled
+   - True Strike 100%
+
+7. Sum up Pre-Roll effects:
+   - Total Dice Rolled: 1 (base) + 3 (dice modifier) + 500 (gems) = 504
+   - True Strike: 100%
+
+8. Roll Dice:
+   - 504x d20 with minimum roll of 5
+   - Average roll: (5 + 20) / 2 = 12.5
+   - Total roll: 504 * 12.5 = 6,300
+
+9. Apply Dice Modifier Post-Roll effects:
+   - Reroll 3 non-max rolls
+   - Assuming these rerolls average to 15
+   - Damage increase: 3 * (15 - 12.5) = 7.5
+
+10. Apply Gem Modifier Post-Roll effects:
+    - No post-roll effects in this scenario
+
+11. Sum up Post-Roll effects:
+    - Total roll after rerolls: 6,300 + 7.5 = 6,307.5
+
+12. Apply Flat Dice Modifiers to Damage value:
+    - +6 from dice modifier
+
+13. Apply Flat Gem Modifiers to Damage value:
+    - +500 from gems
+
+14. Sum up Flat modifiers to Damage value:
+    - Total flat modifier: 6 + 500 = 506
+
+15. Apply Multiplier Dice Modifiers to Damage value:
+    - 1.4x from dice modifier
+
+16. Apply Multiplier Gem Modifiers to Damage value:
+    - 60x from gems
+
+17. Sum up Multiplier modifiers:
+    - Total multiplier: 1.4 * 60 = 84x
+
+18. Apply Type Advantage Modifier:
+    - Base Ancient vs Magic: 0.8x
+    - Gem bonus: +1.0
+    - Total Type Advantage: 0.8 + 1.0 = 1.8x
+
+19. Apply Dice Critical Chance Modifiers:
+    - +33% from dice modifier
+
+20. Apply Gem Critical Chance Modifiers:
+    - +100% from gems (capped)
+
+21. Sum Critical Chance and calculate if the crit succeeds:
+    - Total Crit Chance: 100% (guaranteed crit)
+
+22. If crit succeeds: Apply Critical Strike Damage Modifiers
+    - Crit successful
+
+23. Apply Dice Critical Strike Damage Modifiers:
+    - 1.4x from dice modifier
+
+24. Apply Gem Critical Strike Damage Modifiers:
+    - 60x from gems
+
+25. Check for overcrit:
+    - No overcrit mechanic in this scenario
+
+26. Sum Critical Strike Modifier Damage:
+    - Total Crit Damage Multiplier: 1.4 * 60 = 84x
+
+27. Sum Critical Strike Modifier Damage + Overcrit Damage value:
+    - 84x (no overcrit)
+
+28. Calculate Final Damage:
+    Base damage: 6,307.5 (total roll) + 506 (flat modifiers) = 6,813.5
+    Damage after multipliers: 6,813.5 * 84 (damage multiplier) * 1.8 (type advantage) * 84 (crit multiplier)
+    = 6,813.5 * 12,700.8
+    = 86,530,164.8
+
+29. Apply Post-Final Damage Effects:
+    Poison Damage: 86,530,164.8 * 60 = 5,191,809,888 per turn for 8 turns
+
+30. Output Final Damage:
+    Initial Damage: 86,530,164.8
+    Poison Damage: 5,191,809,888 per turn for 8 turns
+    Total Damage over 8 turns: 86,530,164.8 + (5,191,809,888 * 8) = 41,621,009,268.8
+
+31. Apply Dice Ultimate Effect:
+    - Any rolls of 20 become 69
+    - This would significantly increase the damage, but for simplicity, we'll assume it's accounted for in the average roll calculation
+
+Opponent's Defensive Calculation:
+1. True Strike is 100%, so all defensive calculations are bypassed
+2. Full damage of 41,621,009,268.8 is applied to the opponent's Bet Pool over 8 turns
+
+Final damage dealt to Opponent: 
+- Initial hit: 86,530,164.8
+- Poison damage: 5,191,809,888 per turn for 8 turns
+- Total damage over 8 turns: 41,621,009,268.8
+
 
 ## 7. Economy and Progression System
 
