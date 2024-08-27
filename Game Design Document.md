@@ -1,8 +1,12 @@
 # The Serpent's Eyes (TSE) - Comprehensive Game Design Document
 
 # Table of Contents
+
+
 1. [[#1. Core Concepts]]
-2. [[#2. Dice System]]
+
+
+1. [[#2. Dice System]]
    2.1 [[#2.1 Type Advantage]]
    2.2 [[#2.2 Dice Loadout]]
    2.3 [[#2.3 Dice Mastery System]]
@@ -16,7 +20,9 @@
       2.5.6 [[#D20]]
       2.5.7 [[#D30]]
       2.5.8 [[#D100]]
-3. [[#3. Ring and Modifier System]]
+
+
+1. [[#3. Ring and Modifier System]]
    3.1 [[#3.1 Ring Types]]
       3.1.1 [[#Basic Rings]]
       3.1.2 [[#Amplifier Rings]]
@@ -34,7 +40,9 @@
       3.3.7 [[#3.3.7 Reduction Effects]]
       3.3.8 [[#3.3.8 Type Modifier Effects]]
       3.3.9 [[#3.3.9 Post-Battle Effects]]
-4. [[#4. Robot Companion System]]
+
+
+1. [[#4. Robot Companion System]]
    4.1 [[#4.1 Initial Activation]]
    4.2 [[#4.2 Robot Personalities]]
       4.2.1 [[#4.2.1 Kawaii (Bio Cult)]]
@@ -59,7 +67,9 @@
    4.7 [[#4.7 Friendship Benefits]]
    4.8 [[#4.8 Gift System]]
    4.9 [[#4.9 Robot Switching]]
-5. [[#5. Crafting System]]
+
+
+1. [[#5. Crafting System]]
    5.1 [[#5.1 Gem System]]
       5.1.1 [[#5.1.1 Gem Levels]]
       5.1.2 [[#5.1.2 Gem Crafting Materials]]
@@ -67,7 +77,9 @@
       5.2.1 [[#5.2.1 Modifier Rarity Tiers]]
       5.2.2 [[#5.2.2 Modifier Crafting Materials]]
       5.2.3 [[#5.2.3 Additional Crafting Materials]]
-6. [[#6. Combat System]]
+
+
+1. [[#6. Combat System]]
    6.1 [[#6.1 Dice Selection and Cost]]
       6.1.1 [[#6.1.1 Dice Loadout]]
       6.1.2 [[#6.1.2 Dice Cost]]
@@ -101,7 +113,9 @@
       6.8.1 [[#6.8.1 Early Game Scenario]]
       6.8.2 [[#6.8.2 Mid Game Scenario]]
       6.8.3 [[#6.8.3 End Game Scenario]]
-7. [[#7. Economy and Progression System]]
+
+
+1. [[#7. Economy and Progression System]]
    7.1 [[#7.1 Currency System]]
       7.1.1 [[#7.1.1 Bet Pool]]
       7.1.2 [[#7.1.2 Piggy Bank System]]
@@ -123,21 +137,107 @@
       7.6.2 [[#7.6.2 Honor System]]
       7.6.3 [[#7.6.3 Astral Arena]]
    7.7 [[#7.7 Additional Notes]]
-8. [[#8. UI Elements]]
-9. [[#9. Game Flow]]
-10. [[#10. Game Structure]]
+
+
+1. [[#8. UI Elements]]
+   8.1 [[#8.1 Main Menu]]
+   8.2 [[#8.2 Bedroom Scene]]
+   8.3 [[#8.3 Map Scene]]
+   8.4 [[#8.4 Battle Scene]]
+   8.5 [[#8.5 Post-Battle Scene]]
+   8.6 [[#8.6 Crafting Interface (WorkBench)]]
+   8.7 [[#8.7 Dice Loadout Interface (Altar)]]
+   8.8 [[#8.8 Shop Interface (Computer)]]
+   8.9 [[#8.9 Robot Assistant Interface]]
+   8.10 [[#8.10 Library Interface]]
+   8.11 [[#8.11 Jukebox Interface]]
+   8.12 [[#8.12 Mailbox Interface]]
+   8.13 [[#8.13 Settings Menu]]
+   8.14 [[#8.14 Astral Arena Interface (Endgame)]]
+   8.15 [[#8.15 Piggy Bank Interface]]
+   8.16 [[#8.16 Additional UI Elements]]
+
+
+1. [[#9. Game Flow]]
+   9.1 [[#9.1 New Game Initialization and Tutorial System]]
+   9.2 [[#9.2 Early Game Progression]]
+   9.3 [[#9.3 Battle Progression]]
+   9.4 [[#9.4 Character Development]]
+   9.5 [[#9.5 Area Progression]]
+   9.6 [[#9.6 Endgame Progression]]
+   9.7 [[#9.7 Continuous Gameplay Loop]]
+   9.8 [[#9.8 Meta Progression]]
+   9.9 [[#9.9 Optional Activities]]
+
+
+1. [[#10. Game Structure]]
     10.1 [[#10.1 Master Scene]]
     10.2 [[#10.2 Cutscene Scene]]
     10.3 [[#10.3 Bedroom Scene]]
     10.4 [[#10.4 Map Scene]]
     10.5 [[#10.5 Battle Scene]]
-    10.6 [[#10.6 Post Battle Scene]]
-11. [[#11. Endgame Setup]]
-    11.1 [[#11.1 Map Scene Overview]]
-    11.2 [[#11.2 Progression System]]
-    11.3 [[#11.3 Rune System]]
-    11.4 [[#11.4 Lore]]
-12. [[#12. Future Considerations]]
+    10.6 [[#10.6 Post-Battle Scene]]
+    10.7 [[#10.7 Crafting Scene (WorkBench)]]
+    10.8 [[#10.8 Shop Scene (Computer)]]
+    10.9 [[#10.9 Astral Arena Scene]]
+    10.10 [[#10.10 Settings Scene]]
+    10.11 [[#10.11 Endgame Structure]]
+    10.12 [[#10.12 Economy System Integration]]
+    10.13 [[#10.13 Scene Transitions]]
+
+
+1. [[#11. Character Creation & Customization]]
+    11.1 [[#11.1 Initial Character Setup]]
+    11.2 [[#11.2 Appearance Customization]]
+    11.3 [[#11.3 Voice Selection]]
+    11.4 [[#11.4 Starting Loadout]]
+    11.5 [[#11.5 Impact on Gameplay]]
+    11.6 [[#11.6 Future Customization]]
+
+
+1. [[#12. Additional Gameplay Systems]]
+    12.1 [[#12.1 Non-Combat Gameplay]]
+    12.2 [[#12.2 Tutorial System]]
+    12.3 [[#12.3 Accessibility Features]]
+
+
+1. [[#13. Future Considerations]]
+    13.1 [[#13.1 Gameplay Expansions]]
+    13.2 [[#13.2 Mechanical Depth]]
+    13.3 [[#13.3 Character Progression]]
+    13.4 [[#13.4 World Expansion]]
+    13.5 [[#13.5 Customization Options]]
+    13.6 [[#13.6 Economy and Progression Refinement]]
+    13.7 [[#13.7 User Experience Improvements]]
+    13.8 [[#13.8 Technical Improvements]]
+    13.9 [[#13.9 Audio and Visual Enhancements]]
+    13.10 [[#13.10 Replayability Features]]
+    13.11 [[#13.11 Accessibility and Quality of Life]]
+
+
+1. [[#14. Monetization Strategy]]
+    14.1 [[#14.1 Cosmetic Items]]
+    14.2 [[#14.2 Arena Customization]]
+    14.3 [[#14.3 Convenience Features]]
+    14.4 [[#14.4 UI Enhancements]]
+    14.5 [[#14.5 Audio Packs]]
+    14.6 [[#14.6 Expanded Lore Access]]
+    14.7 [[#14.7 Supporter Packs]]
+    14.8 [[#14.8 Seasonal Leagues]]
+    14.9 [[#14.9 Monetization Principles]]
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 1. Core Concepts
 
 - A dice-based combat RPG with strategic elements
@@ -1965,121 +2065,676 @@ Final damage dealt to Opponent:
 
 ## 8. UI Elements
 
+### 8.1 Main Menu
+- New Game button
+- Load Game button (with 3 save slots)
+- Settings button
+- Discord integration button
+
+### 8.2 Bedroom Scene
+- 8 clickable animated sprites:
+  - Robot Assistant
+  - Computer
+  - WorkBench
+  - Altar
+  - Jukebox
+  - Library
+  - Door
+  - Mailbox
+- Pop-up UI elements for each sprite's function
+- Map Screen access button
+
+### 8.3 Map Scene
+- 3 main arena buttons (Bio/Tech/Magic themed)
+- Multiple round selection buttons per arena
+- Boss battle buttons
+- Progression indicators (wealth and status)
+- Fourth area button (for final boss, initially locked)
+
+### 8.4 Battle Scene
 - Top bar: Area name, enemy name, money/health display
-- Left side: Character dialogue/interaction
-- Right side: Enemy avatar and info
-- Bottom: Player's dice selection with type-changing buttons
+- Left side: Character dialogue box
+- Right side: Enemy avatar and info panel
+- Bottom: Player's dice selection
 - Center: Dice rolling area
-- Background: Animated crowd reacting to gameplay
+- Background: Animated crowd
+- Announcers' commentary box
+- Combat log
+- Roll button
+- Next button (for calculation stages)
+
+### 8.5 Post-Battle Scene
+- Continue to next round button
+- Exit event button (return to bedroom)
+
+### 8.6 Crafting Interface (WorkBench)
+- Gem display area
+- Gem selection for crafting (drag and drop)
+- Modifier display and selection interface
+- Crafting material inventory display
+- Material cost display
+- Craft button
+- Preview window
+- Undo/Redo buttons
+- "Lock" toggles for modifier lines
+- Tier filter and search bar for modifiers
+
+### 8.7 Dice Loadout Interface (Altar)
+- Visual representation of all available dice
+- Three loadout slots with progressive unlocks
+- Drag and drop functionality
+- Loadout management buttons (Clear, Save, Load)
+- Loadout stats summary
+- Dice info panel
+
+### 8.8 Shop Interface (Computer)
+- Category tabs (Gems, Crafting Materials, Special Items)
+- Grid display of items for sale
+- Item info panel
+- Quantity selector and buy buttons
+- Shopping cart summary
+- Search and filter options
+
+### 8.9 Robot Assistant Interface
+- Robot avatar display
+- Conversation options and dialogue box
+- Friendship meter
+- Ring upgrade options
+- Gift giving interface
+- Upgrade preview window
+
+### 8.10 Library Interface
+- Categorized lore entries sidebar
+- Main display area for lore
+- Navigation and search functionality
+- Cutscene replay section
+- Progress tracker
+- Lore Collection System: - Discover fragments of ancient history through gameplay and social interactions - Organize and catalog discovered lore pieces - Piecing together the truth about Gaia, the Treeramid, and the cosmic conflict - Lore completion tracker - Unlock special content or bonuses for completing lore sets
+
+### 8.11 Jukebox Interface
+- Playlist management
+- Song selection and playback controls
+- Volume control
+- Now playing display
+
+### 8.12 Mailbox Interface
+
+- Inbox display
+- Letter reading and management
+- Reward claim functionality
+
+- Social Interaction System:
+  - Receive correspondence from defeated opponents
+  - Multiple response options for each letter, affecting relationships
+  - Relationship status tracker for each correspondent
+  - Special events or quests triggered through mailbox interactions
+  - Potential to unlock unique lore or gameplay elements based on correspondence choices
+
+### 8.13 Settings Menu
+- Volume controls
+- Graphics options
+- Control customization
+- Save/Load game options
+
+### 8.14 Astral Arena Interface (Endgame)
+- Rune inventory and combination slots
+- Challenge selection grid
+- Difficulty modifier controls
+- Reward preview
+- Leaderboard and personal best records
+
+### 8.15 Piggy Bank Interface
+- Current money display
+- Upgrade stage indicator and preview
+- Upgrade controls
+- Transaction history
+- Savings goal feature
+
+### 8.16 Additional UI Elements
+- Tutorial overlay system
+- Notification system
+- Quick access toolbar
+- Achievements display
+- Stats page
 
 ## 9. Game Flow
 
-1. Start with one dice and no gems
-2. Battle opponents, earning money and experience
-3. Buy gems, upgrade gems, and improve character between battles
-4. Progress through increasingly difficult areas
-5. Face boss battles at milestones
-6. Unlock new game features as you progress
-7. Access endgame content and continue to improve character
+### 9.1 New Game Initialization and Tutorial System
+
+#### 9.1.1 Initial Setup
+- Player starts in the Bedroom Scene
+- Character creation and customization (as detailed in Section 11)
+
+#### 9.1.2 Tutorial Overlay
+- Introduces basic game concepts
+- Context-sensitive hints appear during gameplay
+
+#### 9.1.3 Robot Assistant Introduction
+- Robot Assistant activates and introduces itself
+- Personality based on player's initial dice choice
+
+#### 9.1.4 Core Concept Tutorials
+Interactive tutorials introduce key gameplay elements:
+1. Basic dice rolling and type advantages
+2. Gem effects and ring equipment
+3. Money management and betting system
+4. Crafting and upgrading mechanics
+
+#### 9.1.5 Advanced Tutorial Features
+- Optional advanced tutorials unlock as new features become available
+- In-game codex provides detailed explanations of all game systems
+- Practice arena for testing strategies:
+  - Simulates multiple dice rolls
+  - Provides statistical analysis of roll results
+- Tutorial progress tracked and revisitable through Library Interface
+
+### 9.2 Early Game Progression
+
+#### 9.2.1 Initial Dice Selection
+- Player chooses starting dice type (Bio, Tech, or Magic)
+- Choice influences early game strategy and Robot Assistant personality
+
+#### 9.2.2 Introduction to Crafting
+- Guided tour of the WorkBench in Bedroom Scene
+- Overview of the Crafting System mechanics
+
+#### 9.2.3 First Gem Acquisition
+- Player receives their first gem
+- Tutorial on gem modification and equipment
+
+#### 9.2.4 Early Battles
+- Introduction to the Map Scene
+- Guidance through first few battles in School Area
+
+#### 9.2.5 Progression Milestones
+- Unlock additional Bedroom Scene features
+- Introduce sponsorship system
+- Expand available dice loadout options
+
+### 9.3 Battle Progression
+1. Player enters Map Scene
+2. Selects available arena (initially only School Area)
+3. Enters Battle Scene
+4. Selects dice for the round
+5. Combat ensues (as per Section 6: Combat System)
+6. Post-Battle Scene displays results and rewards
+7. Player chooses to continue or return to Bedroom
+
+### 9.4 Character Development
+- Between battles, player returns to Bedroom Scene
+- Upgrade gems at WorkBench
+- Modify dice loadout at Altar
+- Interact with Robot Assistant to improve friendship and unlock upgrades
+- Purchase items from Computer shop
+- Check Mailbox for event notifications and rewards
+
+### 9.5 Area Progression
+1. Complete School Area (7 battles, including boss)
+2. Unlock first Faction Area
+3. Progress through increasingly difficult Faction Areas
+4. Defeat Mini-Bosses to unlock higher tier upgrades
+5. Defeat Area Bosses to progress to next Faction Area
+6. Complete all three Faction Areas
+
+### 9.6 Endgame Progression
+1. Unlock Ultimate Boss after completing all Faction Areas
+2. Defeat Ultimate Boss to access Astral Arena
+3. Honor System replaces Money as currency
+4. Engage in Astral Arena challenges
+5. Collect and combine Runes for varied gameplay experiences
+
+### 9.7 Continuous Gameplay Loop
+- Battle in arenas to earn currency and materials
+- Upgrade equipment (gems, rings, dice)
+- Improve Robot friendship for better upgrades
+- Progress through story and unlock new areas
+- Replay previous areas with increased difficulty
+- Tackle Astral Arena challenges for endgame content
+
+### 9.8 Meta Progression
+- Unlock lore entries in Library
+- Achieve milestones and earn achievements
+- Upgrade Piggy Bank to increase wealth capacity
+- Collect and customize music tracks in Jukebox
+
+### 9.9 Optional Activities
+- Engage in self-imposed challenges (e.g., no-sponsor runs)
+- Experiment with different dice loadouts and strategies
+- Aim for high scores and leaderboard positions in Astral Arena
+- Collect all possible gem and modifier combinations
 
 ## 10. Game Structure
-### 10.1 Master Scene
 
+### 10.1 Master Scene
 - Main entry point for the game
 - Contains:
-    - New Game
-    - Load Game (3 file options)
-    - Settings
-    - Discord integration
+  - New Game button
+  - Load Game button (3 file options)
+  - Settings button
+  - Discord integration button
 
 ### 10.2 Cutscene Scene
-
 - Dedicated node for storing and displaying cutscenes
 - Features:
-    - Text box at the bottom
-    - Sound integration for voice lines
-    - Click-through functionality
-    - Character pop-ups
-    - Image display with minor animations
+  - Text box at the bottom
+  - Sound integration for voice lines
+  - Click-through functionality
+  - Character pop-ups
+  - Image display with minor animations
 
 ### 10.3 Bedroom Scene
-
 - Main hub of the game
-- Contains:
-    - 8 clickable animated sprites
-    - Pop-up UI elements for each sprite's function
-    - Access to MapScreen
-
-- Robot Assistant (Waifu/Husbando that serves as the upgrade menu for Rings, new tiers of upgrades must be unlocked by gaining the friendship of the Robot, a conversation event can happen once between each set of rounds played in which the player must discourse with their Robot Learning about them and choosing the right choices to build their friendship meter up which will unlock higher tiers of base rings) 
-- Computer (Opens the shop to purchase gems & craft materials for $) 
-- WorkBench (The crafting system allowing the player to Craft on their Gems a system similar to path of exile where lines can be added in and removed) 
-- Altar ( A place for the player to select which dice are in 1 of 3 loadouts) 
-- Jukebox (Setup Playlists & listen to game music) 
-- Library (Lore Library to read/listen to collected lore and re-watch cutscenes) 
-- Door (This transitions to the map_scene) 
-- Mailbox (A place where the player will receive various letters from corresponding game events)
+- Contains 8 clickable animated sprites:
+  1. Robot Assistant
+     - Upgrade menu for Rings
+     - Conversation system for building friendship
+     - Friendship levels unlock higher tiers of upgrades
+     - Gift-giving system
+  2. Computer
+     - Shop for gems & craft materials
+     - Sponsorship management system
+  3. WorkBench
+     - Crafting system for Gems
+     - Similar to Path of Exile's crafting system
+  4. Altar
+     - Dice loadout selection (3 loadouts available)
+     - Dice upgrade system
+  5. Jukebox
+     - Music playlist setup and customization
+  6. Library
+     - Lore collection and organization
+     - Cutscene replay functionality
+  7. Door
+     - Transition to Map Scene
+  8. Mailbox
+     - Receive in-game event notifications and rewards
+- Pop-up UI elements for each sprite's function
+- Access to Map Scene
 
 ### 10.4 Map Scene
-
 - Arena selection screen
 - Features:
-    - 3 arenas (Bio/Tech/Magic themed)
-    - Multiple rounds per arena
-    - Boss battles
-    - Progression system (wealth and status)
-    - Fourth area unlocked for final boss
+  - Initially, only playground & schoolyard arenas visible
+  - 3 main arenas unlocked after becoming schoolyard champion:
+    - Bio-themed arena
+    - Tech-themed arena
+    - Magic-themed arena
+  - 6 tiers for each archetype, increasing in difficulty
+  - 7th tier (initially hidden) for Master of each archetype
+  - Multiple rounds per arena (7 fights in each area)
+  - Boss battle selections
+  - Progression indicators (wealth and status)
+  - Fourth area for Ultimate Boss (unlocked after completing all faction final bosses)
 
 ### 10.5 Battle Scene
-
 - Main gameplay screen
-- Layout as per provided mockup image
+- Layout:
+  - Top bar: Area name, enemy name, money/health display
+  - Left side: Character dialogue/interaction
+  - Right side: Enemy avatar and info
+  - Bottom: Player's dice selection
+  - Center: Dice rolling area
+  - Background: Animated crowd reacting to gameplay
 - Features:
-    - Dice selection and rolling
-    - Character dialogue
-    - Enemy display
-    - Health/Money tracking
-    - Animated crowd reactions
+  - Dice selection and rolling mechanics
+  - Character dialogue system
+  - Enemy display with info panel
+  - Health/Money (Bet Pool) tracking
+  - Animated crowd reactions
+  - Announcers' commentary
+  - Combat log
+  - Damage calculation and application system
 
-### 10.6 Post Battle Scene
-
+### 10.6 Post-Battle Scene
 - Displayed after each fight
-- Options:
+- Features:
+  - Results summary
+  - Rewards display (money, crafting materials, etc.)
+  - Experience and progression updates
+  - Options:
     - Continue to next round
-    - Exit event (return to bedroom)
+    - Exit event (return to Bedroom Scene)
 
-## 11. Endgame Setup
+### 10.7 Crafting Scene (WorkBench)
+- Accessed via WorkBench in Bedroom Scene
+- Interface for modifying and upgrading Gems
+- Features:
+  - Gem Transfigurator system
+  - Gem Transformer system
+  - Gem Polisher system
+  - Gem Waxer system
+  - Modifier crafting system (Chaotic Gem Reformers, Gem Slammers, Gem Tweakers)
+  - Gem Locksmith's Kit functionality
+  - Gem Eraser system
+  - Gem Enhancer functionality
+  - Gem Resonator system
+  - Gem Party Hat rare item usage
 
-### 11.1 Map Scene Overview
+### 10.8 Shop Scene (Computer)
+- Accessed via Computer in Bedroom Scene
+- Interface for purchasing Gems and crafting materials
+- Features:
+  - Gem purchase options
+  - Crafting material purchase options
+  - Sponsorship management system:
+    - 4 sponsorship slots
+    - 4 factions (Bio/Tech/Magic/Ancient) offering sponsorships
+    - 8 tiers of sponsorship with increasing benefits
 
-- Initially, only the playground & schoolyard arenas are visible.
-- Players must become the schoolyard champion to unlock Arena Tournaments.
-- Arena Tournaments consist of 6 tiers for each archetype, increasing in difficulty.
-- A 7th tier (initially hidden) represents the Master of each archetype.
+### 10.9 Astral Arena Scene
+- Endgame content
+- Accessible after defeating the Ultimate Boss
+- Features:
+  - Rune combination interface
+  - Challenge selection with varying difficulties
+  - Difficulty modifiers affecting scaling and rewards
+  - Leaderboards
+  - Unique, unmodifiable rings with powerful static effects
 
-### 11.2 Progression System
+### 10.10 Settings Scene
+- Accessible from Master Scene and in-game menu
+- Contains:
+  - Volume controls
+  - Graphics options
+  - Control customization
+  - Save/Load game options
 
- - Defeating Masters drops rune pieces for the Astral Arena Device.
- - The Astral Arena becomes visible after completing all three Master battles.
- - Unlocking the Astral Arena allows replaying previous arenas at higher difficulty.
- - Each arena drops unique rune pieces for varying combinations.
+### 10.11 Endgame Structure
+- Progression System:
+  - Defeat Masters to drop rune pieces for Astral Arena Device
+  - Astral Arena becomes visible after completing all three Master battles
+  - Unlocking Astral Arena allows replaying previous arenas at higher difficulty
+  - Each arena drops unique rune pieces for varying combinations
+- Rune System:
+  - Runes act as modifiers, affecting difficulty scaling and rewards
+  - Different rune combinations unlock various challenges in Astral Arena
+  - System allows for easy content expansion and endgame progression
+- Lore Integration:
+  - After defeating Ancient Gods Cult Leaders, players enter the gods' domain
+  - Gods have taken up the game in their celestial realms
+  - Revelation that gods invented the game to spread awareness among humans
+  - Gods relive their escapades from the Great War on Earth through the game
 
-### 11.3 Rune System
+### 10.12 Economy System Integration
+- Piggy Bank System with 5 upgrade stages:
+  1. Piggy Bank (Default): 1,000$ maximum
+  2. Money Case: 10,000$ maximum
+  3. Small Safe: 100,000$ maximum
+  4. Medium Safe Portfolio: 500,000$ maximum
+  5. Large Safe: 1,000,000$ maximum
+  6. Underground Vault Safe: 10,000,000$ maximum
+- Bet Pool functioning as both health and currency in battles
+- Sponsorship system affecting rewards and bet costs
 
-- Runes act as modifiers, affecting difficulty scaling and rewards.
-- Different rune combinations unlock various challenges in the Astral Arena.
-- The system allows for easy content expansion and endgame progression.
+### 10.13 Scene Transitions
+- Smooth transitions between scenes for seamless gameplay experience
+- Loading screens with lore snippets or gameplay tips for longer transitions
 
-### 11.4 Lore
+## 11. Character Creation & Customization
 
-- After defeating the Ancient Gods Cult Leaders, players enter the gods' domain.
-- Gods have taken up the game in their celestial realms out of boredom and we find out it's actually the gods who invented the game in the first place merely using it as a tool to spread awareness of them amongst the humans without directly intervening while reliving their escapades in the Great War on Earth.
-## 12. Future Considerations
+### 11.1 Initial Character Setup
+- Players create their character at the start of the game
+- Character creation occurs in the Bedroom Scene
 
-- Unique, unmodifiable rings with powerful static effects
-- Expanded storyline and character development
-- Additional areas and enemy types
-- Possible integration of character classes or specializations
-- Advanced crafting system for gems and runes
-- Seasonal events and limited-time challenges
-- Multiplayer arena battles
+### 11.2 Appearance Customization
+- Hair style selection (multiple options for various styles)
+- Hair color selection (color picker or preset palette)
+- Eye color selection (color picker or preset palette)
+- Skin tone selection (color picker or preset options)
 
+### 11.3 Voice Selection
+- Choose between male or female voice
+- Voice affects character dialogue and reactions during gameplay
+
+### 11.4 Starting Loadout
+- Players select their initial dice type:
+  - Bio
+  - Tech
+  - Magic
+- This choice determines the initial Robot Companion personality
+
+### 11.5 Impact on Gameplay
+- Character appearance is visible in the Bedroom Scene and during cutscenes
+- Voice selection affects audio during character interactions
+- Initial dice type influences early game strategy and progression
+
+### 11.6 Future Customization
+- Players can modify their character's appearance later in the game through the Bedroom Scene
+- Additional customization options (e.g., outfits, accessories) can be unlocked through gameplay or purchased as cosmetic items
+## 11. Future Considerations
+
+### 11.1 Gameplay Expansions
+- Create additional unique rings with powerful static effects
+- Develop unique dice modifiers for each enemy type
+- Design structured enemy types for each area and zone
+- Introduce additional crafting materials to enhance the crafting process
+- Create additional modifier lines for gems
+- Implement special gems that provide inherent boons
+- Design combination gems and combination rings
+- Expand the variety of available rings
+
+### 11.2 Mechanical Depth
+- Create synergy bonuses for specific dice and gem combinations
+- Develop more complex modifier interactions
+- Implement a system for combining gem effects
+
+### 11.3 Character Progression
+- Introduce a clothing/costume system with additional boons
+- Implement a prestige system (New Game+) where players can restart with certain progression intact
+- Develop an "isekai" mode for players who have fully completed the Astral Arena
+
+### 11.4 World Expansion
+- Design additional endgame-specific, high-difficulty battles (unlocked after Astral Arena)
+- Implement hard mode versions of normal battles with special item rewards
+- Develop side quests and optional challenges in existing areas
+
+### 11.5 Customization Options
+- Implement a transmog system for dice and rings
+- Develop character appearance customization options
+- Create custom animations for critical hits and special combinations
+- Implement a dye system for gems and equipment
+
+### 11.6 Economy and Progression Refinement
+- Expand the sponsorship system with more complex interactions
+- Develop a dynamic economy with randomly fluctuating prices
+- Implement a stock system where players can invest money and influence prices through gameplay
+- Create a gacha system for materials and items using in-game currency
+
+### 11.7 User Experience Improvements
+- Develop a comprehensive tutorial suite
+- Implement a hint system for complex mechanics
+- Design a pity system for RNG-heavy crafting processes
+- Enhance the Bedroom Scene with more interactive elements
+
+### 11.8 Technical Improvements
+- Develop a full mobile version of the game
+- Implement cloud save functionality
+- Create an anti-cheat system for leaderboard integrity
+- Develop modding tools to support community content creation
+
+### 11.9 Audio and Visual Enhancements
+- Implement voice-overs for main characters and key NPCs
+- Develop advanced particle effects for epic dice rolls and critical hits
+- Create additional visual upgrades for skills and abilities
+
+### 11.10 Replayability Features
+- Implement a New Game+ mode with increased difficulty and carried-over progression
+- Develop a computer quest system with daily refreshing missions
+- Create an endless arena mode for high-risk, high-reward gameplay
+
+### 11.11 Accessibility and Quality of Life
+- Implement colorblind modes
+- Create options for UI scaling
+- Develop alternative control schemes and hotkeys for all actions
+
+## 12. Additional Gameplay Systems
+
+### 12.1 Non-Combat Gameplay
+- Social Interactions:
+  - Mailbox system for correspondence with defeated opponents
+  - Players can respond to letters in various ways, affecting relationships and unlocking lore
+  - Occasional special events or quests triggered through mailbox interactions
+- Lore Collection:
+  - Discover fragments of ancient history through gameplay and social interactions
+  - Piecing together the truth about Gaia, the Treeramid, and the cosmic conflict
+
+### 12.2 Tutorial System
+- Interactive tutorial integrated into the game's prologue
+- Introduces core concepts one at a time:
+  1. Basic dice rolling and type advantages
+  2. Gem effects and ring equipment
+  3. Money management and betting
+  4. Crafting and upgrading
+- Optional advanced tutorials unlocked as new features become available
+- In-game codex with detailed explanations of all game systems
+- Context-sensitive hints during gameplay
+- Practice arena for testing strategies:
+  - Allow players to simulate multiple rolls and view outcomes
+  - Provide statistical analysis of roll results for strategy optimization
+
+### 12.3 Accessibility Features
+- Visual:
+  - Colorblind modes (Protanopia, Deuteranopia, Tritanopia)
+  - High contrast mode for UI elements
+  - Adjustable UI scaling
+  - Option to increase size and readability of text
+- Audio:
+  - Separate volume controls for music, sound effects, and voices
+  - Audio descriptions for key visual elements
+- Gameplay:
+  - Adjustable game speed for combat animations
+- Controls:
+  - Fully remappable controls for keyboard and gamepad
+
+## 13. Future Considerations
+
+### 13.1 Gameplay Expansions
+- Create additional unique rings with powerful static effects
+- Develop unique dice modifiers for each enemy type
+- Design structured enemy types for each area and zone
+- Introduce additional crafting materials to enhance the crafting process
+- Create additional modifier lines for gems
+- Implement special gems that provide inherent boons
+- Design combination gems and combination rings
+- Expand the variety of available rings
+
+### 13.2 Mechanical Depth
+- Create synergy bonuses for specific dice and gem combinations
+- Develop more complex modifier interactions
+- Implement a system for combining gem effects
+
+### 13.3 Character Progression
+- Introduce a clothing/costume system with additional boons
+- Implement a prestige system (New Game+) where players can restart with certain progression intact
+- Develop an "isekai" mode for players who have fully completed the Astral Arena
+
+### 13.4 World Expansion
+- Design additional endgame-specific, high-difficulty battles (unlocked after Astral Arena)
+- Implement hard mode versions of normal battles with special item rewards
+- Develop side quests and optional challenges in existing areas
+
+### 13.5 Customization Options
+- Implement a transmog system for dice and rings
+- Develop character appearance customization options
+- Create custom animations for critical hits and special combinations
+- Implement a dye system for gems and equipment
+
+### 13.6 Economy and Progression Refinement
+- Expand the sponsorship system with more complex interactions
+- Develop a dynamic economy with randomly fluctuating prices
+- Implement a stock system where players can invest money and influence prices through gameplay
+- Create a gacha system for materials and items using in-game currency
+
+### 13.7 User Experience Improvements
+- Develop a comprehensive tutorial suite
+- Implement a hint system for complex mechanics
+- Design a pity system for RNG-heavy crafting processes
+- Enhance the Bedroom Scene with more interactive elements
+
+### 13.8 Technical Improvements
+- Develop a full mobile version of the game
+- Implement cloud save functionality
+- Create an anti-cheat system for leaderboard integrity
+- Develop modding tools to support community content creation
+
+### 13.9 Audio and Visual Enhancements
+- Implement voice-overs for main characters and key NPCs
+- Develop advanced particle effects for epic dice rolls and critical hits
+- Create additional visual upgrades for skills and abilities
+
+### 13.10 Replayability Features
+- Implement a New Game+ mode with increased difficulty and carried-over progression
+- Develop a computer quest system with daily refreshing missions
+- Create an endless arena mode for high-risk, high-reward gameplay
+
+### 13.11 Accessibility and Quality of Life
+- Implement colorblind modes
+- Create options for UI scaling
+- Develop alternative control schemes and hotkeys for all actions
+
+## 14. Monetization Strategy
+
+### 14.1 Cosmetic Items
+- Exclusive dice skins with unique visual effects
+- Special ring designs with custom animations
+- Themed costume sets for character customization
+- Unique gem appearances and special effects
+- Custom critical hit animations
+
+### 14.2 Arena Customization
+- Themed arena backgrounds (e.g., space, underwater, steampunk)
+- Custom crowd models and reactions
+- Unique announcer voice packs
+- Special cheerleader outfits and routines
+- Personalized arena banners and flags
+
+### 14.3 Convenience Features
+- "Craft until X" automation system for repetitive crafting
+- Additional loadout slots for dice and ring combinations
+- Expanded storage for gems and crafting materials
+- Quick-swap feature for instantly changing equipment setups
+- Batch crafting options for creating multiple items at once
+
+### 14.4 UI Enhancements
+- Custom UI themes and color schemes
+- Animated menu backgrounds
+- Special effects for menu transitions
+- Unique cursor designs
+- Personalized loading screen art
+
+### 14.5 Audio Packs
+- Alternative music tracks for different game areas
+- Custom sound effect packs for dice rolls and abilities
+- Voice packs for the Robot Assistant
+- Ambient sound themes for the Bedroom Scene
+
+### 14.6 Expanded Lore Access
+- Animated lore cutscenes
+- Digital artbook with concept art and design insights
+- Character backstory novellas
+- "Behind the scenes" developer commentaries
+
+### 14.7 Supporter Packs
+- Pre-release packs allowing supporters to contribute ideas to the game:
+  - Enemy names, types, and loadouts
+  - Special item designs
+  - Unique dialogue options
+- Post-release packs with exclusive cosmetics and convenience features
+- Special in-game badge or title for supporters
+- Early access to upcoming cosmetic features
+
+### 14.8 Seasonal Leagues
+- Periodic leagues with major gameplay shifts
+- Separate progression from the main game
+- Unique rule sets and challenges for each league
+- All materials and progress transfer to the standard game upon league end
+- Exclusive cosmetic rewards for league participation and achievements
+
+### 14.9 Monetization Principles
+- All purchases are strictly cosmetic or convenience-based
+- No pay-to-win elements or gameplay advantages
+- No exclusive gameplay content behind paywalls
+- Regular rotation of available items to maintain freshness
+- Transparent communication about monetization with the player base
+- Ability to earn some premium items through extensive gameplay
+- Seasonal leagues accessible to all players, with optional cosmetic purchases
