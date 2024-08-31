@@ -28,6 +28,7 @@ func update_save_slot_display(slot):
 			var slot_data = SaveManager.get_save_data(slot)
 			if slot_data["name"] != "":
 				label.text = slot_data["name"]
+				# You might want to add more info here, like the number of dice in the loadout
 			else:
 				label.text = "Empty Slot"
 		else:
@@ -37,13 +38,14 @@ func update_save_slot_display(slot):
 
 func on_load_game(slot):
 	if SaveManager.has_save_data(slot):
-		var save_data = SaveManager.load_game(slot)
-		GameManager.set_game_data(slot, save_data["name"])
-		GameManager.set_starter_dice(save_data["starter_dice"])
-		if save_data["starter_dice"] != "":
-			get_tree().change_scene_to_file("res://scenes/bedroom_scene/bedroom_scene.tscn")
+		if SaveManager.load_game(slot):
+			var save_data = SaveManager.get_save_data(slot)
+			if save_data["starter_dice"] != "":
+				get_tree().change_scene_to_file("res://scenes/bedroom_scene/bedroom_scene.tscn")
+			else:
+				get_tree().change_scene_to_file("res://scenes/intro_scene/intro_scene.tscn")
 		else:
-			get_tree().change_scene_to_file("res://scenes/intro_scene/intro_scene.tscn")
+			print("Failed to load game data from slot ", slot)
 	else:
 		print("No save data in slot ", slot)
 

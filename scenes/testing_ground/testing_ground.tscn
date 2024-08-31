@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://kjjanadkfr4g"]
+[gd_scene load_steps=4 format=3 uid="uid://kjjanadkfr4g"]
 
 [ext_resource type="Texture2D" uid="uid://8legreastj53" path="res://assets/panels/background_panel/bg_1920x1080.png" id="1_abcde"]
 [ext_resource type="Script" path="res://scenes/testing_ground/testing_ground.gd" id="1_fe8c8"]
-[ext_resource type="LabelSettings" uid="uid://ckg0j8haan05w" path="res://assets/fonts/orbitron_48_so.tres" id="2_fghij"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_klmno"]
 bg_color = Color(0.1, 0.1, 0.1, 0.8)
@@ -44,10 +43,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
 [node name="ScrollContainer" type="ScrollContainer" parent="LogPanel/MarginContainer"]
 layout_mode = 2
@@ -66,285 +65,16 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -200.0
+offset_left = 303.0
+offset_top = -238.0
+offset_right = -18.0
+offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/margin_left = 310
+theme_override_constants/margin_left = 0
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="DiceContainer"]
 layout_mode = 2
 theme_override_constants/separation = 10
-
-[node name="D4Container" type="VBoxContainer" parent="DiceContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="D4Label" type="Label" parent="DiceContainer/HBoxContainer/D4Container"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "D4"
-label_settings = ExtResource("2_fghij")
-horizontal_alignment = 1
-
-[node name="D4Buttons" type="HBoxContainer" parent="DiceContainer/HBoxContainer/D4Container"]
-layout_mode = 2
-
-[node name="Roll1" type="Button" parent="DiceContainer/HBoxContainer/D4Container/D4Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "1"
-
-[node name="Roll10" type="Button" parent="DiceContainer/HBoxContainer/D4Container/D4Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "10"
-
-[node name="Roll50" type="Button" parent="DiceContainer/HBoxContainer/D4Container/D4Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "50"
-
-[node name="Roll100" type="Button" parent="DiceContainer/HBoxContainer/D4Container/D4Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "100"
-
-[node name="D6Container" type="VBoxContainer" parent="DiceContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="D6Label" type="Label" parent="DiceContainer/HBoxContainer/D6Container"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "D6"
-label_settings = ExtResource("2_fghij")
-horizontal_alignment = 1
-
-[node name="D6Buttons" type="HBoxContainer" parent="DiceContainer/HBoxContainer/D6Container"]
-layout_mode = 2
-
-[node name="Roll1" type="Button" parent="DiceContainer/HBoxContainer/D6Container/D6Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "1"
-
-[node name="Roll10" type="Button" parent="DiceContainer/HBoxContainer/D6Container/D6Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "10"
-
-[node name="Roll50" type="Button" parent="DiceContainer/HBoxContainer/D6Container/D6Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "50"
-
-[node name="Roll100" type="Button" parent="DiceContainer/HBoxContainer/D6Container/D6Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "100"
-
-[node name="D8Container" type="VBoxContainer" parent="DiceContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="D8Label" type="Label" parent="DiceContainer/HBoxContainer/D8Container"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "D8"
-label_settings = ExtResource("2_fghij")
-horizontal_alignment = 1
-
-[node name="D8Buttons" type="HBoxContainer" parent="DiceContainer/HBoxContainer/D8Container"]
-layout_mode = 2
-
-[node name="Roll1" type="Button" parent="DiceContainer/HBoxContainer/D8Container/D8Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "1"
-
-[node name="Roll10" type="Button" parent="DiceContainer/HBoxContainer/D8Container/D8Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "10"
-
-[node name="Roll50" type="Button" parent="DiceContainer/HBoxContainer/D8Container/D8Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "50"
-
-[node name="Roll100" type="Button" parent="DiceContainer/HBoxContainer/D8Container/D8Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "100"
-
-[node name="D10Container" type="VBoxContainer" parent="DiceContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="D10Label" type="Label" parent="DiceContainer/HBoxContainer/D10Container"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "D10"
-label_settings = ExtResource("2_fghij")
-horizontal_alignment = 1
-
-[node name="D10Buttons" type="HBoxContainer" parent="DiceContainer/HBoxContainer/D10Container"]
-layout_mode = 2
-
-[node name="Roll1" type="Button" parent="DiceContainer/HBoxContainer/D10Container/D10Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "1"
-
-[node name="Roll10" type="Button" parent="DiceContainer/HBoxContainer/D10Container/D10Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "10"
-
-[node name="Roll50" type="Button" parent="DiceContainer/HBoxContainer/D10Container/D10Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "50"
-
-[node name="Roll100" type="Button" parent="DiceContainer/HBoxContainer/D10Container/D10Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "100"
-
-[node name="D12Container" type="VBoxContainer" parent="DiceContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="D12Label" type="Label" parent="DiceContainer/HBoxContainer/D12Container"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "D12"
-label_settings = ExtResource("2_fghij")
-horizontal_alignment = 1
-
-[node name="D12Buttons" type="HBoxContainer" parent="DiceContainer/HBoxContainer/D12Container"]
-layout_mode = 2
-
-[node name="Roll1" type="Button" parent="DiceContainer/HBoxContainer/D12Container/D12Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "1"
-
-[node name="Roll10" type="Button" parent="DiceContainer/HBoxContainer/D12Container/D12Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "10"
-
-[node name="Roll50" type="Button" parent="DiceContainer/HBoxContainer/D12Container/D12Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "50"
-
-[node name="Roll100" type="Button" parent="DiceContainer/HBoxContainer/D12Container/D12Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "100"
-
-[node name="D20Container" type="VBoxContainer" parent="DiceContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="D20Label" type="Label" parent="DiceContainer/HBoxContainer/D20Container"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "D20"
-label_settings = ExtResource("2_fghij")
-horizontal_alignment = 1
-
-[node name="D20Buttons" type="HBoxContainer" parent="DiceContainer/HBoxContainer/D20Container"]
-layout_mode = 2
-
-[node name="Roll1" type="Button" parent="DiceContainer/HBoxContainer/D20Container/D20Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "1"
-
-[node name="Roll10" type="Button" parent="DiceContainer/HBoxContainer/D20Container/D20Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "10"
-
-[node name="Roll50" type="Button" parent="DiceContainer/HBoxContainer/D20Container/D20Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "50"
-
-[node name="Roll100" type="Button" parent="DiceContainer/HBoxContainer/D20Container/D20Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "100"
-
-[node name="D30Container" type="VBoxContainer" parent="DiceContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="D30Label" type="Label" parent="DiceContainer/HBoxContainer/D30Container"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "D30"
-label_settings = ExtResource("2_fghij")
-horizontal_alignment = 1
-
-[node name="D30Buttons" type="HBoxContainer" parent="DiceContainer/HBoxContainer/D30Container"]
-layout_mode = 2
-
-[node name="Roll1" type="Button" parent="DiceContainer/HBoxContainer/D30Container/D30Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "1"
-
-[node name="Roll10" type="Button" parent="DiceContainer/HBoxContainer/D30Container/D30Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "10"
-
-[node name="Roll50" type="Button" parent="DiceContainer/HBoxContainer/D30Container/D30Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "50"
-
-[node name="Roll100" type="Button" parent="DiceContainer/HBoxContainer/D30Container/D30Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "100"
-
-[node name="D100Container" type="VBoxContainer" parent="DiceContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="D100Label" type="Label" parent="DiceContainer/HBoxContainer/D100Container"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "D100"
-label_settings = ExtResource("2_fghij")
-horizontal_alignment = 1
-
-[node name="D100Buttons" type="HBoxContainer" parent="DiceContainer/HBoxContainer/D100Container"]
-layout_mode = 2
-
-[node name="Roll1" type="Button" parent="DiceContainer/HBoxContainer/D100Container/D100Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "1"
-
-[node name="Roll10" type="Button" parent="DiceContainer/HBoxContainer/D100Container/D100Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "10"
-
-[node name="Roll50" type="Button" parent="DiceContainer/HBoxContainer/D100Container/D100Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "50"
-
-[node name="Roll100" type="Button" parent="DiceContainer/HBoxContainer/D100Container/D100Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "100"

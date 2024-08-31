@@ -21,12 +21,18 @@ var dice_info = {
 		"name": "Magic Dice",
 		"description": "A mystical die imbued with arcane energies.",
 		"lore": "Whispers speak of Thaumaturga's influence in the creation of this enigmatic die."
+	},
+	"ancient": {
+		"name": "Ancient Dice",
+		"description": "A mysterious die of unknown origin.",
+		"lore": "This die seems to predate known history, its true nature a complete mystery."
 	}
 }
 
 var selected_dice = null
 var confirmation_scene = preload("res://scenes/intro_scene/dice_selection/dice_selection_confirmation.tscn")
 var hover_tween: Tween
+var next_button_presses = 0
 
 func _ready():
 	dialogue_text.text = ""
@@ -51,7 +57,6 @@ func _on_dice_input(event: InputEvent, dice_type: String):
 func select_dice(dice_type: String):
 	if hover_tween:
 		hover_tween.kill()
-
 	for dice in [tech_dice, magic_dice, bio_dice]:
 		dice.position.y = 140
 		if dice.material:
@@ -67,6 +72,7 @@ func select_dice(dice_type: String):
 	
 	selected_dice = dice_type
 	update_dialogue()
+	next_button_presses = 0  # Reset the counter when a dice is selected
 
 func update_dialogue():
 	var dice = dice_info[selected_dice]
@@ -76,7 +82,14 @@ func on_next_pressed():
 	if selected_dice:
 		show_confirmation()
 	else:
-		dialogue_text.text = "Please select a dice before continuing."
+		next_button_presses += 1
+		if next_button_presses == 7:
+			dialogue_text.text = "Oh so you know eh?"
+		elif next_button_presses == 8:
+			selected_dice = "ancient"
+			show_confirmation()
+		else:
+			dialogue_text.text = "Please select a dice before continuing."
 
 func show_confirmation():
 	var confirm_instance = confirmation_scene.instantiate()
@@ -92,9 +105,18 @@ func center_popup(popup):
 	popup.set_position(centered_position)
 
 func on_dice_confirmed():
+	# Set the starter dice in GameManager
 	GameManager.set_starter_dice(selected_dice)
-	SaveManager.save_game(GameManager.current_save_slot, GameManager.current_player_name, selected_dice)
+	
+	# Save the game
+	SaveManager.save_game(GameManager.current_save_slot)
+	
+	# Transition to the next scene
 	get_tree().change_scene_to_file("res://scenes/bedroom_scene/bedroom_scene.tscn")
 
 func on_confirmation_cancelled():
+	if selected_dice == "ancient":
+		selected_dice = null
+		next_button_presses = 0
+		display_initial_text()
 	pass

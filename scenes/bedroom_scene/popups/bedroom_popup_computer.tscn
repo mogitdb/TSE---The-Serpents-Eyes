@@ -1,12 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvhco66l24fuw"]
+[gd_scene load_steps=11 format=3 uid="uid://bvhco66l24fuw"]
 
 [ext_resource type="Texture2D" uid="uid://c4raotdsqdcbh" path="res://assets/panels/button_panel/button_panel_800x800.png" id="1_5u6wr"]
 [ext_resource type="Script" path="res://scenes/bedroom_scene/popups/bedroom_popup_computer.gd" id="1_088lv"]
 [ext_resource type="LabelSettings" uid="uid://cikkld844vyvt" path="res://assets/fonts/orbitron_24_so.tres" id="2_8w660"]
 [ext_resource type="LabelSettings" uid="uid://c0r3vu37o7tx8" path="res://assets/fonts/orbitron_16_so.tres" id="3_ed0m2"]
 [ext_resource type="Texture2D" uid="uid://qnbdy1vgg1j5" path="res://assets/panels/close_button/close_button_panel_50x50.png" id="4_i08dx"]
+[ext_resource type="Texture2D" uid="uid://cimtj75m1wmoe" path="res://assets/panels/button_panel/button_panel_400x100.png" id="5_gkegp"]
 [ext_resource type="Texture2D" uid="uid://blu3v660yt63r" path="res://assets/panels/close_button/close_button_panel_50x50_pressed.png" id="5_njkxs"]
+[ext_resource type="Texture2D" uid="uid://dhjtn4qkrcj7b" path="res://assets/panels/button_panel/button_panel_400x100_pressed.png" id="6_bi8fy"]
 [ext_resource type="Texture2D" uid="uid://w8eb67ngwgep" path="res://assets/panels/close_button/close_button_panel_50x50_hover.png" id="6_v3bom"]
+[ext_resource type="Texture2D" uid="uid://d1tga5njkvlsk" path="res://assets/panels/button_panel/button_panel_400x100_hover.png" id="7_sul7h"]
 
 [node name="ComputerPopup" type="Panel"]
 custom_minimum_size = Vector2(800, 800)
@@ -48,6 +51,31 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 text = "Browse the web and order gems & crafting materials"
+label_settings = ExtResource("3_ed0m2")
+
+[node name="DiceSimulator" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_gkegp")
+texture_pressed = ExtResource("6_bi8fy")
+texture_hover = ExtResource("7_sul7h")
+
+[node name="TitleLabel3" type="Label" parent="MarginContainer/VBoxContainer/DiceSimulator"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -10.5
+offset_right = 78.0
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "RUN THE DICE SIMULATOR"
 label_settings = ExtResource("3_ed0m2")
 
 [node name="CloseButton" type="TextureButton" parent="."]

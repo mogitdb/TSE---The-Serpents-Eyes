@@ -3,14 +3,57 @@ extends Control
 enum DiceType {D4, D6, D8, D10, D12, D20, D30, D100}
 
 @onready var log_label = $LogPanel/MarginContainer/ScrollContainer/LogLabel
+@onready var dice_container = $DiceContainer/HBoxContainer
+
+var dice_textures = {
+	"ancient": preload("res://assets/buttons_dice/ancient_dice_placeholder.png"),
+	"bio": preload("res://assets/buttons_dice/bio_110x110.png"),
+	"magic": preload("res://assets/buttons_dice/magic_110x110.png"),
+	"tech": preload("res://assets/buttons_dice/tech_110x110.png")
+}
 
 func _ready():
 	randomize()  # Initialize random number generator
-	for dice_container in $DiceContainer/HBoxContainer.get_children():
-		var dice_name = dice_container.name.substr(0, dice_container.name.length() - 9)
-		var buttons = dice_container.get_node(dice_name + "Buttons")
-		for button in buttons.get_children():
-			button.connect("pressed", Callable(self, "_on_roll_button_pressed").bind(dice_name, int(button.text)))
+	populate_dice_loadout()
+
+func populate_dice_loadout():
+	var loadout = GameManager.get_dice_loadout()
+	for dice in loadout:
+		add_dice_to_container(dice)
+
+func add_dice_to_container(dice):
+	var container = VBoxContainer.new()
+	container.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+
+	var texture_rect = TextureRect.new()
+	texture_rect.texture = dice_textures[dice.type]
+	texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	texture_rect.custom_minimum_size = Vector2(110, 110)
+	container.add_child(texture_rect)
+
+	var dice_label = Label.new()
+	dice_label.text = "D" + str(dice.sides)
+	dice_label.label_settings = preload("res://assets/fonts/orbitron_48_so.tres")
+	dice_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	container.add_child(dice_label)
+
+	var buttons = VBoxContainer.new()
+	var roll_label = Label.new()
+	roll_label.text = "Roll X"
+	roll_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	buttons.add_child(roll_label)
+
+	var button_container = HBoxContainer.new()
+	for roll_count in [1, 10, 50, 100]:
+		var button = Button.new()
+		button.text = str(roll_count)
+		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		button.pressed.connect(_on_roll_button_pressed.bind("D" + str(dice.sides), roll_count))
+		button_container.add_child(button)
+	buttons.add_child(button_container)
+	container.add_child(buttons)
+
+	dice_container.add_child(container)
 
 func _on_roll_button_pressed(dice_name: String, num_rolls: int):
 	var dice_type = DiceType[dice_name]

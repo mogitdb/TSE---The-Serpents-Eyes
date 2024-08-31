@@ -83,7 +83,8 @@ func open_new_game_entry(slot):
 
 func on_start_new_game(player_name, save_slot):
 	GameManager.set_game_data(save_slot, player_name)
-	SaveManager.save_game(save_slot, player_name)
+	GameManager.set_starter_dice("")  # This will be set later in the intro scene
+	SaveManager.save_game(save_slot)
 	get_tree().change_scene_to_file("res://scenes/intro_scene/intro_scene.tscn")
 
 func on_close_pressed():

@@ -17,19 +17,22 @@ func load_save_data():
 	else:
 		save_data = {
 			"slots": {
-				"1": {"name": "", "playtime": 0, "starter_dice": ""},
-				"2": {"name": "", "playtime": 0, "starter_dice": ""},
-				"3": {"name": "", "playtime": 0, "starter_dice": ""},
-				"4": {"name": "", "playtime": 0, "starter_dice": ""},
-				"5": {"name": "", "playtime": 0, "starter_dice": ""}
+				"1": {"name": "", "playtime": 0, "starter_dice": "", "dice_loadouts": [[], [], []]},
+				"2": {"name": "", "playtime": 0, "starter_dice": "", "dice_loadouts": [[], [], []]},
+				"3": {"name": "", "playtime": 0, "starter_dice": "", "dice_loadouts": [[], [], []]},
+				"4": {"name": "", "playtime": 0, "starter_dice": "", "dice_loadouts": [[], [], []]},
+				"5": {"name": "", "playtime": 0, "starter_dice": "", "dice_loadouts": [[], [], []]}
 			}
 		}
 
-func save_game(slot, player_name, starter_dice=""):
+func save_game(slot):
+	var game_data = GameManager.get_save_data()
 	save_data["slots"][str(slot)] = {
-		"name": player_name,
-		"playtime": 0,
-		"starter_dice": starter_dice
+		"name": game_data["name"],
+		"playtime": 0,  # You might want to track this separately
+		"starter_dice": game_data["starter_dice"],
+		"dice_loadouts": game_data["dice_loadouts"],
+		"current_loadout": game_data["current_loadout"]
 	}
 	write_save_data()
 
@@ -48,11 +51,15 @@ func delete_save(slot):
 	save_data["slots"][str(slot)] = {
 		"name": "",
 		"playtime": 0,
-		"starter_dice": ""
+		"starter_dice": "",
+		"dice_loadouts": [[], [], []],
+		"current_loadout": 0
 	}
 	write_save_data()
 
 func load_game(slot):
 	if has_save_data(slot):
-		return get_save_data(slot)
-	return null
+		var slot_data = get_save_data(slot)
+		GameManager.load_save_data(slot_data)
+		return true
+	return false

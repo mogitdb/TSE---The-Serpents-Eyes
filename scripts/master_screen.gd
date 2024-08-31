@@ -46,7 +46,8 @@ func on_popup_closed():
 
 func on_start_new_game(save_slot, player_name):
 	print("Starting new game with name: ", player_name, " in slot: ", save_slot)
-	SaveManager.save_game(save_slot, player_name)
+	GameManager.set_game_data(save_slot, player_name)
+	SaveManager.save_game(save_slot)  # Changed from SaveManager.save_game(save_slot, player_name)
 	start_intro_scene()
 
 func on_load_game(save_slot):
