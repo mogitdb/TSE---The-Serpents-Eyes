@@ -6,6 +6,18 @@ var starter_dice: String = ""
 var dice_loadouts: Array = [[], [], []]  # Three empty loadouts
 var current_loadout: int = 0  # Index of the current active loadout
 
+# Dictionary to store owned dice
+var owned_dice: Dictionary = {
+	"d4": {"ancient": false, "bio": false, "magic": false, "tech": false},
+	"d6": {"ancient": false, "bio": false, "magic": false, "tech": false},
+	"d8": {"ancient": false, "bio": false, "magic": false, "tech": false},
+	"d10": {"ancient": false, "bio": false, "magic": false, "tech": false},
+	"d12": {"ancient": false, "bio": false, "magic": false, "tech": false},
+	"d20": {"ancient": false, "bio": false, "magic": false, "tech": false},
+	"d30": {"ancient": false, "bio": false, "magic": false, "tech": false},
+	"d100": {"ancient": false, "bio": false, "magic": false, "tech": false}
+}
+
 class DiceData:
 	var sides: int = 6
 	var type: String = "bio"
@@ -59,6 +71,9 @@ func set_starter_dice(dice: String):
 	var new_dice = DiceData.new()
 	new_dice.type = dice
 	dice_loadouts[0] = [new_dice]  # Replace the first loadout with only the new dice
+	
+	# Add the starter dice to the player's owned dice
+	add_owned_dice("d6", dice)  # Assuming starter dice is always d6
 
 func add_dice_to_loadout(dice: DiceData, loadout_index: int = current_loadout):
 	if loadout_index >= 0 and loadout_index < 3 and dice_loadouts[loadout_index].size() < 7:
@@ -97,7 +112,8 @@ func get_save_data() -> Dictionary:
 		"name": current_player_name,
 		"starter_dice": starter_dice,
 		"dice_loadouts": loadouts_data,
-		"current_loadout": current_loadout
+		"current_loadout": current_loadout,
+		"owned_dice": owned_dice
 	}
 
 func load_save_data(data: Dictionary):
@@ -109,3 +125,19 @@ func load_save_data(data: Dictionary):
 		if i < data["dice_loadouts"].size():
 			for dice_dict in data["dice_loadouts"][i]:
 				dice_loadouts[i].append(DiceData.from_dict(dice_dict))
+	owned_dice = data.get("owned_dice", owned_dice)  # Load owned dice, use default if not present
+
+# Functions for managing owned dice
+func add_owned_dice(sides: String, type: String):
+	if sides in owned_dice and type in owned_dice[sides]:
+		owned_dice[sides][type] = true
+
+func remove_owned_dice(sides: String, type: String):
+	if sides in owned_dice and type in owned_dice[sides]:
+		owned_dice[sides][type] = false
+
+func has_owned_dice(sides: String, type: String) -> bool:
+	return owned_dice.get(sides, {}).get(type, false)
+
+func get_owned_dice() -> Dictionary:
+	return owned_dice

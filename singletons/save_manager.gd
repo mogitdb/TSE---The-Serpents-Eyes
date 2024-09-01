@@ -32,7 +32,8 @@ func save_game(slot):
 		"playtime": 0,  # You might want to track this separately
 		"starter_dice": game_data["starter_dice"],
 		"dice_loadouts": game_data["dice_loadouts"],
-		"current_loadout": game_data["current_loadout"]
+		"current_loadout": game_data["current_loadout"],
+		"owned_dice": game_data["owned_dice"]  # Add this line
 	}
 	write_save_data()
 
@@ -53,7 +54,8 @@ func delete_save(slot):
 		"playtime": 0,
 		"starter_dice": "",
 		"dice_loadouts": [[], [], []],
-		"current_loadout": 0
+		"current_loadout": 0,
+		"owned_dice": {}  # Add this line
 	}
 	write_save_data()
 

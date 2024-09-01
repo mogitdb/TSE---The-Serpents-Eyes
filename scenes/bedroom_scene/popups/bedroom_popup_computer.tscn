@@ -53,6 +53,31 @@ size_flags_vertical = 0
 text = "Browse the web and order gems & crafting materials"
 label_settings = ExtResource("3_ed0m2")
 
+[node name="PurchaseDice" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_gkegp")
+texture_pressed = ExtResource("6_bi8fy")
+texture_hover = ExtResource("7_sul7h")
+
+[node name="TitleLabel3" type="Label" parent="MarginContainer/VBoxContainer/PurchaseDice"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -10.5
+offset_right = 78.0
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "PURCHASE NEW DICE"
+label_settings = ExtResource("3_ed0m2")
+
 [node name="DiceSimulator" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4

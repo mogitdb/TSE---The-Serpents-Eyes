@@ -1,0 +1,1273 @@
+[gd_scene load_steps=16 format=3 uid="uid://dyh6naqycjjbx"]
+
+[ext_resource type="Script" path="res://scenes/bedroom_scene/popups/computer_dice_shop.gd" id="1_gmgft"]
+[ext_resource type="Texture2D" uid="uid://c4raotdsqdcbh" path="res://assets/panels/button_panel/button_panel_800x800.png" id="2_nx6gw"]
+[ext_resource type="LabelSettings" uid="uid://cikkld844vyvt" path="res://assets/fonts/orbitron_24_so.tres" id="3_2lvvq"]
+[ext_resource type="LabelSettings" uid="uid://c0r3vu37o7tx8" path="res://assets/fonts/orbitron_16_so.tres" id="4_vu8r0"]
+[ext_resource type="Texture2D" uid="uid://c0t5g444tousf" path="res://assets/buttons_dice/tech_110x110.png" id="5_3mjm5"]
+[ext_resource type="Texture2D" uid="uid://cimtj75m1wmoe" path="res://assets/panels/button_panel/button_panel_400x100.png" id="5_8rsa7"]
+[ext_resource type="Texture2D" uid="uid://dhjtn4qkrcj7b" path="res://assets/panels/button_panel/button_panel_400x100_pressed.png" id="6_r7tch"]
+[ext_resource type="Texture2D" uid="uid://d1tga5njkvlsk" path="res://assets/panels/button_panel/button_panel_400x100_hover.png" id="7_bp1jq"]
+[ext_resource type="Texture2D" uid="uid://qnbdy1vgg1j5" path="res://assets/panels/close_button/close_button_panel_50x50.png" id="8_l5mb0"]
+[ext_resource type="Texture2D" uid="uid://blu3v660yt63r" path="res://assets/panels/close_button/close_button_panel_50x50_pressed.png" id="9_gr7s2"]
+[ext_resource type="Texture2D" uid="uid://w8eb67ngwgep" path="res://assets/panels/close_button/close_button_panel_50x50_hover.png" id="10_oxuqg"]
+[ext_resource type="Texture2D" uid="uid://b21k6cm3b4yh" path="res://assets/buttons_dice/magic_110x110.png" id="10_yhmem"]
+[ext_resource type="Texture2D" uid="uid://d7k3ccw8sufe" path="res://assets/buttons_dice/bio_110x110.png" id="11_00lwk"]
+[ext_resource type="Texture2D" uid="uid://h6sitag4l8cj" path="res://assets/buttons_dice/ancient_dice_placeholder.png" id="12_1uym5"]
+[ext_resource type="LabelSettings" uid="uid://ckg0j8haan05w" path="res://assets/fonts/orbitron_48_so.tres" id="14_jkl78"]
+
+[node name="ComputerDiceShop" type="Panel"]
+custom_minimum_size = Vector2(800, 800)
+offset_right = 800.0
+offset_bottom = 800.0
+script = ExtResource("1_gmgft")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nx6gw")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "DICE SHOP"
+label_settings = ExtResource("3_2lvvq")
+
+[node name="TitleLabel2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Purchase new dice for your collection"
+label_settings = ExtResource("4_vu8r0")
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="d4" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d4"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d4/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D4Tech" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d4/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_3mjm5")
+
+[node name="D4TechBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d4/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d4/VBoxContainer/HBoxContainer/D4TechBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d4/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D4Magic" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d4/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("10_yhmem")
+
+[node name="D4MagicBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d4/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d4/VBoxContainer/HBoxContainer2/D4MagicBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d4/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D4Bio" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d4/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("11_00lwk")
+
+[node name="D4BioBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d4/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d4/VBoxContainer/HBoxContainer3/D4BioBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d4/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D4Ancient" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d4/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("12_1uym5")
+
+[node name="D4AncientBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d4/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d4/VBoxContainer/HBoxContainer4/D4AncientBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="d6" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d6"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d6/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D6Tech" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d6/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_3mjm5")
+
+[node name="D6TechBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d6/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d6/VBoxContainer/HBoxContainer/D6TechBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d6/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D6Magic" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d6/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("10_yhmem")
+
+[node name="D6MagicBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d6/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d6/VBoxContainer/HBoxContainer2/D6MagicBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d6/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D6Bio" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d6/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("11_00lwk")
+
+[node name="D6BioBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d6/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d6/VBoxContainer/HBoxContainer3/D6BioBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d6/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D6Ancient" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d6/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("12_1uym5")
+
+[node name="D6AncientBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d6/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d6/VBoxContainer/HBoxContainer4/D6AncientBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="d8" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_tab_index = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d8"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d8/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D8Tech" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d8/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_3mjm5")
+
+[node name="D8TechBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d8/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d8/VBoxContainer/HBoxContainer/D8TechBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d8/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D8Magic" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d8/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("10_yhmem")
+
+[node name="D8MagicBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d8/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d8/VBoxContainer/HBoxContainer2/D8MagicBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d8/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D8Bio" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d8/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("11_00lwk")
+
+[node name="D8BioBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d8/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d8/VBoxContainer/HBoxContainer3/D8BioBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d8/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D8Ancient" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d8/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("12_1uym5")
+
+[node name="D8AncientBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d8/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d8/VBoxContainer/HBoxContainer4/D8AncientBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="d10" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_tab_index = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d10"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d10/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D10Tech" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d10/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_3mjm5")
+
+[node name="D10TechBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d10/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d10/VBoxContainer/HBoxContainer/D10TechBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d10/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D10Magic" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d10/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("10_yhmem")
+
+[node name="D10MagicBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d10/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d10/VBoxContainer/HBoxContainer2/D10MagicBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d10/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D10Bio" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d10/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("11_00lwk")
+
+[node name="D10BioBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d10/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d10/VBoxContainer/HBoxContainer3/D10BioBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d10/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D10Ancient" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d10/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("12_1uym5")
+
+[node name="D10AncientBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d10/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d10/VBoxContainer/HBoxContainer4/D10AncientBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="d12" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_tab_index = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d12"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d12/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D12Tech" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d12/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_3mjm5")
+
+[node name="D12TechBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d12/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d12/VBoxContainer/HBoxContainer/D12TechBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d12/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D12Magic" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d12/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("10_yhmem")
+
+[node name="D12MagicBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d12/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d12/VBoxContainer/HBoxContainer2/D12MagicBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d12/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D12Bio" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d12/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("11_00lwk")
+
+[node name="D12BioBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d12/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d12/VBoxContainer/HBoxContainer3/D12BioBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d12/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D12Ancient" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d12/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("12_1uym5")
+
+[node name="D12AncientBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d12/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d12/VBoxContainer/HBoxContainer4/D12AncientBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="d20" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_tab_index = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d20"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d20/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D20Tech" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d20/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_3mjm5")
+
+[node name="D20TechBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d20/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d20/VBoxContainer/HBoxContainer/D20TechBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d20/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D20Magic" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d20/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("10_yhmem")
+
+[node name="D20MagicBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d20/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d20/VBoxContainer/HBoxContainer2/D20MagicBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d20/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D20Bio" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d20/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("11_00lwk")
+
+[node name="D20BioBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d20/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d20/VBoxContainer/HBoxContainer3/D20BioBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d20/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D20Ancient" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d20/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("12_1uym5")
+
+[node name="D20AncientBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d20/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d20/VBoxContainer/HBoxContainer4/D20AncientBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="d30" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_tab_index = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d30"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d30/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D30Tech" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d30/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_3mjm5")
+
+[node name="D30TechBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d30/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d30/VBoxContainer/HBoxContainer/D30TechBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d30/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D30Magic" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d30/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("10_yhmem")
+
+[node name="D30MagicBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d30/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d30/VBoxContainer/HBoxContainer2/D30MagicBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d30/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D30Bio" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d30/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("11_00lwk")
+
+[node name="D30BioBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d30/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d30/VBoxContainer/HBoxContainer3/D30BioBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d30/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D30Ancient" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d30/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("12_1uym5")
+
+[node name="D30AncientBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d30/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d30/VBoxContainer/HBoxContainer4/D30AncientBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="d100" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_tab_index = 7
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d100"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d100/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D100Tech" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d100/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_3mjm5")
+
+[node name="D100TechBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d100/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d100/VBoxContainer/HBoxContainer/D100TechBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d100/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D100Magic" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d100/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("10_yhmem")
+
+[node name="D100MagicBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d100/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d100/VBoxContainer/HBoxContainer2/D100MagicBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d100/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D100Bio" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d100/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("11_00lwk")
+
+[node name="D100BioBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d100/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d100/VBoxContainer/HBoxContainer3/D100BioBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d100/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="D100Ancient" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d100/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("12_1uym5")
+
+[node name="D100AncientBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d100/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_8rsa7")
+texture_pressed = ExtResource("6_r7tch")
+texture_hover = ExtResource("7_bp1jq")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d100/VBoxContainer/HBoxContainer4/D100AncientBuyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = ExtResource("14_jkl78")
+
+[node name="CloseButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.0
+offset_top = 25.0
+offset_right = -10.0
+offset_bottom = 75.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("8_l5mb0")
+texture_pressed = ExtResource("9_gr7s2")
+texture_hover = ExtResource("10_oxuqg")
