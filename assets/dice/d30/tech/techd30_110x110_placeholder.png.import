@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc3q6t8hqvgqq"
-path="res://.godot/imported/magic135.png-244d78814be8f0f017e34dd87302244b.ctex"
+uid="uid://ckhpalka8x127"
+path="res://.godot/imported/techd30_110x110_placeholder.png-c37ca89d62782c7ee6717671469133b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dice/d6/magic/magic135.png"
-dest_files=["res://.godot/imported/magic135.png-244d78814be8f0f017e34dd87302244b.ctex"]
+source_file="res://assets/dice/d30/tech/techd30_110x110_placeholder.png"
+dest_files=["res://.godot/imported/techd30_110x110_placeholder.png-c37ca89d62782c7ee6717671469133b9.ctex"]
 
 [params]
 

@@ -7,6 +7,7 @@ var dice_types = ["Tech", "Magic", "Bio", "Ancient"]
 
 func _ready():
 	setup_buy_buttons()
+	update_all_button_states()
 	$CloseButton.connect("pressed", Callable(self, "_on_CloseButton_pressed"))
 
 func setup_buy_buttons():
@@ -14,18 +15,26 @@ func setup_buy_buttons():
 		var tab = $MarginContainer/VBoxContainer/TabContainer.get_node(side)
 		if tab:
 			var vbox = tab.get_node("VBoxContainer")
-			for i in range(4):  # 4 types of dice
-				var hbox = vbox.get_node("HBoxContainer" + str(i + 1))
-				if hbox:
-					var button = hbox.get_node(side + dice_types[i] + "BuyButton")
-					if button:
-						button.connect("pressed", Callable(self, "_on_BuyButton_pressed").bind(side, dice_types[i].to_lower()))
+			if vbox:
+				for i in range(4):  # 4 types of dice
+					var hbox = vbox.get_node("HBoxContainer" + str(i + 1))
+					if hbox:
+						var button = hbox.get_node(side.to_upper() + dice_types[i] + "BuyButton")
+						if button:
+							button.connect("pressed", Callable(self, "_on_BuyButton_pressed").bind(side, dice_types[i].to_lower()))
+						else:
+							print("Warning: Button not found for " + side.to_upper() + dice_types[i] + "BuyButton")
 					else:
-						print("Warning: Button not found for " + side + " " + dice_types[i])
-				else:
-					print("Warning: HBoxContainer" + str(i + 1) + " not found for " + side)
+						print("Warning: HBoxContainer" + str(i + 1) + " not found for " + side)
+			else:
+				print("Warning: VBoxContainer not found for " + side)
 		else:
 			print("Warning: Tab not found for " + side)
+
+func update_all_button_states():
+	for side in dice_sides:
+		for type in dice_types:
+			update_button_state(side, type.to_lower())
 
 func _on_BuyButton_pressed(side: String, type: String):
 	if GameManager.has_owned_dice(side, type):
@@ -39,20 +48,23 @@ func update_button_state(side: String, type: String):
 	var tab = $MarginContainer/VBoxContainer/TabContainer.get_node(side)
 	if tab:
 		var vbox = tab.get_node("VBoxContainer")
-		var hbox = vbox.get_node("HBoxContainer" + str(dice_types.find(type.capitalize()) + 1))
-		if hbox:
-			var button = hbox.get_node(side + type.capitalize() + "BuyButton")
-			if button:
-				button.disabled = true
-				var label = button.get_node("Label")
-				if label:
-					label.text = "OWNED"
+		if vbox:
+			var hbox = vbox.get_node("HBoxContainer" + str(dice_types.find(type.capitalize()) + 1))
+			if hbox:
+				var button = hbox.get_node(side.to_upper() + type.capitalize() + "BuyButton")
+				if button:
+					button.disabled = true
+					var label = button.get_node("Label")
+					if label:
+						label.text = "OWNED"
+					else:
+						print("Warning: Label not found for " + side.to_upper() + " " + type + " button")
 				else:
-					print("Warning: Label not found for " + side + " " + type + " button")
+					print("Warning: Button not found for " + side.to_upper() + type.capitalize() + "BuyButton")
 			else:
-				print("Warning: Button not found for " + side + " " + type)
+				print("Warning: HBoxContainer not found for " + side + " " + type)
 		else:
-			print("Warning: HBoxContainer not found for " + side + " " + type)
+			print("Warning: VBoxContainer not found for " + side)
 	else:
 		print("Warning: Tab not found for " + side)
 

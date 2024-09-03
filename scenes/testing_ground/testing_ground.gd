@@ -4,6 +4,7 @@ enum DiceType {D4, D6, D8, D10, D12, D20, D30, D100}
 
 @onready var log_label = $LogPanel/MarginContainer/ScrollContainer/LogLabel
 @onready var dice_container = $DiceContainer/HBoxContainer
+@onready var loadout_selector = $LoadoutSelector
 
 var dice_textures = {
 	"ancient": preload("res://assets/buttons_dice/ancient_dice_placeholder.png"),
@@ -14,7 +15,24 @@ var dice_textures = {
 
 func _ready():
 	randomize()  # Initialize random number generator
+	setup_loadout_selector()
 	populate_dice_loadout()
+
+func setup_loadout_selector():
+	loadout_selector.add_item("Loadout 1", 0)
+	loadout_selector.add_item("Loadout 2", 1)
+	loadout_selector.add_item("Loadout 3", 2)
+	loadout_selector.select(GameManager.current_loadout)
+	loadout_selector.connect("item_selected", Callable(self, "_on_loadout_selected"))
+
+func _on_loadout_selected(index):
+	GameManager.switch_loadout(index)
+	clear_dice_container()
+	populate_dice_loadout()
+
+func clear_dice_container():
+	for child in dice_container.get_children():
+		child.queue_free()
 
 func populate_dice_loadout():
 	var loadout = GameManager.get_dice_loadout()

@@ -78,17 +78,17 @@ metadata/_tab_index = 0
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d4/VBoxContainer"]
+[node name="HBoxContainer1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d4/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="D4Tech" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d4/VBoxContainer/HBoxContainer"]
+[node name="D4Tech" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d4/VBoxContainer/HBoxContainer1"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("5_3mjm5")
 
-[node name="D4TechBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d4/VBoxContainer/HBoxContainer"]
+[node name="D4TechBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d4/VBoxContainer/HBoxContainer1"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -96,7 +96,7 @@ texture_normal = ExtResource("5_8rsa7")
 texture_pressed = ExtResource("6_r7tch")
 texture_hover = ExtResource("7_bp1jq")
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d4/VBoxContainer/HBoxContainer/D4TechBuyButton"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d4/VBoxContainer/HBoxContainer1/D4TechBuyButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -227,17 +227,17 @@ metadata/_tab_index = 1
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d6/VBoxContainer"]
+[node name="HBoxContainer1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d6/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="D6Tech" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d6/VBoxContainer/HBoxContainer"]
+[node name="D6Tech" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d6/VBoxContainer/HBoxContainer1"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("5_3mjm5")
 
-[node name="D6TechBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d6/VBoxContainer/HBoxContainer"]
+[node name="D6TechBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d6/VBoxContainer/HBoxContainer1"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -245,7 +245,7 @@ texture_normal = ExtResource("5_8rsa7")
 texture_pressed = ExtResource("6_r7tch")
 texture_hover = ExtResource("7_bp1jq")
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d6/VBoxContainer/HBoxContainer/D6TechBuyButton"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d6/VBoxContainer/HBoxContainer1/D6TechBuyButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -376,17 +376,17 @@ metadata/_tab_index = 2
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d8/VBoxContainer"]
+[node name="HBoxContainer1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d8/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="D8Tech" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d8/VBoxContainer/HBoxContainer"]
+[node name="D8Tech" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d8/VBoxContainer/HBoxContainer1"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("5_3mjm5")
 
-[node name="D8TechBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d8/VBoxContainer/HBoxContainer"]
+[node name="D8TechBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d8/VBoxContainer/HBoxContainer1"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -394,7 +394,7 @@ texture_normal = ExtResource("5_8rsa7")
 texture_pressed = ExtResource("6_r7tch")
 texture_hover = ExtResource("7_bp1jq")
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d8/VBoxContainer/HBoxContainer/D8TechBuyButton"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d8/VBoxContainer/HBoxContainer1/D8TechBuyButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -525,17 +525,17 @@ metadata/_tab_index = 3
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d10/VBoxContainer"]
+[node name="HBoxContainer1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d10/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="D10Tech" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d10/VBoxContainer/HBoxContainer"]
+[node name="D10Tech" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d10/VBoxContainer/HBoxContainer1"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("5_3mjm5")
 
-[node name="D10TechBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d10/VBoxContainer/HBoxContainer"]
+[node name="D10TechBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d10/VBoxContainer/HBoxContainer1"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -543,7 +543,7 @@ texture_normal = ExtResource("5_8rsa7")
 texture_pressed = ExtResource("6_r7tch")
 texture_hover = ExtResource("7_bp1jq")
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d10/VBoxContainer/HBoxContainer/D10TechBuyButton"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d10/VBoxContainer/HBoxContainer1/D10TechBuyButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -674,17 +674,17 @@ metadata/_tab_index = 4
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d12/VBoxContainer"]
+[node name="HBoxContainer1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d12/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="D12Tech" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d12/VBoxContainer/HBoxContainer"]
+[node name="D12Tech" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d12/VBoxContainer/HBoxContainer1"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("5_3mjm5")
 
-[node name="D12TechBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d12/VBoxContainer/HBoxContainer"]
+[node name="D12TechBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d12/VBoxContainer/HBoxContainer1"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -692,7 +692,7 @@ texture_normal = ExtResource("5_8rsa7")
 texture_pressed = ExtResource("6_r7tch")
 texture_hover = ExtResource("7_bp1jq")
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d12/VBoxContainer/HBoxContainer/D12TechBuyButton"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d12/VBoxContainer/HBoxContainer1/D12TechBuyButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -823,17 +823,17 @@ metadata/_tab_index = 5
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d20/VBoxContainer"]
+[node name="HBoxContainer1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d20/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="D20Tech" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d20/VBoxContainer/HBoxContainer"]
+[node name="D20Tech" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d20/VBoxContainer/HBoxContainer1"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("5_3mjm5")
 
-[node name="D20TechBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d20/VBoxContainer/HBoxContainer"]
+[node name="D20TechBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d20/VBoxContainer/HBoxContainer1"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -841,7 +841,7 @@ texture_normal = ExtResource("5_8rsa7")
 texture_pressed = ExtResource("6_r7tch")
 texture_hover = ExtResource("7_bp1jq")
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d20/VBoxContainer/HBoxContainer/D20TechBuyButton"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d20/VBoxContainer/HBoxContainer1/D20TechBuyButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -972,17 +972,17 @@ metadata/_tab_index = 6
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d30/VBoxContainer"]
+[node name="HBoxContainer1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d30/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="D30Tech" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d30/VBoxContainer/HBoxContainer"]
+[node name="D30Tech" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d30/VBoxContainer/HBoxContainer1"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("5_3mjm5")
 
-[node name="D30TechBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d30/VBoxContainer/HBoxContainer"]
+[node name="D30TechBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d30/VBoxContainer/HBoxContainer1"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -990,7 +990,7 @@ texture_normal = ExtResource("5_8rsa7")
 texture_pressed = ExtResource("6_r7tch")
 texture_hover = ExtResource("7_bp1jq")
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d30/VBoxContainer/HBoxContainer/D30TechBuyButton"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d30/VBoxContainer/HBoxContainer1/D30TechBuyButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1121,17 +1121,17 @@ metadata/_tab_index = 7
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d100/VBoxContainer"]
+[node name="HBoxContainer1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/d100/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="D100Tech" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d100/VBoxContainer/HBoxContainer"]
+[node name="D100Tech" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/d100/VBoxContainer/HBoxContainer1"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("5_3mjm5")
 
-[node name="D100TechBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d100/VBoxContainer/HBoxContainer"]
+[node name="D100TechBuyButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TabContainer/d100/VBoxContainer/HBoxContainer1"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -1139,7 +1139,7 @@ texture_normal = ExtResource("5_8rsa7")
 texture_pressed = ExtResource("6_r7tch")
 texture_hover = ExtResource("7_bp1jq")
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d100/VBoxContainer/HBoxContainer/D100TechBuyButton"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/d100/VBoxContainer/HBoxContainer1/D100TechBuyButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
